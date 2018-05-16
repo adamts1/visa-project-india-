@@ -12,6 +12,7 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
@@ -34,14 +35,15 @@
 
 <!-- nav bar -->
 
+
  <div class="container">
-  <form action="insert.php" method="post" enctype="multipart/form-data">
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data">
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
         <h4>טופס הגשת בקשה לויזה להודו</h4>
       </div>
-	  
+
 	  
       <div class="row">
         <div class="col s12">
@@ -121,11 +123,11 @@
 	  <div class="row">
 		  <div class="input-field col s6">
       <input type="text" class="validate validate_company_name" name = "company_name" id="company_name">
-      <p class = "valid_alert" id = "valid_company_name"></p>
+      <p class = "valid_alert" id = "valid_company_name" ></p>
 		  <label for="company_name">שם החברה</label>
 		  </div>
 		  <div class="input-field col s6">
-      <input type="text" class="validate validate_company_address" name="company address" id="company_address">
+      <input type="text" class="validate validate_company_address" name="company_address" id="company_address">
       <p class = "valid_alert" id = "valid_company_address"></p>      
 		  <label for="company_address">כתובת החברה</label>
 		  </div>
@@ -1176,6 +1178,9 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
+  <script src="js/validateBeforeGo.js"></script>
   </body>
 </html>
+
+
 

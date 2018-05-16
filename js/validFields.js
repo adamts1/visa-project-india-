@@ -1,12 +1,9 @@
 (function($){
-
   $(document).ready(function () {
 
     var $mail_reg = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     var $english_reg = /^[a-zA-Z0-9$@$!%*-?&#^-_. +]+$/;
     var $eng_heb_reg = /^[א-תa-zA-Z0-9$@$!%*-?&#^-_. +]+$/;
-
-
 
     $('.validate_country_visited').first().keyup(function () {  //validate refuse details eng heb 
       var $value = this.value;
@@ -462,7 +459,8 @@ $('#passport_issue_date').pickadate({   //  תאריך הנפקת הויזה ה�
 	close: 'אישור',
   closeOnSelect: false // Close upon selecting a date,
 });
-
 });
-
 })(jQuery); // end of jQuery name space
+
+
+
