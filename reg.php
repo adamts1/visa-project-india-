@@ -37,7 +37,7 @@
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data">
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -49,11 +49,12 @@
         <div class="col s12">
           <div class="row">
             <div class="col s6">
-              <select class="browser-default" name="passport_type" id="passport_type">
-                <option value="" disabled selected>סוג הדרכון</option>
+              <select class="browser-default validate" name="passport_type" id="passport_type">
+                <option value=""  disabled selected>סוג הדרכון</option>
                 <option value="רגיל">רגיל</option>
                 <option value="מיוחד">מיוחד</option>
               </select>
+              <p class = "valid_alert" id = "valid_passport_type"></p>
             </div>
             <div class="col s6">
               <select class="browser-default" name="Nationality" id="nationality">
@@ -61,6 +62,7 @@
                 <option value="ILS">ישראל</option>
                 <!-- רשימת מדינות עם קוד מדינה -->
               </select>
+              <p class = "valid_alert" id = "valid_nationality"></p>              
             </div>
           </div>
           <div class="row">
@@ -95,6 +97,8 @@
                 <option value="I023">TRIVANDRUM AIRPORT</option>
                 <option value="I007">VARANASI AIRPORT</option>
               </select>
+              <p class = "valid_alert" id = "valid_port_of_arrival"></p>              
+              
             </div>
             <div class="col s6">
               <select class="browser-default" name="Visa Type" id="visa_type">
@@ -102,6 +106,7 @@
                 <option value="1">תיירות</option>
                 <option value="2">עסקים</option>
               </select>
+              <p class = "valid_alert" id = "valid_visa_type"></p>              
             </div>
           </div>
 
@@ -173,6 +178,7 @@
                 <option value="SHORT TERM YOGA PROGRAMME">תוכנית יוגה</option>
                 <option value="BUSINESS">עסקים</option>
               </select>
+              <p class = "valid_alert" id = "valid_purpose_of_visit"></p>              
             </div>
           </div>
 
@@ -189,7 +195,8 @@
                 <input type="file" id="passport_image" name = "passport_image">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+                <input class="file-path validate" type="text" id="passport_image_txt">
+                <p class = "valid_alert" id = "valid_passport_image_txt"></p>              
               </div>
           </div>
  
@@ -199,19 +206,20 @@
                 <input type="file" id="selfi_image" name="selfi_image">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+                <input class="file-path validate" type="text" id="selfi_image">
+                <p class = "valid_alert" id = "valid_selfi_image"></p>             
               </div>
           </div>          
          </div>
          
           <div class="row">
               <div class="input-field col s6">
-               <input type="email" class="validate validate1" id="validate_email">
+               <input type="email" class="validate validate1" id="email1" >
                 <p class = "valid_alert" id = "valid_email_1"></p>
                <label for="validate_email">כתובת דוא"ל</label>
               </div>
               <div class="input-field col s6">
-               <input type="email" class="validate validate2" id="validate_email">
+               <input type="email" class="validate validate2" id="email2">
                 <p class = "valid_alert" id = "valid_email_2"></p>
                <label for="validate_email">הקלד כתובת דוא"ל שוב</label>
               </div>
@@ -219,6 +227,7 @@
           <div class="row">
             <div class="input-area col s6">
                <input type="text" id="date_of_birth" class="datepicker datepicker_of_birth" name="date_of_birth" style="direction:ltr;">
+               <p class = "valid_alert" id = "valid_date_of_birth"></p>
                <label for="date_of_birth" data-error="wrong" data-success="right">תאריך לידה</label>
             </div>
           </div>
@@ -1179,6 +1188,7 @@
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
   <script src="js/validateBeforeGo.js"></script>
+  <script src="js/emailValid.js"></script>
   </body>
 </html>
 
