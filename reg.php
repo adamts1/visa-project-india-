@@ -233,7 +233,8 @@
           </div>
           <div class="row">
             <div class="input-area col s6">
-               <input type="text" class="datepicker datepicker_expected_arrival_date" name="Expected Date of Arrival" id="expected_arrival_date" style="direction:ltr;">
+               <input type="text" class="datepicker datepicker_expected_arrival_date" name="Expected_Date_of_Arrival" id="expected_arrival_date" style="direction:ltr;">
+               <p class = "valid_alert" id = "valid_expected_arrival_date"></p>
                <label for="expected_arrival_date" data-error="wrong" data-success="right">תאריך נחיתה משוער</label>
             </div>
           </div>
@@ -292,6 +293,7 @@
             <option value="F">נקבה</option>
             <option value="X">טרנסג'נדר</option>
           </select>
+          <p class = "valid_alert" id = "valid_gender"></p>      
         </div>
       </div>
       <div class="row">
@@ -308,11 +310,13 @@
 			<!-- add here country list at the same format value = country code --> 
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_country_birth"></p>      
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input type="number" class="validate" name="National Id No" id="national_id_number">
+          <p class = "valid_alert" id = "valid_national_id_number"></p>      
           <label for="national_id_number">מספר תעודת זהות</label>
         </div>
       </div>
@@ -327,6 +331,7 @@
             <option value="CHRISTIAN">נצרות</option>
             <option value="OTHERS">אחר</option>
           </select>
+          <p class = "valid_alert" id = "valid_religion"></p>      
         </div>
       </div>
       
@@ -350,6 +355,7 @@
             <option value="PROFESSIONAL">הכשרה מקצועית</option>
             <option value="OTHERS">אחר</option>
           </select>
+          <p class = "valid_alert" id = "valid_education"></p>      
         </div>
       </div>
 	  
@@ -362,6 +368,7 @@
             <option value="BY BIRTH">מלידה</option>
             <option value="NATURALIZATION">התאזרחות</option>
           </select>
+          <p class = "valid_alert" id = "valid_nationality_by_birth"></p> 
         </div>
       </div>
 	  
@@ -392,7 +399,7 @@
           <label for="at_least_two_years_yes">כן</label>
         </div>
        <div class="col s6">
-          <input name="at_least_two_years" type="radio" id="at_least_two_years_no" />
+          <input name="at_least_two_years" type="radio" id="at_least_two_years_no" checked />
           <label for="at_least_two_years_no">לא</label>
        </div>       
       </div>
@@ -415,6 +422,7 @@
       <div class="row">
         <div class="input-field col s6">
           <input type="text" class="validate" id="passport_number">
+          <p class = "valid_alert" id = "valid_passport_number"></p>      
           <label for="passport_number">מספר דרכון</label>
         </div>
       </div>
@@ -428,12 +436,14 @@
       <div class="row">
         <div class="input-area col s6">
           <input type="text" class="datepicker datepicker_passport_issue_date" name="passport_issue_date" id="passport_issue_date" style="direction:ltr;">
+          <p class = "valid_alert" id = "valid_passport_issue_date"></p>      
           <label for="passport_issue_date" data-error="wrong" data-success="right">תאריך הנפקת הדרכון</label>
         </div>
       </div>
       <div class="row">
         <div class="input-area col s6">
 		      <input type="text" class="datepicker datepicker_passport_expiry_date" name="passport_expiry_date" id="passport_expiry_date" style="direction:ltr;">
+          <p class = "valid_alert" id = "valid_passport_expiry_date"></p>      
           <label for="passport_expiry_date" data-error="wrong" data-success="right">תוקף הדרכון</label>
         </div>
       </div>
@@ -447,11 +457,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input type="radio" name="other passport" value="YES" id="other_ppt_1" />
+          <input type="radio" name="other passport" value="YES" id="other_ppt_1"   />
           <label for="other_ppt_1">כן</label>
        </div>
        <div class="col s6">
-          <input type="radio" name="other passport" value="NO" id="other_ppt_2" />
+          <input type="radio" name="other passport" value="NO" id="other_ppt_2" checked/>
           <label for="other_ppt_2">לא</label>
        </div>       
       </div>
@@ -525,6 +535,7 @@
             <option value="" disabled selected>מדינה</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_pres_country"></p>      
         </div>
       </div>  
       <div class="row">
@@ -537,12 +548,14 @@
       <div class="row">
         <div class="input-field col s6">
           <input type="number" class="validate" id="pincode">
+          <p class = "valid_alert" id = "valid_pincode"></p>      
           <label for="pincode">מיקוד</label>
         </div>
       </div> 
       <div class="row">
         <div class="input-field col s6">
           <input type="number" class="validate" id="pres_phone">
+          <p class = "valid_alert" id = "valid_pres_phone"></p>      
           <label for="pres_phone">מספר טלפון</label>
         </div>
       </div> 
@@ -565,6 +578,7 @@
             <option value="" disabled selected>אזרחות האב</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_father_nationality"></p>      
 		 </div>
     </div> 
       <div class="row">
@@ -588,6 +602,7 @@
             <option value="" disabled selected>מדינת לידה של האב</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_father_country_of_birth"></p>  
         </div>
       </div> 
     </div> <!-- end of section -->
@@ -608,6 +623,7 @@
             <option value="" disabled selected>אזרחות האם</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_mother_nationality"></p>   
         </div>
       </div> 
       <div class="row">
@@ -616,6 +632,7 @@
             <option value="" disabled selected>אזרחות קודמת של האם (אם יש)</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_mother_nationality"></p>   
         </div>
       </div> 
       <div class="row">
@@ -631,6 +648,7 @@
             <option value="" disabled selected>מדינת לידה של האם</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_mother_country_of_birth"></p>            
         </div>
       </div> 
     </div>  <!-- end of section -->
@@ -645,6 +663,7 @@
             <option value="single">רווק</option>
             <option value="married">נשוי</option>
           </select>
+          <p class = "valid_alert" id = "valid_marital_status"></p>            
         </div>
       </div> 
       
@@ -762,6 +781,7 @@
       <div class="row">
         <div class="input-field col s6">
           <input type="number" class="validate" id="empphone">
+          <p class = "valid_alert" id = "valid_empphone"></p>  
           <label for="empphone">מספר הטלפון בעבודה (אם יש)</label>
         </div>
       </div>       
@@ -893,6 +913,7 @@
             <option value="TRIVANDRUM AIRPORT">TRIVANDRUM AIRPORT</option>
             <option value="VARANASI AIRPORT">VARANASI AIRPORT</option>
           </select>
+          <p class = "valid_alert" id = "valid_exitpoint"></p>                              
         </div>
       </div>       
      </div> <!-- end of section -->
@@ -912,7 +933,7 @@
           <label for="old_visa_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input name="old_visa_flag" type="radio" id="old_visa_flag2" />
+          <input name="old_visa_flag" type="radio" id="old_visa_flag2" checked />
           <label for="old_visa_flag2">לא</label>
        </div>       
       </div> 
@@ -1002,7 +1023,7 @@
           <label for="refuse_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input name="refuse_flag" type="radio" id="refuse_flag2" />
+          <input name="refuse_flag" type="radio" id="refuse_flag2"  checked/>
           <label for="refuse_flag2">לא</label>
        </div>       
       </div>
@@ -1046,7 +1067,7 @@
         <label for="saarc_flag1">כן</label>
      </div>
      <div class="col s6">
-        <input name="saarc_flag" type="radio" id="saarc_flag2" />
+        <input name="saarc_flag" type="radio" id="saarc_flag2" checked />
         <label for="saarc_flag2">לא</label>
      </div>       
     </div>
@@ -1127,14 +1148,14 @@
     <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input id="nameofsponsor_msn" type="text" class="validate validate_nameofsponsor_msn">
+          <input type="text" class="validate validate_nameofsponsor_msn" id="nameofsponsor_msn">
            <p class = "valid_alert" id = "valid_nameofsponsor_msn"></p>
           <label for="nameofsponsor_msn">שם איש הקשר בישראל</label>
         </div>
       </div>    
       <div class="row">
         <div class="input-field col s6">
-          <input id="add1ofsponsor_msn" type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn">
+          <input type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn" id="add1ofsponsor_msn">
            <p class = "valid_alert" id = "valid_add1ofsponsor_msn"></p>
           <label>כתובת איש הקשר בישראל</label>
         </div>
@@ -1142,6 +1163,7 @@
       <div class="row">
         <div class="input-field col s6">
           <input type="text" class="validate" id="phoneofsponsor_msn">
+          <p class = "valid_alert" id = "valid_phoneofsponsor_msn"></p>
           <label for="phoneofsponsor_msn">מספר טלפון של איש הקשר בישראל</label>
         </div>
       </div> 
