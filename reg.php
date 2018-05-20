@@ -141,6 +141,7 @@
 	  <div class="row">
 		  <div class="input-field col s6">
 		  <input type="number" class="validate" name="company phone" id="company_phone">
+      <p class = "valid_alert" id = "valid_company_phone"></p>      
 		  <label for="company_phone">טלפון החברה</label>
 		  </div>
 		  <div class="input-field col s6">
@@ -162,7 +163,9 @@
                 <input type="file" id="business_card">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+                <input class="file-path validate" type="text" id="business_card_txt">
+                <p class = "valid_alert" id = "valid_business_card_txt"></p>              
+
               </div>
           </div>
     </div>	
@@ -206,8 +209,8 @@
                 <input type="file" id="selfi_image" name="selfi_image">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="selfi_image">
-                <p class = "valid_alert" id = "valid_selfi_image"></p>             
+                <input class="file-path validate" type="text" id="selfi_image_txt">
+                <p class = "valid_alert" id = "valid_selfi_image_txt"></p>             
               </div>
           </div>          
          </div>
@@ -477,17 +480,20 @@
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
           </select>
+          <p class = "valid_alert" id = "valid_other_ppt_country_issue"></p>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
           <input type="number" class="validate" id="other_ppt_no">
+          <p class = "valid_alert" id = "valid_other_ppt_no"></p>
           <label for="other_ppt_no">מספר הדרכון הנוסף</label>
         </div>
       </div>
       <div class="row">
         <div class="input-area col s6">
 		      <input type="text" class="datepicker datepicker_other_ppt_issue_date" name="other_ppt_issue_date" id="other_ppt_issue_date" style="direction:ltr;">
+          <p class = "valid_alert" id = "valid_other_ppt_issue_date"></p>
           <label for="other_ppt_issue_date" data-error="wrong" data-success="right">תאריך הנפקת הדרכון הנוסף</label>
         </div>
       </div>
@@ -505,6 +511,7 @@
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
           </select>
+          <p class = "valid_alert" id = "valid_other_ppt_nationality"></p>
         </div>
       </div>
     </div>
@@ -683,6 +690,7 @@
             <option value="" disabled selected>אזרחות בן/בת הזוג</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_spouse_nationality"></p>  
         </div>
       </div>
 	  
@@ -692,6 +700,7 @@
             <option value="" disabled selected>אזרחות קודמת של בן הזוג אם יש</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_spouse_previous_nationality"></p>  
         </div>
       </div> 
       <div class="row">
@@ -707,6 +716,7 @@
             <option value="" disabled selected>ארץ לידה של בן/בת הזוג</option>
             <option value="ILS">Israel</option>
           </select>
+          <p class = "valid_alert" id = "valid_spouse_country_of_birth"></p>  
         </div>
       </div> 
     </div> 
@@ -960,6 +970,7 @@
        <div class="row">
         <div class="input-field col s6">
           <input type="text" class="validate" id="old_visa_no">
+          <p class = "valid_alert" id = "valid_old_visa_no"></p>          
           <label for="old_visa_no">מספר ויזה הישנה</label>
         </div>
        </div>      
@@ -992,6 +1003,7 @@
             <option value="17">UN OFFICIAL</option>
             <option value="76">VISIT VISA</option>
           </select>
+          <p class = "valid_alert" id = "valid_old_visa_type_id"></p>          
         </div>
        </div> 
        <div class="row">
@@ -1004,6 +1016,7 @@
 	     <div class="row">
 	      <div class="input-area col s6">
 	      <input type="text" class="datepicker datepicker_oldvisaissuedate" name="oldvisaissuedate" id="oldvisaissuedate" style="direction:ltr;">
+        <p class = "valid_alert" id = "valid_oldvisaissuedate"></p>      
 	      <label for="oldvisaissuedate" data-error="wrong" data-success="right">תאריך הנפקת הויזה הישנה</label>
 	     </div>
 	     </div>
@@ -1089,6 +1102,7 @@
             <option value="1">סרי לנקה</option>
             <option value="1">נפאל</option>
           </select>
+          <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
           <select class="browser-default" id="saarcYear1">
@@ -1099,11 +1113,13 @@
             <option value="1">2017</option>
             <option value="1">2017</option>
           </select>
+          <p class = "valid_alert" id = "valid_saarcYear1"></p>
         </div>
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input type="text" class="validate" id="saarcVisitNo">
+            <input type="number" class="validate" id="saarcVisitNo" value="1">
+            <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
         </div>
@@ -1211,6 +1227,7 @@
   <script src="js/splitedForm.js"></script>
   <script src="js/validateBeforeGo.js"></script>
   <script src="js/emailValid.js"></script>
+  <script src="js/arrData.js"></script>
   </body>
 </html>
 
