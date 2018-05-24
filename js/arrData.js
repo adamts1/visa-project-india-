@@ -114,16 +114,9 @@ var arry_of_item = {
 ],
 
 "dynamicFields":[
-
     ["valid_saarcCountry1", "saarcCountry1"],
     ["valid_saarcYear1", "saarcYear1"]
-
-
 ]
-
-
-
-
 
 
 }
