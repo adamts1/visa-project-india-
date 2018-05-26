@@ -12,18 +12,16 @@
                 scrollTop: $("#section2").offset().top
               }, 1000)
         });
+        jQuery('#part3button').on('click', function(event) {  
+            // $("#section2").hide();      
+            // $("#section1").hide();      
+    
+            jQuery('#section3').toggle('show');
+            $('html, body').animate({
+                scrollTop: $("#section3").offset().top
+              }, 1000)  
+       });
     });
-
-    jQuery('#part3button').on('click', function(event) {  
-        // $("#section2").hide();      
-        // $("#section1").hide();      
-
-        jQuery('#section3').toggle('show');
-        $('html, body').animate({
-            scrollTop: $("#section3").offset().top
-          }, 1000)
-        
-   });
 })(jQuery); // end of jQuery name space
 
 

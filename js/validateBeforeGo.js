@@ -58,9 +58,10 @@ function validateForm() {
     console.log(aa);
     console.log(email1);
     console.log(email2);
+    console.log(paraMail.textContent);
     
     if (email1 != email2) {
-        if (paraMail.textContent != "null") {
+        if (paraMail.textContent == "null" || paraMail.textContent == "") {
             var textMail = document.createTextNode("מייל לא תואם");
             paraMail.appendChild(textMail);
         }
@@ -77,7 +78,7 @@ function validateForm() {
             //if there is comment already have error text dont error again
             testArr.push(j++);
             // var paragraph = document.getElementById(items[index][0]);
-            if (paragraph.textContent != "שדה זה חייב להיות מלא") {
+            if (paragraph.textContent == "" || paragraph.textContent == null ) {
                 var text = document.createTextNode("שדה זה חייב להיות מלא");
                 paragraph.appendChild(text);
             }
