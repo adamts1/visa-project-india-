@@ -13,7 +13,7 @@ function validateForm() {
     var deniedField = arry_of_item.deniedField;
     var dynamicFields = arry_of_item.dynamicFields;
 
-
+ //Arry of all the arry in arrData.js
     var sctions = [
         ["#visa_type_fields", businesss],
         ["#other_pass_fields", otherPass],
@@ -25,12 +25,13 @@ function validateForm() {
         ["#dynamic_fields", dynamicFields],
     ];
 
+    // Conacatinate data to arry acording to the apearance in the form
     for (index1 = 0; index1 < sctions.length; index1++) {
 
         if ($(sctions[index1][0]).is(':visible')) {
             var items = items.concat(sctions[index1][1]);
         }
-    }
+    } 
 
     console.log(items);
     ////////////////////////////////////
@@ -75,9 +76,7 @@ function validateForm() {
         var a = document.forms["Form"][items[index][1]].value;
         var paragraph = document.getElementById(items[index][0]);
         if (a == null || a == "") {
-            //if there is comment already have error text dont error again
             testArr.push(j++);
-            // var paragraph = document.getElementById(items[index][0]);
             if (paragraph.textContent == "" || paragraph.textContent == null ) {
                 var text = document.createTextNode("שדה זה חייב להיות מלא");
                 paragraph.appendChild(text);

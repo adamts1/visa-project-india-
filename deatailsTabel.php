@@ -1,6 +1,9 @@
    
    
 <?php
+
+include 'conn.php';
+
    $PassportType = isset($_POST['passport_type']) ? $_POST['passport_type'] : '';
    $Nationality = isset($_POST['nationality']) ? $_POST['nationality'] : '';
    $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
@@ -15,8 +18,8 @@
 //    $SelfiImage = file_get_contents($SelfiImage);
 //    $SelfiImage = base64_encode($SelfiImage);
    //
-   $Email = isset($_POST['email']) ? $_POST['email'] : '';
-   $ValidateEmail = isset($_POST['validate_email']) ? $_POST['validate_email'] : '';
+   $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
+   $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
    $DateOfBirth = isset($_POST['date_of_birth']) ? $_POST['date_of_birth'] : '';
    $ExpectedArrivalDate = isset($_POST['expected_arrival_date']) ? $_POST['expected_arrival_date'] : '';
    $Surname = isset($_POST['surname']) ? $_POST['surname'] : '';
@@ -102,4 +105,18 @@
    $Company_phone = isset($_POST['company_phone']) ? $_POST['company_phone'] : '';
    $Company_website = isset($_POST['company_website']) ? $_POST['company_website'] : '';
    $Nature_of_company = isset($_POST['nature_of_company']) ? $_POST['nature_of_company'] : '';
-   ?>
+
+   echo "Study PHP at " . $PassportType . "<br>";
+   echo "Study PHP at " . $Email . "<br>";
+   echo "Study PHP at " . $ValidateEmail . "<br>";
+//    header("Location: insert.php");
+//    die();
+
+   $sql = "INSERT INTO main (Passport_Type, Email)
+   VALUES ('$PassportType','$Email')";
+    if ($conn->query($sql) === TRUE) {
+     echo "New record created successfully";
+    }else {
+     echo "Error: " . $sql . "<br>" . $conn->error;
+     }
+    ?>

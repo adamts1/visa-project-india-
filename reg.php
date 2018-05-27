@@ -14,16 +14,15 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <!-- ///-->
 
-   <script src="js/materialize.js"></script>
+  <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
   <script src="js/validateBeforeGo.js"></script>
-  <script src="js/emailValid.js"></script>
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
 </head>
 <body>
@@ -50,7 +49,7 @@
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data"> 
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="deatailsTabel.php" enctype="multipart/form-data"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -230,12 +229,12 @@
          
           <div class="row">
               <div class="input-field col s6">
-               <input type="email" class="validate validate1" id="email1" >
+               <input type="email" class="validate validate1" name="email1" id="email1" >
                 <p class = "valid_alert" id = "valid_email_1"></p>
                <label for="validate_email">כתובת דוא"ל</label>
               </div>
               <div class="input-field col s6">
-               <input type="email" class="validate validate2" id="email2">
+               <input type="email" class="validate validate2" name="email2" id="email2">
                 <p class = "valid_alert" id = "valid_email_2"></p>
                <label for="validate_email">הקלד כתובת דוא"ל שוב</label>
               </div>
