@@ -69,7 +69,7 @@
               <p class = "valid_alert" id = "valid_passport_type"></p>
             </div>
             <div class="col s6">
-              <select onchange="RemoveAlert(valid_nationality.id)" class="browser-default" name="Nationality" id="nationality">
+              <select onchange="RemoveAlert(valid_nationality.id)" class="browser-default" name="nationality" id="nationality">
                 <option value="" disabled selected>לאום</option>
                 <option value="ILS">ישראל</option>
                 <!-- רשימת מדינות עם קוד מדינה -->
@@ -79,7 +79,7 @@
           </div>
           <div class="row">
             <div class="col s6">
-              <select onchange="RemoveAlert(valid_port_of_arrival.id)" class="browser-default" name="Port Of Arrival" id="port_of_arrival">
+              <select onchange="RemoveAlert(valid_port_of_arrival.id)" class="browser-default" name="port_of_arrival" id="port_of_arrival">
                 <option value="" disabled selected>נמל הגעה להודו</option>
                 <option value="I022">AHMEDABAD AIRPORT</option>
                 <option value="I032">AMRITSAR AIRPORT</option>
@@ -113,7 +113,7 @@
               
             </div>
             <div class="col s6">
-              <select onchange="RemoveAlert(valid_visa_type.id)" class="browser-default" name="Visa Type" id="visa_type">
+              <select onchange="RemoveAlert(valid_visa_type.id)" class="browser-default" name="visa_type" id="visa_type">
                 <option value="" disabled selected>סוג הויזה</option>
                 <option value="1">תיירות</option>
                 <option value="2">עסקים</option>
@@ -131,7 +131,7 @@
   <div id="visa_type_fields">
 	  <div class="row">
 		  <div class="input-field col s6">
-      <input onkeyup="genValEngHeb(this.value, valid_business_prep.id)" type="text" class="validate validate_business_prep" name="business prep" id="business_prep">
+      <input onkeyup="genValEngHeb(this.value, valid_business_prep.id)" type="text" class="validate validate_business_prep" name="business_prep" id="business_prep">
       <p class = "valid_alert" id = "valid_business_prep"></p>
 		  <label for="business_prep">מטרת הביקור העסקי (למשל: הרצאות, מכירות, הקמת עסק)</label>
 		  </div>
@@ -248,7 +248,7 @@
           </div>
           <div class="row">
             <div class="input-area col s6">
-               <input onchange="RemoveAlertDate(valid_expected_arrival_date.id)" type="text" class="datepicker datepicker_expected_arrival_date" name="Expected_Date_of_Arrival" id="expected_arrival_date" style="direction:ltr;">
+               <input onchange="RemoveAlertDate(valid_expected_arrival_date.id)" type="text" class="datepicker datepicker_expected_arrival_date" name="expected_arrival_date" id="expected_arrival_date" style="direction:ltr;">
                <p class = "valid_alert" id = "valid_expected_arrival_date"></p>
                <label for="expected_arrival_date" data-error="wrong" data-success="right">תאריך נחיתה משוער</label>
             </div>
@@ -262,12 +262,12 @@
     <div class="section">  
       <div class="row">
           <div class="input-field col s6">
-           <input onkeyup="genValEng(this.value, valid_surname.id)" type="text" class="validate val_surname" name="Surname/Family Name" id="surname">
+           <input onkeyup="genValEng(this.value, valid_surname.id)" type="text" class="validate val_surname" name="surname" id="surname">
             <p class = "valid_alert" id = "valid_surname"></p>
            <label for="surname">שם משפחה</label>
           </div>
           <div class="input-field col s6">
-           <input onkeyup="genValEng(this.value, valid_given_name.id)" type="text" class="validate val_given_name" name="Given Name" id="given_name">
+           <input onkeyup="genValEng(this.value, valid_given_name.id)" type="text" class="validate val_given_name" name="given_name" id="given_name">
             <p class = "valid_alert" id = "valid_given_name"></p>
            <label for="given_name">שם פרטי</label>
           </div>
@@ -287,12 +287,12 @@
    <div id="changed_name">
 	   <div class="row">
 		  <div class="input-field col s6">
-       <input onkeyup="genValEng(this.value, valid_prev_surname.id)" type="text" class="validate val_prev_surname" name="Previous Surname" id="prev_surname">
+       <input onkeyup="genValEng(this.value, valid_prev_surname.id)" type="text" class="validate val_prev_surname" name="Prev_Surname" id="prev_surname">
         <p class = "valid_alert" id = "valid_prev_surname"></p>
 		   <label for="prev_surname" id="prev_surname_label">שם משפחה קודם</label>
 		  </div>
 		  <div class="input-field col s6">
-       <input onkeyup="genValEng(this.value, valid_prev_given_name.id)" type="text" class="validate val_prev_given_name" name="Previous Given Name" id="prev_given_name">
+       <input onkeyup="genValEng(this.value, valid_prev_given_name.id)" type="text" class="validate val_prev_given_name" name="Prev_Given_Name" id="prev_given_name">
        <p class = "valid_alert" id = "valid_prev_given_name"></p>      
 		   <label for="prev_given_name" id="prev_given_name_label">שם פרטי קודם</label>
 		  </div>
@@ -313,14 +313,14 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-           <input onkeyup="genValEngHeb(this.value, valid_birth_place.id)" type="text" class="validate validate_birth_place" name = "birth_place"  id = "birth_place">
+           <input onkeyup="genValEngHeb(this.value, valid_birth_place.id)" type="text" class="validate validate_birth_place" name = "Birth_Place"  id = "birth_place">
            <p class = "valid_alert" id = "valid_birth_place"></p>      
            <label for="birth_place">עיר הולדתך</label>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_country_birth.id)" class="browser-default" name="Country of birth" id="country_birth">
+          <select onchange="RemoveAlert(valid_country_birth.id)" class="browser-default" name="Country_Birth" id="country_birth">
             <option value="" disabled selected>ארץ לידה</option>
 			<!-- add here country list at the same format value = country code --> 
             <option value="ILS">Israel</option>
@@ -330,7 +330,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_national_id_number.id)" type="number" class="validate" name="National Id No" id="national_id_number">
+          <input onkeyup="RemoveAlertNum(this.value, valid_national_id_number.id)" type="number" class="validate" name="National_Id_Number" id="national_id_number">
           <p class = "valid_alert" id = "valid_national_id_number"></p>      
           <label for="national_id_number">מספר תעודת זהות</label>
         </div>
@@ -352,7 +352,7 @@
       
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_identity_marks.id)" type="text" class="validate validate_identity_marks" name="Visible identification marks" id="identity_marks">
+          <input onkeyup="genValEngHeb(this.value, valid_identity_marks.id)" type="text" class="validate validate_identity_marks" name="Identity_Marks" id="identity_marks">
            <p class = "valid_alert" id = "valid_identity_marks"></p>      
           <label for="identity_marks">סימני זיהוי חיצוניים הנראים לעין (משקפיים, קעקועים או רשמו אין)</label>
         </div>
@@ -378,7 +378,7 @@
 	  
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_nationality_by_birth.id)" class="browser-default" name="Nationality by birth" id="nationality_by_birth">
+          <select onchange="RemoveAlert(valid_nationality_by_birth.id)" class="browser-default" name="Nationality_By_Birth" id="nationality_by_birth">
             <option value="" disabled selected>האם קיבלת אזרחות מלידה או התאזרחות?</option>
             <option value="BY BIRTH">מלידה</option>
             <option value="NATURALIZATION">התאזרחות</option>

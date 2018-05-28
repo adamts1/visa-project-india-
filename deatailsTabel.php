@@ -8,15 +8,15 @@ include 'conn.php';
    $Nationality = isset($_POST['nationality']) ? $_POST['nationality'] : '';
    $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
-   $PurposeOfVisit = isset($_POST['purpose_of_visit']) ? $_POST['purpose_of_visit'] : '';
+   $PurposeOfVisit = isset($_POST['purpose of visit']) ? $_POST['purpose of visit'] : '';
    //Passport pic
-//    $PassportImage = $_FILES['passport_image']['tmp_name'];
-//    $PassportImage = file_get_contents($PassportImage);
-//    $PassportImage = base64_encode($PassportImage);
-//    //Selfi pic
-//    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
-//    $SelfiImage = file_get_contents($SelfiImage);
-//    $SelfiImage = base64_encode($SelfiImage);
+   $PassportImage = $_FILES['passport_image']['tmp_name'];
+   $PassportImage = file_get_contents($PassportImage);
+   $PassportImage = base64_encode($PassportImage);
+   //Selfi pic
+   $SelfiImage = $_FILES['selfi_image']['tmp_name'];
+   $SelfiImage = file_get_contents($SelfiImage);
+   $SelfiImage = base64_encode($SelfiImage);
    //
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
@@ -24,17 +24,16 @@ include 'conn.php';
    $ExpectedArrivalDate = isset($_POST['expected_arrival_date']) ? $_POST['expected_arrival_date'] : '';
    $Surname = isset($_POST['surname']) ? $_POST['surname'] : '';
    $GivenName = isset($_POST['given_name']) ? $_POST['given_name'] : '';
-   $ChangedSurnameCheck = isset($_POST['changed_surname_check']) ? $_POST['changed_surname_check'] : '';
-   $PrevSurame = isset($_POST['prev_surname']) ? $_POST['prev_surname'] : '';
-   $PrevGivenName = isset($_POST['prev_given_name']) ? $_POST['prev_given_name'] : '';
-   $Gender = isset($_POST['gender']) ? $_POST['gender'] : '';
-   $BirthPlace = isset($_POST['birth_place']) ? $_POST['birth_place'] : '';
-   $CountryBirth = isset($_POST['country_birth']) ? $_POST['country_birth'] : '';
-   $NationalIdNumber = isset($_POST['national_id_number']) ? $_POST['national_id_number'] : '';
+   $PrevSurame = isset($_POST['Prev_Surname']) ? $_POST['Prev_Surname'] : '';
+   $PrevGivenName = isset($_POST['Prev_Given_Name']) ? $_POST['Prev_Given_Name'] : '';
+   $Gender = isset($_POST['Gender']) ? $_POST['Gender'] : '';
+   $BirthPlace = isset($_POST['Birth_Place']) ? $_POST['Birth_Place'] : '';
+   $CountryBirth = isset($_POST['Country_Birth']) ? $_POST['Country_Birth'] : '';
+   $NationalIdNumber = isset($_POST['National_Id_Number']) ? $_POST['National_Id_Number'] : '';
    $Religion = isset($_POST['religion']) ? $_POST['religion'] : '';
-   $IdentityMarks = isset($_POST['identity_marks']) ? $_POST['identity_marks'] : '';
-   $Education = isset($_POST['education']) ? $_POST['education'] : '';
-   $NationalityByBirth = isset($_POST['nationality_by_birth']) ? $_POST['nationality_by_birth'] : '';
+   $IdentityMarks = isset($_POST['Identity_Marks']) ? $_POST['Identity_Marks'] : '';
+   $Education = isset($_POST['Education']) ? $_POST['Education'] : '';
+   $NationalityByBirth = isset($_POST['Nationality_By_Birth']) ? $_POST['Nationality_By_Birth'] : '';
    $PrevNationality = isset($_POST['prev_nationality']) ? $_POST['prev_nationality'] : '';
    $PassportNumber = isset($_POST['passport_number']) ? $_POST['prev_nationality'] : '';
    $PassportIssuePlace = isset($_POST['passport_issue_place']) ? $_POST['passport_issue_place'] : '';
@@ -106,17 +105,25 @@ include 'conn.php';
    $Company_website = isset($_POST['company_website']) ? $_POST['company_website'] : '';
    $Nature_of_company = isset($_POST['nature_of_company']) ? $_POST['nature_of_company'] : '';
 
-   echo "Study PHP at " . $PassportType . "<br>";
-   echo "Study PHP at " . $Email . "<br>";
-   echo "Study PHP at " . $ValidateEmail . "<br>";
-//    header("Location: insert.php");
-//    die();
 
-   $sql = "INSERT INTO main (Passport_Type, Email)
-   VALUES ('$PassportType','$Email')";
+
+
+   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth)
+   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth')";
     if ($conn->query($sql) === TRUE) {
      echo "New record created successfully";
     }else {
      echo "Error: " . $sql . "<br>" . $conn->error;
      }
+
+
+//      $sql = "SELECT * FROM main";
+// $sth = $conn->query($sql);
+
+// while($result=mysqli_fetch_array($sth)){  
+// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Passport_Image'].'"/>';
+// // echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
+// }
+// $conn->close();
+
     ?>

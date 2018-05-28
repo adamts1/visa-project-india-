@@ -45,7 +45,7 @@ $('#date_of_birth').pickadate({
 
 
 $('.datepicker_expected_arrival_date').pickadate({ 
-  format: 'dd/mm/yyyy',
+  // format: 'dd/mm/yyyy',
   min: true,
   selectMonths: true,
   // closeOnSelect: true,
