@@ -35,25 +35,28 @@ include 'conn.php';
    $Education = isset($_POST['Education']) ? $_POST['Education'] : '';
    $NationalityByBirth = isset($_POST['Nationality_By_Birth']) ? $_POST['Nationality_By_Birth'] : '';
    $PrevNationality = isset($_POST['prev_nationality']) ? $_POST['prev_nationality'] : '';
-   $PassportNumber = isset($_POST['passport_number']) ? $_POST['prev_nationality'] : '';
-   $PassportIssuePlace = isset($_POST['passport_issue_place']) ? $_POST['passport_issue_place'] : '';
-   $PassportIssueDate = isset($_POST['passport_issue_date']) ? $_POST['passport_issue_date'] : '';
-   $PassportExpiryDate = isset($_POST['passport_expiry_date']) ? $_POST['passport_expiry_date'] : '';
-   $OtherPptCountryIssue = isset($_POST['other_ppt_country_issue']) ? $_POST['other_ppt_country_issue'] : '';
-   $OtherPptNo = isset($_POST['other_ppt_no']) ? $_POST['other_ppt_no'] : '';
-   $OtherPpptIssueDate = isset($_POST['other_ppt_issue_date']) ? $_POST['other_ppt_issue_date'] : '';
-   $OtherPptIssuePlace = isset($_POST['other_ppt_issue_place']) ? $_POST['other_ppt_issue_place'] : '';
-   $Address = isset($_POST['address']) ? $_POST['address'] : '';
-   $CityTownVillage = isset($_POST['city_town_village']) ? $_POST['city_town_village'] : '';
-   $PresCountry = isset($_POST['pres_country']) ? $_POST['pres_country'] : '';
-   $StateName = isset($_POST['state_name']) ? $_POST['state_name'] : '';
-   $Pincode = isset($_POST['pincode']) ? $_POST['pincode'] : '';
-   $PresPhone = isset($_POST['pres_phone']) ? $_POST['pres_phone'] : '';
-   $Fthrname = isset($_POST['fthrname']) ? $_POST['fthrname'] : '';
-   $FatherNationality = isset($_POST['father_nationality']) ? $_POST['father_nationality'] : '';
-   $FatherPreviousNationality = isset($_POST['father_previous_nationality']) ? $_POST['father_previous_nationality'] : '';
-   $FatherPlaceOfBirth = isset($_POST['father_place_of_birth']) ? $_POST['father_place_of_birth'] : '';
-   $FatherCountryOfBirth = isset($_POST['father_country_of_birth']) ? $_POST['father_country_of_birth'] : '';
+   $AtLeastTwoYears = isset($_POST['At_Least_Two_Years']) ? $_POST['At_Least_Two_Years'] : '';
+   $PassportNumber = isset($_POST['Passport_Number']) ? $_POST['Passport_Number'] : '';
+   $PassportIssuePlace = isset($_POST['Passport_Issue_Place']) ? $_POST['Passport_Issue_Place'] : '';
+   $PassportIssueDate = isset($_POST['Passport_Issue_Date']) ? $_POST['Passport_Issue_Date'] : '';
+   $PassportExpiryDate = isset($_POST['Passport_Expiry_Date']) ? $_POST['Passport_Expiry_Date'] : '';
+   $OtherPassport = isset($_POST['Other_Passport']) ? $_POST['Other_Passport'] : '';
+   $OtherPptCountryIssue = isset($_POST['Other_Ppt_Country_Issue']) ? $_POST['Other_Ppt_Country_Issue'] : '';
+   $OtherPptNo = isset($_POST['Other_Ppt_No']) ? $_POST['Other_Ppt_No'] : '';
+   $OtherPpptIssueDate = isset($_POST['Other_Ppt_Issue_Date']) ? $_POST['Other_Ppt_Issue_Date'] : '';
+   $OtherPptIssuePlace = isset($_POST['Other_Ppt_Issue_Place']) ? $_POST['Other_Ppt_Issue_Place'] : '';
+   $OtherPptNationality = isset($_POST['Other_Ppt_Nationality']) ? $_POST['Other_Ppt_Nationality'] : '';
+   $Address1 = isset($_POST['Address1']) ? $_POST['Address1'] : '';
+   $CityTownVillage = isset($_POST['City_Town_Village']) ? $_POST['City_Town_Village'] : '';
+   $PresCountry = isset($_POST['Pres_Country']) ? $_POST['Pres_Country'] : '';
+   $StateName = isset($_POST['State_Name']) ? $_POST['State_Name'] : '';
+   $Pincode = isset($_POST['Pincode']) ? $_POST['Pincode'] : '';
+   $PresPhone = isset($_POST['Pres_Phone']) ? $_POST['Pres_Phone'] : '';
+   $Fthrname = isset($_POST['Fthrname']) ? $_POST['Fthrname'] : '';
+   $FatherNationality = isset($_POST['Father_Nationality']) ? $_POST['Father_Nationality'] : '';
+   $FatherPreviousNationality = isset($_POST['Father_Previous_Nationality']) ? $_POST['Father_Previous_Nationality'] : '';
+   $FatherPlaceOfBirth = isset($_POST['Father_Place_Of_Birth']) ? $_POST['Father_Place_Of_Birth'] : '';
+   $FatherCountryOfBirth = isset($_POST['Father_Country_Of_Birth']) ? $_POST['Father_Country_Of_Birth'] : '';
    $MotherName = isset($_POST['mother_name']) ? $_POST['mother_name'] : '';
    $MotherNationality = isset($_POST['mother_nationality']) ? $_POST['mother_nationality'] : '';
    $MotherPreviousNationality = isset($_POST['mother_previous_nationality']) ? $_POST['mother_previous_nationality'] : '';
@@ -108,8 +111,8 @@ include 'conn.php';
 
 
 
-   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth)
-   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth')";
+   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Country_Of_Birth )
+   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherCountryOfBirth')";
     if ($conn->query($sql) === TRUE) {
      echo "New record created successfully";
     }else {

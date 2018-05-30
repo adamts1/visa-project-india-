@@ -18,7 +18,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
-  <script src="js/validateBeforeGo.js"></script>
+  <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -354,7 +354,7 @@
         <div class="input-field col s6">
           <input onkeyup="genValEngHeb(this.value, valid_identity_marks.id)" type="text" class="validate validate_identity_marks" name="Identity_Marks" id="identity_marks">
            <p class = "valid_alert" id = "valid_identity_marks"></p>      
-          <label for="identity_marks">סימני זיהוי חיצוניים הנראים לעין (משקפיים, קעקועים או רשמו אין)</label>
+          <label for="identity_marks">סימני זיהוי(משקפיים, קעקועים או רשמו אין)</label>
         </div>
       </div>
       <div class="row">
@@ -410,11 +410,11 @@
      </div>
       <div class="row">
         <div class="col s1">
-          <input name="at_least_two_years" type="radio" id="at_least_two_years_yes" />
+          <input value="Yes" name="At_Least_Two_Years" type="radio" id="at_least_two_years_yes" />
           <label for="at_least_two_years_yes">כן</label>
         </div>
        <div class="col s6">
-          <input name="at_least_two_years" type="radio" id="at_least_two_years_no" checked />
+          <input value="No" name="At_Least_Two_Years" type="radio" id="at_least_two_years_no" checked />
           <label for="at_least_two_years_no">לא</label>
        </div>       
       </div>
@@ -436,28 +436,28 @@
     <div class="section">  
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_passport_number.id)" type="text" class="validate" id="passport_number">
+          <input onkeyup="RemoveAlertNum(this.value, valid_passport_number.id)" type="text" class="validate" name="Passport_Number" id="passport_number">
           <p class = "valid_alert" id = "valid_passport_number"></p>      
           <label for="passport_number">מספר דרכון</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_pass_issue_place.id)" type="text" class="validate validate_pass_issue_place" id="passport_issue_place">
+          <input onkeyup="genValEng(this.value, valid_pass_issue_place.id)" type="text" class="validate validate_pass_issue_place" name="Passport_Issue_Place" id="passport_issue_place">
           <p class = "valid_alert" id = "valid_pass_issue_place"></p>      
           <label for="passport_issue_place">מקום הנפקה</label>
         </div>
       </div>
       <div class="row">
         <div class="input-area col s6">
-          <input onchange="RemoveAlertDate(valid_passport_issue_date.id)" type="text" class="datepicker datepicker_passport_issue_date" name="passport_issue_date" id="passport_issue_date" style="direction:ltr;">
+          <input onchange="RemoveAlertDate(valid_passport_issue_date.id)" type="text" class="datepicker datepicker_passport_issue_date" name="Passport_Issue_Date" id="passport_issue_date" style="direction:ltr;">
           <p class = "valid_alert" id = "valid_passport_issue_date"></p>      
           <label for="passport_issue_date" data-error="wrong" data-success="right">תאריך הנפקת הדרכון</label>
         </div>
       </div>
       <div class="row">
         <div class="input-area col s6">
-		      <input onchange="RemoveAlertDate(valid_passport_expiry_date.id)" type="text" class="datepicker datepicker_passport_expiry_date" name="passport_expiry_date" id="passport_expiry_date" style="direction:ltr;">
+		      <input onchange="RemoveAlertDate(valid_passport_expiry_date.id)" type="text" class="datepicker datepicker_passport_expiry_date" name="Passport_Expiry_Date" id="passport_expiry_date" style="direction:ltr;">
           <p class = "valid_alert" id = "valid_passport_expiry_date"></p>      
           <label for="passport_expiry_date" data-error="wrong" data-success="right">תוקף הדרכון</label>
         </div>
@@ -472,11 +472,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input type="radio" name="other passport" value="YES" id="other_ppt_1"   />
+          <input type="radio" name="Other_Passport" value="Yes" id="other_ppt_1"   />
           <label for="other_ppt_1">כן</label>
        </div>
        <div class="col s6">
-          <input type="radio" name="other passport" value="NO" id="other_ppt_2" checked/>
+          <input type="radio" name="Other_Passport" value="No" id="other_ppt_2" checked/>
           <label for="other_ppt_2">לא</label>
        </div>       
       </div>
@@ -487,7 +487,7 @@
     <div id="other_pass_fields">
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_other_ppt_country_issue.id)" class="browser-default" id="other_ppt_country_issue">
+          <select onchange="RemoveAlert(valid_other_ppt_country_issue.id)" class="browser-default" name="Other_Ppt_Country_Issue" id="other_ppt_country_issue">
             <option value="" disabled selected>מדינת הדרכון הנוסף</option>
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
@@ -497,28 +497,28 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input type="number" class="validate" id="other_ppt_no">
+          <input type="number" class="validate" name="Other_Ppt_No" id="other_ppt_no">
           <p class = "valid_alert" id = "valid_other_ppt_no"></p>
           <label for="other_ppt_no">מספר הדרכון הנוסף</label>
         </div>
       </div>
       <div class="row">
         <div class="input-area col s6">
-		      <input onchange="RemoveAlertDate(valid_other_ppt_issue_date.id)" type="text" class="datepicker datepicker_other_ppt_issue_date" name="other_ppt_issue_date" id="other_ppt_issue_date" style="direction:ltr;">
+		      <input onchange="RemoveAlertDate(valid_other_ppt_issue_date.id)" type="text" class="datepicker datepicker_other_ppt_issue_date" name="Other_Ppt_Issue_Date" id="other_ppt_issue_date" style="direction:ltr;">
           <p class = "valid_alert" id = "valid_other_ppt_issue_date"></p>
           <label for="other_ppt_issue_date" data-error="wrong" data-success="right">תאריך הנפקת הדרכון הנוסף</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_other_ppt_issue_place.id)" type="text" class="validate validate_other_ppt_issue_place" id="other_ppt_issue_place">
+          <input onkeyup="genValEngHeb(this.value, valid_other_ppt_issue_place.id)" type="text" class="validate validate_other_ppt_issue_place" name="Other_Ppt_Issue_Place" id="other_ppt_issue_place">
            <p class = "valid_alert" id = "valid_other_ppt_issue_place"></p>
           <label for="other_ppt_issue_place">מקום הנפקת הדרכון הנוסף</label>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_other_ppt_nationality.id)" class="browser-default" id="other_ppt_nationality">
+          <select onchange="RemoveAlert(valid_other_ppt_nationality.id)" class="browser-default" name="Other_Ppt_Nationality" id="other_ppt_nationality">
             <option value="" disabled selected>אזרחות הדרכון הנוסף כפי שרשומה בדרכון</option>
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
@@ -536,21 +536,21 @@
     <div class="section">  
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_address.id)" type="text" class="validate validate_address" id="address">
+          <input onkeyup="genValEng(this.value, valid_address.id)" type="text" class="validate validate_address" name="Address1" id="address">
            <p class = "valid_alert" id = "valid_address"></p>      
           <label for="address">כתובת מגורים ומספר בית (באנגלית בלבד)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_city_town_village.id)" type="text" class="validate validate_city_town_village" id="city_town_village">
+          <input onkeyup="genValEng(this.value, valid_city_town_village.id)" type="text" class="validate validate_city_town_village" name="City_Town_Village" id="city_town_village">
            <p class = "valid_alert" id = "valid_city_town_village"></p>      
           <label for="city_town_village">שם העיר או הישוב (באנגלית בלבד)</label>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_pres_country.id)" class="browser-default" id="pres_country">
+          <select onchange="RemoveAlert(valid_pres_country.id)" class="browser-default" name="Pres_Country" id="pres_country">
             <option value="" disabled selected>מדינה</option>
             <option value="ILS">Israel</option>
           </select>
@@ -559,21 +559,21 @@
       </div>  
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_state_name.id)" type="text" class="validate validate_state_name" id="state_name">
+          <input onkeyup="genValEngHeb(this.value, valid_state_name.id)" type="text" class="validate validate_state_name" name="State_Name" id="state_name">
            <p class = "valid_alert" id = "valid_state_name"></p>      
           <label for="state_name">מחוז (למשל: המרכז, הצפון...)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_pincode.id)" type="number" class="validate" id="pincode">
+          <input onkeyup="RemoveAlertNum(this.value, valid_pincode.id)" type="number" class="validate" name="Pincode" id="pincode">
           <p class = "valid_alert" id = "valid_pincode"></p>      
           <label for="pincode">מיקוד</label>
         </div>
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_pres_phone.id)"  type="number" class="validate" id="pres_phone">
+          <input onkeyup="RemoveAlertNum(this.value, valid_pres_phone.id)"  type="number" class="validate" name="Pres_Phone" id="pres_phone">
           <p class = "valid_alert" id = "valid_pres_phone"></p>      
           <label for="pres_phone">מספר טלפון</label>
         </div>
@@ -586,14 +586,14 @@
     <div class="section">      
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_fthrname.id)" type="text" class="validate validate_fthrname" id="fthrname">
+          <input onkeyup="genValEngHeb(this.value, valid_fthrname.id)" type="text" class="validate validate_fthrname" name="Fthrname" id="fthrname">
            <p class = "valid_alert" id = "valid_fthrname"></p>      
           <label for="fthrname">שם האב (באנגלית בלבד)</label>
         </div>
       </div>     
 	  <div class="row">
 		 <div class="col s6">
-          <select onchange="RemoveAlert(valid_father_nationality.id)" class="browser-default" id="father_nationality">
+          <select onchange="RemoveAlert(valid_father_nationality.id)" class="browser-default" name="Father_Nationality" id="father_nationality">
             <option value="" disabled selected>אזרחות האב</option>
             <option value="ILS">Israel</option>
           </select>
@@ -602,7 +602,7 @@
     </div> 
       <div class="row">
         <div class="col s6">
-          <select class="browser-default" id="father_previous_nationality">
+          <select class="browser-default" name="Father_Previous_Nationality" id="father_previous_nationality">
             <option value="" disabled selected>אזרחות קודמת של האב (אם יש)</option>
             <option value="ILS">Israel</option>
           </select>
@@ -610,14 +610,14 @@
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_father_place_of_birth.id)" type="text" class="validate validate_father_place_of_birth" id="father_place_of_birth">
+          <input onkeyup="genValEng(this.value, valid_father_place_of_birth.id)" type="text" class="validate validate_father_place_of_birth" name="Father_Place_Of_Birth" id="father_place_of_birth">
            <p class = "valid_alert" id = "valid_father_place_of_birth"></p>  
           <label for="father_place_of_birth">עיר לידה</label>
         </div>
       </div> 
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_father_country_of_birth.id)" class="browser-default" id="father_country_of_birth">
+          <select onchange="RemoveAlert(valid_father_country_of_birth.id)" class="browser-default" name="Father_Country_Of_Birth" id="father_country_of_birth">
             <option value="" disabled selected>מדינת לידה של האב</option>
             <option value="ILS">Israel</option>
           </select>
