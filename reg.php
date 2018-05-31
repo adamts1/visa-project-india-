@@ -631,14 +631,14 @@
     <div class="section">      
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_mother_name.id)" type="text" class="validate validate_mother_name" id="mother_name">
+          <input onkeyup="genValEng(this.value, valid_mother_name.id)" type="text" class="validate validate_mother_name" name="Mother_Name" id="mother_name">
            <p class = "valid_alert" id = "valid_mother_name"></p>  
           <label for="mother_name">שם האם (באנגלית בלבד)</label>
         </div>
       </div>
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_mother_nationality.id)" class="browser-default" id="mother_nationality">
+          <select onchange="RemoveAlert(valid_mother_nationality.id)" class="browser-default" name="Mother_Nationality" id="mother_nationality">
             <option value="" disabled selected>אזרחות האם</option>
             <option value="ILS">Israel</option>
           </select>
@@ -647,7 +647,7 @@
       </div> 
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_mother_previous_nationality.id)"  class="browser-default" id="mother_previous_nationality">
+          <select onchange="RemoveAlert(valid_mother_previous_nationality.id)"  class="browser-default" name='Mother_Previous_Nationality' id="mother_previous_nationality">
             <option value="" disabled selected>אזרחות קודמת של האם (אם יש)</option>
             <option value="ILS">Israel</option>
           </select>
@@ -656,14 +656,14 @@
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_mother_place_of_birth.id)" type="text" class="validate validate_mother_place_of_birth" id="mother_place_of_birth">
+          <input onkeyup="genValEng(this.value, valid_mother_place_of_birth.id)" type="text" class="validate validate_mother_place_of_birth" name="Mother_Place_Of_Birth" id="mother_place_of_birth">
            <p class = "valid_alert" id = "valid_mother_place_of_birth"></p>  
           <label for="mother_place_of_birth">עיר לידה</label>
         </div>
       </div> 
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_mother_country_of_birth.id)" class="browser-default" id="mother_country_of_birth">
+          <select onchange="RemoveAlert(valid_mother_country_of_birth.id)" class="browser-default" name="Mother_Country_Of_Birth" id="mother_country_of_birth">
             <option value="" disabled selected>מדינת לידה של האם</option>
             <option value="ILS">Israel</option>
           </select>
@@ -677,7 +677,7 @@
     <div class="section">      
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_marital_status.id)" class="browser-default" id="marital_status">
+          <select onchange="RemoveAlert(valid_marital_status.id)" class="browser-default" name="Marital_Status" id="marital_status">
             <option value="" disabled selected>מצב משפחתי</option>
             <option value="single">רווק</option>
             <option value="married">נשוי</option>
@@ -691,14 +691,14 @@
     <div id="married_field">
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_spouse_name.id)" type="text" class="validate validate_spouse_name" id="spouse_name">
+          <input onkeyup="genValEng(this.value, valid_spouse_name.id)" type="text" class="validate validate_spouse_name" name='Spouse_Name' id="spouse_name">
            <p class = "valid_alert" id = "valid_spouse_name"></p>  
           <label for="spouse_name">שם בן/בת הזוג</label>
         </div>
       </div> 
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_spouse_nationality.id)" class="browser-default" id="spouse_nationality">
+          <select onchange="RemoveAlert(valid_spouse_nationality.id)" class="browser-default" name="Spouse_Nationality" id="spouse_nationality">
             <option value="" disabled selected>אזרחות בן/בת הזוג</option>
             <option value="ILS">Israel</option>
           </select>
@@ -708,7 +708,7 @@
 	  
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_spouse_previous_nationality.id)" class="browser-default" id="spouse_previous_nationality">
+          <select onchange="RemoveAlert(valid_spouse_previous_nationality.id)" class="browser-default" name="Spouse_Previous_Nationality" id="spouse_previous_nationality">
             <option value="" disabled selected>אזרחות קודמת של בן הזוג אם יש</option>
             <option value="ILS">Israel</option>
           </select>
@@ -717,14 +717,14 @@
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_spouse_place_of_birth.id)" type="text" class="validate validate_spouse_place_of_birth" id="spouse_place_of_birth">
+          <input onkeyup="genValEng(this.value, valid_spouse_place_of_birth.id)" type="text" class="validate validate_spouse_place_of_birth" name="Spouse_Place_Of_Birth" id="spouse_place_of_birth">
            <p class = "valid_alert" id = "valid_spouse_place_of_birth"></p>  
           <label for="spouse_place_of_birth">עיר לידה של בן/בת הזוג</label>
         </div>
       </div> 
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_spouse_country_of_birth.id)" class="browser-default" id="spouse_country_of_birth">
+          <select onchange="RemoveAlert(valid_spouse_country_of_birth.id)" class="browser-default" name="Spouse_Country_Of_Birth" id="spouse_country_of_birth">
             <option value="" disabled selected>ארץ לידה של בן/בת הזוג</option>
             <option value="ILS">Israel</option>
           </select>
@@ -744,11 +744,11 @@
 	  
       <div class="row">
        <div class="col s1">
-          <input name="grandparent_flag" type="radio" id="grandparent_flag1" />
+          <input value="כן" type="radio" name="Grandparent_Flag" id="grandparent_flag1" />
           <label for="grandparent_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input name="grandparent_flag" type="radio" id="grandparent_flag2" />
+          <input value="לא" type="radio" name="Grandparent_Flag" id="grandparent_flag2" />
           <label for="grandparent_flag2">לא</label>
        </div>       
       </div> 
@@ -758,7 +758,7 @@
     <div id="pakistan_field">
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_grandparent_details.id)" type="text" class="validate validate_grandparent_details" id="grandparent_details">
+          <input onkeyup="genValEngHeb(this.value, valid_grandparent_details.id)" type="text" class="validate validate_grandparent_details" name="Grandparent_Details" id="grandparent_details">
            <p class = "valid_alert" id = "valid_grandparent_details"></p>
           <label for="grandparent_details">אם כן, ציין פרטים אודות הקשר עם פקיסטן</label>
         </div>
@@ -773,7 +773,7 @@
     <div class="section">   
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_occupation.id)" type="text" class="validate validate_occupation" id="occupation">
+          <input onkeyup="genValEngHeb(this.value, valid_occupation.id)" type="text" class="validate validate_occupation" name="Occupation" id="occupation">
            <p class = "valid_alert" id = "valid_occupation"></p>
           <label for="occupation">מקצוע עבודה (למשל: רופא, עיתונאי, צלם, עקר\ת בית)</label>
 		       <p>אם עקר/ת בית,/סטודנט/מובטל נא לציין זאת ולכתוב בנוסף את העיסוק של בן/בת הזוג או של אחד ההורים</p>
@@ -781,28 +781,28 @@
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_empname.id)" type="text" class="validate validate_empname" id="empname">
+          <input onkeyup="genValEngHeb(this.value, valid_empname.id)" type="text" class="validate validate_empname" name="Empname" id="empname">
            <p class = "valid_alert" id = "valid_empname"></p>
           <label for="empname">שם המעסיק</label>
         </div>
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_empdesignation.id)" type="text" class="validate validate_empdesignation" id="empdesignation">
+          <input onkeyup="genValEngHeb(this.value, valid_empdesignation.id)" type="text" class="validate validate_empdesignation" name="Empdesignation" id="empdesignation">
            <p class = "valid_alert" id = "valid_empdesignation"></p>
           <label for="empdesignation">תאור התפקיד</label>
         </div>
       </div>   
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_empaddress.id)" type="text" class="validate validate_empaddress" id="empaddress">
+          <input onkeyup="genValEng(this.value, valid_empaddress.id)" type="text" class="validate validate_empaddress" name="Empaddress" id="empaddress">
            <p class = "valid_alert" id = "valid_empaddress"></p>  
           <label for="empaddress">כתובת מקום העבודה</label>
         </div>
       </div>  
       <div class="row">
         <div class="input-field col s6">
-          <input type="number" class="validate" id="empphone">
+          <input type="number" class="validate" name="Empphone" id="empphone">
           <p class = "valid_alert" id = "valid_empphone"></p>  
           <label for="empphone">מספר הטלפון בעבודה (אם יש)</label>
         </div>
@@ -810,7 +810,7 @@
 
       <div class="row">
         <div class="input-field col s6">
-          <input type="text" class="validate" id="previous_occupation">
+          <input type="text" class="validate" name="Previous_Occupation" id="previous_occupation">
           <label for="previous_occupation">מקצוע קודם, אם אין לא חובה למלא שדה זה</label>
         </div>
       </div> 
@@ -823,11 +823,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input name="prev_org" type="radio" id="prev_org1" />
+          <input value="כן"  type="radio" name="Prev_Org" id="prev_org1" />
           <label for="prev_org1">כן</label>
        </div>
        <div class="col s6">
-          <input name="prev_org" type="radio" id="prev_org2" />
+          <input value="לא"  type="radio" name="Prev_Org" id="prev_org2" />
           <label for="prev_org2">לא</label>
        </div>       
       </div> 
@@ -836,28 +836,28 @@
     <div id="army_field">
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_organization.id)" type="text" class="validate validate_previous_organization" id="previous_organization">
+          <input onkeyup="genValEngHeb(this.value, valid_previous_organization.id)" type="text" class="validate validate_previous_organization" name="Previous_Organization" id="previous_organization">
            <p class = "valid_alert" id = "valid_previous_organization"></p>          
           <label for="previous_organization">ציין את הארגון בו שירתת (צבא\משטרה אחר)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_designation.id)" type="text" class="validate validate_previous_designation" id="previous_designation">
+          <input onkeyup="genValEngHeb(this.value, valid_previous_designation.id)" type="text" class="validate validate_previous_designation" name="Previous_Designation" id="previous_designation">
            <p class = "valid_alert" id = "valid_previous_designation"></p>          
           <label for="previous_designation">חיל</label>
         </div>
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_previous_rank.id)" type="text" class="validate validate_previous_rank" id="previous_rank">
+          <input onkeyup="genValEngHeb(this.value, valid_previous_previous_rank.id)" type="text" class="validate validate_previous_rank" name="Previous_Rank" id="previous_rank">
            <p class = "valid_alert" id = "valid_previous_previous_rank"></p>                    
           <label for="previous_rank">דרגה</label>
         </div>
       </div>      
       <div class="row">
         <div class="input-field col s6">
-          <input type="text" class="validate validate_previous_posting" id="previous_posting">
+          <input type="text" class="validate validate_previous_posting" name="Previous_Posting" id="previous_posting">
            <p class = "valid_alert" id = "valid_previous_posting"></p>                              
           <label for="previous_posting">מקום השירות?</label>
         </div>

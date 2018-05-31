@@ -57,27 +57,30 @@ include 'conn.php';
    $FatherPreviousNationality = isset($_POST['Father_Previous_Nationality']) ? $_POST['Father_Previous_Nationality'] : '';
    $FatherPlaceOfBirth = isset($_POST['Father_Place_Of_Birth']) ? $_POST['Father_Place_Of_Birth'] : '';
    $FatherCountryOfBirth = isset($_POST['Father_Country_Of_Birth']) ? $_POST['Father_Country_Of_Birth'] : '';
-   $MotherName = isset($_POST['mother_name']) ? $_POST['mother_name'] : '';
-   $MotherNationality = isset($_POST['mother_nationality']) ? $_POST['mother_nationality'] : '';
-   $MotherPreviousNationality = isset($_POST['mother_previous_nationality']) ? $_POST['mother_previous_nationality'] : '';
-   $MotherPlaceOfBirth = isset($_POST['mother_place_of_birth']) ? $_POST['mother_place_of_birth'] : '';
-   $MotherCountryOfBirth = isset($_POST['mother_country_of_birth']) ? $_POST['mother_country_of_birth'] : '';
-   $MaritalStatus = isset($_POST['marital_status']) ? $_POST['marital_status'] : '';
-   $SpouseName = isset($_POST['spouse_name']) ? $_POST['spouse_name'] : '';
-   $SpouseNationality = isset($_POST['spouse_nationality']) ? $_POST['spouse_nationality'] : '';
-   $SpousePreviousNationality = isset($_POST['spouse_previous_nationality']) ? $_POST['spouse_previous_nationality'] : '';
-   $SpouseCountryOfBirth = isset($_POST['spouse_country_of_birth']) ? $_POST['spouse_country_of_birth'] : '';
-   $GrandparentDetails = isset($_POST['grandparent_details']) ? $_POST['grandparent_details'] : '';
-   $Occupation = isset($_POST['occupation']) ? $_POST['occupation'] : '';
-   $Empname = isset($_POST['empname']) ? $_POST['empname'] : '';
-   $Empdesignation = isset($_POST['empdesignation']) ? $_POST['empdesignation'] : '';
-   $Empaddress = isset($_POST['empaddress']) ? $_POST['empaddress'] : '';
-   $Empphone = isset($_POST['empphone']) ? $_POST['empphone'] : '';
-   $PreviousOccupation = isset($_POST['previous_occupation']) ? $_POST['previous_occupation'] : '';
-   $PreviousOrganization = isset($_POST['previous_organization']) ? $_POST['previous_organization'] : '';
-   $PreviousDesignation = isset($_POST['previous_designation']) ? $_POST['previous_designation'] : '';
-   $PreviousRank = isset($_POST['previous_rank']) ? $_POST['previous_rank'] : '';
-   $PreviousPosting = isset($_POST['previous_posting']) ? $_POST['previous_posting'] : '';
+   $MotherName = isset($_POST['Mother_Name']) ? $_POST['Mother_Name'] : '';
+   $MotherNationality = isset($_POST['Mother_Nationality']) ? $_POST['Mother_Nationality'] : '';
+   $MotherPreviousNationality = isset($_POST['Mother_Previous_Nationality']) ? $_POST['Mother_Previous_Nationality'] : '';
+   $MotherPlaceOfBirth = isset($_POST['Mother_Place_Of_Birth']) ? $_POST['Mother_Place_Of_Birth'] : '';
+   $MotherCountryOfBirth = isset($_POST['Mother_Country_Of_Birth']) ? $_POST['Mother_Country_Of_Birth'] : '';
+   $MaritalStatus = isset($_POST['Marital_Status']) ? $_POST['Marital_Status'] : '';
+   $SpouseName = isset($_POST['Spouse_Name']) ? $_POST['Spouse_Name'] : '';
+   $SpouseNationality = isset($_POST['Spouse_Nationality']) ? $_POST['Spouse_Nationality'] : '';
+   $SpousePreviousNationality = isset($_POST['Spouse_Previous_Nationality']) ? $_POST['Spouse_Previous_Nationality'] : '';
+   $SpousePlaceOfBirth = isset($_POST['Spouse_Place_Of_Birth']) ? $_POST['Spouse_Place_Of_Birth'] : '';
+   $SpouseCountryOfBirth = isset($_POST['Spouse_Country_Of_Birth']) ? $_POST['Spouse_Country_Of_Birth'] : '';
+   $GrandparentFlag = isset($_POST['Grandparent_Flag']) ? $_POST['Grandparent_Flag'] : '';
+   $GrandparentDetails = isset($_POST['Grandparent_Details']) ? $_POST['Grandparent_Details'] : '';
+   $Occupation = isset($_POST['Occupation']) ? $_POST['Occupation'] : '';
+   $Empname = isset($_POST['Empname']) ? $_POST['Empname'] : '';
+   $Empdesignation = isset($_POST['Empdesignation']) ? $_POST['Empdesignation'] : '';
+   $Empaddress = isset($_POST['Empaddress']) ? $_POST['Empaddress'] : '';
+   $Empphone = isset($_POST['Empphone']) ? $_POST['Empphone'] : '';
+   $PreviousOccupation = isset($_POST['Previous_Occupation']) ? $_POST['Previous_Occupation'] : '';
+   $PrevOrg = isset($_POST['Prev_Org']) ? $_POST['Prev_Org'] : '';
+   $PreviousOrganization = isset($_POST['Previous_Organization']) ? $_POST['Previous_Organization'] : '';
+   $PreviousDesignation = isset($_POST['Previous_Designation']) ? $_POST['Previous_Designation'] : '';
+   $PreviousRank = isset($_POST['Previous_Rank']) ? $_POST['Previous_Rank'] : '';
+   $PreviousPosting = isset($_POST['Previous_Posting']) ? $_POST['Previous_Posting'] : '';
    $VisaSerreqId1 = isset($_POST['visa_serreq_id_1']) ? $_POST['visa_serreq_id_1'] : '';
    $Exitpoint = isset($_POST['exitpoint']) ? $_POST['exitpoint'] : '';
    $prvVisitAdd1 = isset($_POST['prv_visit_add1']) ? $_POST['prv_visit_add1'] : '';
@@ -111,8 +114,8 @@ include 'conn.php';
 
 
 
-   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Country_Of_Birth )
-   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherCountryOfBirth')";
+   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Country_Of_Birth, Mother_Name, Mother_Nationality, Mother_Previous_Nationality, Mother_Place_Of_Birth, Mother_Country_Of_Birth, Marital_Status, Spouse_Name, Spouse_Nationality, Spouse_Previous_Nationality, Spouse_Place_Of_Birth, Spouse_Country_Of_Birth, Grandparent_Flag, Grandparent_Details, Occupation, Empname, Empdesignation, Empaddress, Empphone, Previous_Occupation, Prev_Org, Previous_Organization, Previous_Designation, Previous_Rank, Previous_Posting)
+   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherCountryOfBirth', '$MotherName', '$MotherNationality', '$MotherPreviousNationality', '$MotherPlaceOfBirth', '$MotherCountryOfBirth', '$MaritalStatus', '$SpouseName', '$SpouseNationality', '$SpousePreviousNationality', '$SpousePlaceOfBirth', '$SpouseCountryOfBirth', '$GrandparentFlag', '$GrandparentDetails', '$Occupation', '$Empname', '$Empdesignation', '$Empaddress', '$Empphone', '$PreviousOccupation', '$PrevOrg' , '$PreviousOrganization', '$PreviousDesignation', '$PreviousRank', '$PreviousPosting')";
     if ($conn->query($sql) === TRUE) {
      echo "New record created successfully";
     }else {
