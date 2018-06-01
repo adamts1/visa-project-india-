@@ -10,7 +10,7 @@ include 'conn.php';
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
    $PurposeOfVisit = isset($_POST['purpose of visit']) ? $_POST['purpose of visit'] : '';
    //Passport pic
-   $PassportImage = $_FILES['passport_image']['tmp_name'];
+   $PassportImage = $_FILES['Passport_Image']['tmp_name'];
    $PassportImage = file_get_contents($PassportImage);
    $PassportImage = base64_encode($PassportImage);
    //Selfi pic
@@ -81,41 +81,46 @@ include 'conn.php';
    $PreviousDesignation = isset($_POST['Previous_Designation']) ? $_POST['Previous_Designation'] : '';
    $PreviousRank = isset($_POST['Previous_Rank']) ? $_POST['Previous_Rank'] : '';
    $PreviousPosting = isset($_POST['Previous_Posting']) ? $_POST['Previous_Posting'] : '';
-   $VisaSerreqId1 = isset($_POST['visa_serreq_id_1']) ? $_POST['visa_serreq_id_1'] : '';
-   $Exitpoint = isset($_POST['exitpoint']) ? $_POST['exitpoint'] : '';
-   $prvVisitAdd1 = isset($_POST['prv_visit_add1']) ? $_POST['prv_visit_add1'] : '';
-   $VisitedCity = isset($_POST['visited_city']) ? $_POST['visited_city'] : '';
-   $OldVisaNo = isset($_POST['old_visa_no']) ? $_POST['old_visa_no'] : '';
-   $OldVisaTypeId = isset($_POST['old_visa_type_id']) ? $_POST['old_visa_type_id'] : '';
-   $Oldvisaissueplace = isset($_POST['oldvisaissueplace']) ? $_POST['oldvisaissueplace'] : '';
-   $RefuseDetails = isset($_POST['refuse_details']) ? $_POST['refuse_details'] : '';
-   $CountryVisited = isset($_POST['country_visited']) ? $_POST['country_visited'] : '';
-   $SaarcCountry1 = isset($_POST['saarcCountry1']) ? $_POST['saarcCountry1'] : '';
-   $SaarcYear1 = isset($_POST['saarcYear1']) ? $_POST['saarcYear1'] : '';
-   $SaarcVisitNo = isset($_POST['saarcVisitNo']) ? $_POST['saarcVisitNo'] : '';
-   $NameofsponsorInd = isset($_POST['nameofsponsor_ind']) ? $_POST['nameofsponsor_ind'] : '';
-   $Add1ofsponsorInd = isset($_POST['add1ofsponsor_ind']) ? $_POST['add1ofsponsor_ind'] : '';
-   $PhoneofsponsorInd = isset($_POST['phoneofsponsor_ind']) ? $_POST['phoneofsponsor_ind'] : '';
-   $NameofsponsorMsn = isset($_POST['nameofsponsor_msn']) ? $_POST['nameofsponsor_msn'] : '';
-   $Add1ofsponsorMsn = isset($_POST['add1ofsponsor_msn']) ? $_POST['add1ofsponsor_msn'] : '';
-   $PhoneofsponsorMsn = isset($_POST['phoneofsponsor_msn']) ? $_POST['phoneofsponsor_msn'] : '';
+   $VisaSerreqId1 = isset($_POST['Visa_Serreq_Id_1']) ? $_POST['Visa_Serreq_Id_1'] : '';
+   $Exitpoint = isset($_POST['Exitpoint']) ? $_POST['Exitpoint'] : '';
+   $OldVisaFlag = isset($_POST['Old_Visa_Flag']) ? $_POST['Old_Visa_Flag'] : '';
+   $PrvVisitAdd1 = isset($_POST['Prv_Visit_Add1']) ? $_POST['Prv_Visit_Add1'] : '';
+   $VisitedCity = isset($_POST['Visited_City']) ? $_POST['Visited_City'] : '';
+   $OldVisaNo = isset($_POST['Old_Visa_No']) ? $_POST['Old_Visa_No'] : '';
+   $OldVisaTypeId = isset($_POST['Old_Visa_Type_Id']) ? $_POST['Old_Visa_Type_Id'] : '';
+   $Oldvisaissueplace = isset($_POST['Oldvisaissueplace']) ? $_POST['Oldvisaissueplace'] : '';
+   $Oldvisaissuedate = isset($_POST['Oldvisaissuedate']) ? $_POST['Oldvisaissuedate'] : '';
+   $RefuseFlag = isset($_POST['Refuse_Flag']) ? $_POST['Refuse_Flag'] : '';
+   $RefuseDetails = isset($_POST['Refuse_Details']) ? $_POST['Refuse_Details'] : '';
+   $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
+   $CountryVisited = isset($_POST['Country_Visited']) ? $_POST['Country_Visited'] : '';
+   $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
+   $SaarcCountry1 = isset($_POST['SaarcCountry']) ? $_POST['SaarcCountry'] : '';
+   $SaarcYear1 = isset($_POST['SaarcYear1']) ? $_POST['SaarcYear1'] : '';
+   $SaarcVisitNo = isset($_POST['SaarcVisitNo']) ? $_POST['SaarcVisitNo'] : '';
+   $NameofsponsorInd = isset($_POST['Nameofsponsor_Ind']) ? $_POST['Nameofsponsor_Ind'] : '';
+   $Add1ofsponsorInd = isset($_POST['Add1ofsponsor_Ind']) ? $_POST['Add1ofsponsor_Ind'] : '';
+   $PhoneofsponsorInd = isset($_POST['Phoneofsponsor_Ind']) ? $_POST['Phoneofsponsor_Ind'] : '';
+   $NameofsponsorMsn = isset($_POST['Nameofsponsor_Msn']) ? $_POST['Nameofsponsor_Msn'] : '';
+   $Add1ofsponsorMsn = isset($_POST['Add1ofsponsor_Msn']) ? $_POST['Add1ofsponsor_Msn'] : '';
+   $PhoneofsponsorMsn = isset($_POST['Phoneofsponsor_Msn']) ? $_POST['Phoneofsponsor_Msn'] : '';
+   //////////////Business
+   $BusinessPrep = isset($_POST['Business_Prep']) ? $_POST['Business_Prep'] : '';
+   $CompanyName = isset($_POST['Company_Name']) ? $_POST['Company_Name'] : '';
+   $CompanyAddress = isset($_POST['Company_Address']) ? $_POST['Company_Address'] : '';
+   $CompanyPhone = isset($_POST['Company_Phone']) ? $_POST['Company_Phone'] : '';
+   $CompanyWebsite = isset($_POST['Company_Website']) ? $_POST['Company_Website'] : '';
+   $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
    //Business fields pic
-//    $BusinessCard = $_FILES['business_card']['tmp_name'];
-//    $BusinessCard = file_get_contents($business_card);
-//    $BusinessCard = base64_encode($business_card);
-   //Business fields
-   $Business_prep = isset($_POST['business_prep']) ? $_POST['business_prep'] : '';
-   $Company_name = isset($_POST['company_name']) ? $_POST['company_name'] : '';
-   $Company_address = isset($_POST['company_address']) ? $_POST['company_address'] : '';
-   $Company_phone = isset($_POST['company_phone']) ? $_POST['company_phone'] : '';
-   $Company_website = isset($_POST['company_website']) ? $_POST['company_website'] : '';
-   $Nature_of_company = isset($_POST['nature_of_company']) ? $_POST['nature_of_company'] : '';
+   $BusinessCard = $_FILES['Business_Card']['tmp_name'];
+   $BusinessCard = file_get_contents($BusinessCard);
+   $BusinessCard = base64_encode($BusinessCard);
 
 
 
 
-   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Country_Of_Birth, Mother_Name, Mother_Nationality, Mother_Previous_Nationality, Mother_Place_Of_Birth, Mother_Country_Of_Birth, Marital_Status, Spouse_Name, Spouse_Nationality, Spouse_Previous_Nationality, Spouse_Place_Of_Birth, Spouse_Country_Of_Birth, Grandparent_Flag, Grandparent_Details, Occupation, Empname, Empdesignation, Empaddress, Empphone, Previous_Occupation, Prev_Org, Previous_Organization, Previous_Designation, Previous_Rank, Previous_Posting)
-   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherCountryOfBirth', '$MotherName', '$MotherNationality', '$MotherPreviousNationality', '$MotherPlaceOfBirth', '$MotherCountryOfBirth', '$MaritalStatus', '$SpouseName', '$SpouseNationality', '$SpousePreviousNationality', '$SpousePlaceOfBirth', '$SpouseCountryOfBirth', '$GrandparentFlag', '$GrandparentDetails', '$Occupation', '$Empname', '$Empdesignation', '$Empaddress', '$Empphone', '$PreviousOccupation', '$PrevOrg' , '$PreviousOrganization', '$PreviousDesignation', '$PreviousRank', '$PreviousPosting')";
+   $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Country_Of_Birth, Mother_Name, Mother_Nationality, Mother_Previous_Nationality, Mother_Place_Of_Birth, Mother_Country_Of_Birth, Marital_Status, Spouse_Name, Spouse_Nationality, Spouse_Previous_Nationality, Spouse_Place_Of_Birth, Spouse_Country_Of_Birth, Grandparent_Flag, Grandparent_Details, Occupation, Empname, Empdesignation, Empaddress, Empphone, Previous_Occupation, Prev_Org, Previous_Organization, Previous_Designation, Previous_Rank, Previous_Posting, Visa_Serreq_Id_1, Exitpoint, Old_Visa_Flag, Prv_Visit_Add1, Visited_City, Old_Visa_Type_Id, Oldvisaissueplace, Oldvisaissuedate, Refuse_Flag, Refuse_Details, Country_Visited, Saarc_Flag, SaarcCountry1, SaarcYear1, SaarcVisitNo, Nameofsponsor_Ind, Add1ofsponsor_Ind, Phoneofsponsor_Ind, Nameofsponsor_Msn, Add1ofsponsor_Msn, Phoneofsponsor_Msn, Business_Prep, Company_Name, Company_Address, Company_Phone, Company_Website, Nature_Of_Company, Business_Card)
+   VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherCountryOfBirth', '$MotherName', '$MotherNationality', '$MotherPreviousNationality', '$MotherPlaceOfBirth', '$MotherCountryOfBirth', '$MaritalStatus', '$SpouseName', '$SpouseNationality', '$SpousePreviousNationality', '$SpousePlaceOfBirth', '$SpouseCountryOfBirth', '$GrandparentFlag', '$GrandparentDetails', '$Occupation', '$Empname', '$Empdesignation', '$Empaddress', '$Empphone', '$PreviousOccupation', '$PrevOrg' , '$PreviousOrganization', '$PreviousDesignation', '$PreviousRank', '$PreviousPosting', '$VisaSerreqId1', '$Exitpoint', '$OldVisaFlag', '$PrvVisitAdd1', '$VisitedCity', '$OldVisaTypeId', '$Oldvisaissueplace' ,'$Oldvisaissuedate', '$RefuseFlag', '$RefuseDetails', '$CountryVisited', '$SaarcFlag', '$SaarcCountry1', '$SaarcYear1', '$SaarcVisitNo', '$NameofsponsorInd', '$Add1ofsponsorInd', '$PhoneofsponsorInd', '$NameofsponsorMsn', '$Add1ofsponsorMsn', '$PhoneofsponsorMsn', '$BusinessPrep', '$CompanyName', '$CompanyAddress', '$CompanyPhone', '$CompanyWebsite', '$NatureOfCompany', '$BusinessCard')";
     if ($conn->query($sql) === TRUE) {
      echo "New record created successfully";
     }else {
@@ -123,13 +128,13 @@ include 'conn.php';
      }
 
 
-//      $sql = "SELECT * FROM main";
-// $sth = $conn->query($sql);
+     $sql = "SELECT * FROM main";
+$sth = $conn->query($sql);
 
-// while($result=mysqli_fetch_array($sth)){  
-// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Passport_Image'].'"/>';
-// // echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
-// }
-// $conn->close();
+while($result=mysqli_fetch_array($sth)){  
+echo '<img width="600" height="600"  src="data:image;base64,'.$result['Business_Card'].'"/>';
+// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
+}
+$conn->close();
 
     ?>

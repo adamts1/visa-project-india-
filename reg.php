@@ -18,7 +18,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
-  <!-- <script src="js/validateBeforeGo.js"></script> -->
+  <script src="js/validateBeforeGo.js"></script>
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -131,7 +131,7 @@
   <div id="visa_type_fields">
 	  <div class="row">
 		  <div class="input-field col s6">
-      <input onkeyup="genValEngHeb(this.value, valid_business_prep.id)" type="text" class="validate validate_business_prep" name="business_prep" id="business_prep">
+      <input onkeyup="genValEngHeb(this.value, valid_business_prep.id)" type="text" class="validate validate_business_prep" name="Business_Prep" id="business_prep">
       <p class = "valid_alert" id = "valid_business_prep"></p>
 		  <label for="business_prep">מטרת הביקור העסקי (למשל: הרצאות, מכירות, הקמת עסק)</label>
 		  </div>
@@ -139,12 +139,12 @@
 
 	  <div class="row">
 		  <div class="input-field col s6">
-      <input onkeyup="genValEng(this.value, valid_company_name.id)" type="text" class="validate validate_company_name" name = "company_name" id="company_name">
+      <input onkeyup="genValEng(this.value, valid_company_name.id)" type="text" class="validate validate_company_name" name = "Company_Name" id="company_name">
       <p class = "valid_alert" id = "valid_company_name" ></p>
 		  <label for="company_name">שם החברה</label>
 		  </div>
 		  <div class="input-field col s6">
-      <input onkeyup="genValEng(this.value, valid_company_address.id)" type="text" class="validate validate_company_address" name="company_address" id="company_address">
+      <input onkeyup="genValEng(this.value, valid_company_address.id)" type="text" class="validate validate_company_address" name="Company_Address" id="company_address">
       <p class = "valid_alert" id = "valid_company_address"></p>      
 		  <label for="company_address">כתובת החברה</label>
 		  </div>
@@ -152,12 +152,12 @@
 
 	  <div class="row">
 		  <div class="input-field col s6">
-		  <input onkeyup="RemoveAlertNum(this.value, valid_company_phone.id)" type="number" class="validate" name="company phone" id="company_phone">
+		  <input onkeyup="RemoveAlertNum(this.value, valid_company_phone.id)" type="number" class="validate" name="Company_Phone" id="company_phone">
       <p class = "valid_alert" id = "valid_company_phone"></p>      
 		  <label for="company_phone">טלפון החברה</label>
 		  </div>
 		  <div class="input-field col s6">
-      <input onkeyup="genValEng(this.value, valid_company_website.id)" type="text" class="validate validate_company_website" name="company website" id="company_website">
+      <input onkeyup="genValEng(this.value, valid_company_website.id)" type="text" class="validate validate_company_website" name="Company_Website" id="company_website">
       <p class = "valid_alert" id = "valid_company_website"></p>      
 		  <label for="company_website">אתר אינטרנט של החברה</label>
 		  </div>
@@ -165,14 +165,14 @@
 	  
 	  <div class="row">
 		  <div class="input-field col s6">
-      <input type="text" class="validate validate_nature_of_company" name="nature of company" id="nature_of_company">
+      <input type="text" class="validate validate_nature_of_company" name="Nature_Of_Company" id="nature_of_company">
       <p class = "valid_alert" id = "valid_nature_of_company"></p>            
 		  <label for="nature_of_company">תחום החברה (למשל: מזון, רפואה)</label>
 		  </div>
 		  <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף כרטיס ביקור</span>
-                <input type="file" id="business_card">
+                <input type="file" name="Business_Card" id="business_card">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" id="business_card_txt">
@@ -207,7 +207,7 @@
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף צילום דרכון</span>
-                <input type="file" id="passport_image" name = "passport_image">
+                <input type="file" name="Passport_Image" id="passport_image">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" id="passport_image_txt">
@@ -879,7 +879,7 @@
      <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_visa_serreq_id_1.id)" type="text" class="validate validate_visa_serreq_id_1" id="visa_serreq_id_1">
+          <input onkeyup="genValEngHeb(this.value, valid_visa_serreq_id_1.id)" type="text" class="validate validate_visa_serreq_id_1" name="Visa_Serreq_Id_1" id="visa_serreq_id_1">
            <p class = "valid_alert" id = "valid_visa_serreq_id_1"></p>                              
           <label for="visa_serreq_id_1">ערים בהם את\ה מתכננ\ת לבקר</label>
         </div>
@@ -905,7 +905,7 @@
             
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_exitpoint.id)" class="browser-default" id="exitpoint">
+          <select onchange="RemoveAlert(valid_exitpoint.id)" class="browser-default" name="Exitpoint" id="exitpoint">
             <option value="" disabled selected>נמל עזיבה</option>
             <option value="AHMEDABAD AIRPORT">AHMEDABAD AIRPORT</option>
             <option value="AMRITSAR AIRPORT">AMRITSAR AIRPORT</option>
@@ -951,11 +951,11 @@
       </div>
       <div class="row">
        <div class="col s1">
-          <input class="old_visa_flag1" name="old_visa_flag" type="radio" id="old_visa_flag1" />
+          <input class="old_visa_flag1" type="radio" name="Old_Visa_Flag" id="old_visa_flag1" />
           <label for="old_visa_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input name="old_visa_flag" type="radio" id="old_visa_flag2" checked />
+          <input type="radio" name="Old_Visa_Flag" id="old_visa_flag2" checked />
           <label for="old_visa_flag2">לא</label>
        </div>       
       </div> 
@@ -967,14 +967,14 @@
 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_prv_visit_add1.id)" type="text" class="validate validate_prv_visit_add1" id="prv_visit_add1">
+          <input onkeyup="genValEngHeb(this.value, valid_prv_visit_add1.id)" type="text" class="validate validate_prv_visit_add1" name="Prv_Visit_Add1" id="prv_visit_add1">
            <p class = "valid_alert" id = "valid_prv_visit_add1"></p>
           <label for="prv_visit_add1">כתובת בה ביקרת</label>
         </div>
        </div> 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_visited_city.id)" type="text" class="validate validate_visited_city" id="visited_city">
+          <input onkeyup="genValEngHeb(this.value, valid_visited_city.id)" type="text" class="validate validate_visited_city" name="Visited_City" id="visited_city">
            <p class = "valid_alert" id = "valid_visited_city"></p>          
           <label for="visited_city">ערים בהן ביקרת</label>
         </div>
@@ -988,7 +988,7 @@
        </div>      
        <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_old_visa_type_id.id)" class="browser-default" id="old_visa_type_id">
+          <select onchange="RemoveAlert(valid_old_visa_type_id.id)" class="browser-default" name="Old_Visa_Type_Id" id="old_visa_type_id">
             <option value="" disabled selected>סוג הויזה הישנה</option>
             <option value="1">BUSINESS VISA</option>
             <option value="4">CONFERENCE VISA</option>
@@ -1020,14 +1020,14 @@
        </div> 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_oldvisaissueplace.id)" type="text" class="validate validate_oldvisaissueplace" id="oldvisaissueplace">
+          <input onkeyup="genValEngHeb(this.value, valid_oldvisaissueplace.id)" type="text" class="validate validate_oldvisaissueplace" name="Oldvisaissueplace" id="oldvisaissueplace">
            <p class = "valid_alert" id = "valid_oldvisaissueplace"></p>      
           <label for="oldvisaissueplace">מקום הנפקת הויזה הקודמת</label>
         </div>
        </div>  
 	     <div class="row">
 	      <div class="input-area col s6">
-	      <input onchange="RemoveAlertDate(valid_oldvisaissuedate.id)" type="text" class="datepicker datepicker_oldvisaissuedate" name="oldvisaissuedate" id="oldvisaissuedate" style="direction:ltr;">
+	      <input onchange="RemoveAlertDate(valid_oldvisaissuedate.id)" type="text" class="datepicker datepicker_oldvisaissuedate" name="Oldvisaissuedate" id="oldvisaissuedate" style="direction:ltr;">
         <p class = "valid_alert" id = "valid_oldvisaissuedate"></p>      
 	      <label for="oldvisaissuedate" data-error="wrong" data-success="right">תאריך הנפקת הויזה הישנה</label>
 	     </div>
@@ -1044,11 +1044,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input name="refuse_flag" type="radio" id="refuse_flag1" />
+          <input value="כן" type="radio" name="Refuse_Flag" id="refuse_flag1" />
           <label for="refuse_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input name="refuse_flag" type="radio" id="refuse_flag2"  checked/>
+          <input value="לא" type="radio" name="Refuse_Flag" id="refuse_flag2"  checked/>
           <label for="refuse_flag2">לא</label>
        </div>       
       </div>
@@ -1058,7 +1058,7 @@
       <div id="denied_field">
        <div class="row">
          <div class="input-field col s8">
-          <input onkeyup="genValEngHeb(this.value, valid_refuse_details.id)" type="text" class="validate validate_refuse_details" id="refuse_details">
+          <input onkeyup="genValEngHeb(this.value, valid_refuse_details.id)" type="text" class="validate validate_refuse_details" name="Refuse_Details" id="refuse_details">
            <p class = "valid_alert" id = "valid_refuse_details"></p>
           <label for="refuse_details">מהי הסיבה בגינה בקשתכם להיכנס להודו נדחתה? אם ידוע לך, ציין תאריכים ושם האדם שדחה את בקשת הויזה</label>
          </div>
@@ -1071,7 +1071,7 @@
     <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_country_visited.id)" type="text" class="validate validate_country_visited" id="country_visited">
+          <input onkeyup="genValEngHeb(this.value, valid_country_visited.id)" type="text" class="validate validate_country_visited" name="Country_Visited" id="country_visited">
            <p class = "valid_alert" id = "valid_country_visited"></p>
           <label for="country_visited">מדינות אשר ביקרת בהן במהלך ה-10 שנים האחרונות (באנגלית בלבד)</label>
         </div>
@@ -1088,11 +1088,11 @@
 
     <div class="row">
      <div class="col s1">
-        <input name="saarc_flag" type="radio" id="saarc_flag1" />
+        <input value="כן" type="radio" name="Saarc_Flag" id="saarc_flag1" />
         <label for="saarc_flag1">כן</label>
      </div>
      <div class="col s6">
-        <input name="saarc_flag" type="radio" id="saarc_flag2" checked />
+        <input value="לא" type="radio" name="Saarc_Flag"  id="saarc_flag2" checked />
         <label for="saarc_flag2">לא</label>
      </div>       
     </div>
@@ -1104,33 +1104,33 @@
     <div id="dynamic_fields">
       <div class="row">
        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" id="saarcCountry1">
+          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
-            <option value="1">אפגניסטן</option>
-            <option value="1">בוטן</option>
-            <option value="1">פקיסטן</option>
-            <option value="1">מלדיביים</option>
-            <option value="1">בנגלדש</option>
-            <option value="1">סרי לנקה</option>
-            <option value="1">נפאל</option>
+            <option value="אפגניסטן">אפגניסטן</option>
+            <option value="בוטן">בוטן</option>
+            <option value="פקיסטן">פקיסטן</option>
+            <option value="מלדיביים">מלדיביים</option>
+            <option value="בנגלדש">בנגלדש</option>
+            <option value="לנקה">סרי לנקה</option>
+            <option value="נפאל">נפאל</option>
           </select>
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
-          <select class="browser-default" id="saarcYear1">
+          <select class="browser-default" name="SaarcYear1" id="saarcYear1">
             <option onchange="RemoveAlert(valid_saarcYear1.id)" value="" disabled selected>בחר שנה</option>
 			<!-- להציג רק 4 שנים אחרונות V-->
-            <option value="1">2017</option>
-            <option value="1">2017</option>
-            <option value="1">2017</option>
-            <option value="1">2017</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
           </select>
           <p class = "valid_alert" id = "valid_saarcYear1"></p>
         </div>
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input type="number" class="validate" id="saarcVisitNo" value="1">
+            <input value="1" type="number" class="validate" name="SaarcVisitNo" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
@@ -1152,21 +1152,21 @@
     <div class="section">      
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_nameofsponsor_ind.id)" type="text" class="validate validate_nameofsponsor_ind" id="nameofsponsor_ind">
+          <input onkeyup="genValEng(this.value, valid_nameofsponsor_ind.id)" type="text" class="validate validate_nameofsponsor_ind" name="Nameofsponsor_Ind" id="nameofsponsor_ind">
            <p class = "valid_alert" id = "valid_nameofsponsor_ind"></p>
           <label for="nameofsponsor_ind">שם איש הקשר בהודו, אם אין השאירו ריק</label>
         </div>
       </div>    
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_ind.id)" type="text" class="validate validate_add1ofsponsor_ind" id="add1ofsponsor_ind">
+          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_ind.id)" type="text" class="validate validate_add1ofsponsor_ind" name="Add1ofsponsor_Ind" id="add1ofsponsor_ind">
            <p class = "valid_alert" id = "valid_add1ofsponsor_ind"></p>
           <label for="add1ofsponsor_ind">כתובת איש הקשר בהודו, אם  אין השאירו ריק</label>
         </div>
       </div>     
       <div class="row">
         <div class="input-field col s6">
-          <input type="number" class="validate" id="phoneofsponsor_ind">
+          <input type="number" class="validate" name="Phoneofsponsor_Ind" id="phoneofsponsor_ind">
           <label for="phoneofsponsor_ind">טלפון של איש הקשר בהודו, אם אין, השאירו ריק</label>
         </div>
       </div> 
@@ -1176,21 +1176,21 @@
     <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_nameofsponsor_msn.id)" type="text" class="validate validate_nameofsponsor_msn" id="nameofsponsor_msn">
+          <input onkeyup="genValEng(this.value, valid_nameofsponsor_msn.id)" type="text" class="validate validate_nameofsponsor_msn" name="Nameofsponsor_Msn" id="nameofsponsor_msn">
            <p class = "valid_alert" id = "valid_nameofsponsor_msn"></p>
           <label for="nameofsponsor_msn">שם איש הקשר בישראל</label>
         </div>
       </div>    
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_msn.id)" type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn" id="add1ofsponsor_msn">
+          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_msn.id)" type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn" name="Add1ofsponsor_Msn" id="add1ofsponsor_msn">
            <p class = "valid_alert" id = "valid_add1ofsponsor_msn"></p>
           <label>כתובת איש הקשר בישראל</label>
         </div>
       </div>     
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_phoneofsponsor_msn.id)" type="text" class="validate" id="phoneofsponsor_msn">
+          <input onkeyup="RemoveAlertNum(this.value, valid_phoneofsponsor_msn.id)" type="text" class="validate" name="Phoneofsponsor_Msn" id="phoneofsponsor_msn">
           <p class = "valid_alert" id = "valid_phoneofsponsor_msn"></p>
           <label for="phoneofsponsor_msn">מספר טלפון של איש הקשר בישראל</label>
         </div>
