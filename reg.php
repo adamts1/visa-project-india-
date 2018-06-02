@@ -186,7 +186,7 @@
                   
           <div class="row">
             <div class="col s6">
-              <select onchange="RemoveAlert(valid_purpose_of_visit.id)" class="browser-default" name="purpose of visit" id="purpose_of_visit">
+              <select onchange="RemoveAlert(valid_purpose_of_visit.id)" class="browser-default" name="Purpose_Of_Visit" id="purpose_of_visit">
                 <option value="" disabled selected>מטרת הביקור</option>
                 <option value="RECREATION/SIGHT-SEEING">נופש\ביקור באתרים</option>
                 <option value="MEETING FRIENDS/RELATIVES">ביקור חברים\קרובי משפחה</option>
@@ -394,7 +394,7 @@
     <div id="naturalization">
       <div class="row">
         <div class="col s6">
-		      <select class="browser-default" name="Prev nationality" id="prev_nationality">
+		      <select class="browser-default" name="Prev_Nationality" id="prev_nationality">
             <option value="" disabled selected>אזרחות קודמת, במידה ואין דלג על שדה זה</option>
             <option value="ILS">Israel</option>
           </select>
@@ -981,7 +981,7 @@
        </div>        
        <div class="row">
         <div class="input-field col s6">
-          <input type="text" class="validate" id="old_visa_no">
+          <input type="text" class="validate" name="Old_Visa_No" id="old_visa_no">
           <p class = "valid_alert" id = "valid_old_visa_no"></p>          
           <label for="old_visa_no">מספר ויזה הישנה</label>
         </div>
