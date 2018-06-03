@@ -128,6 +128,29 @@ include 'conn.php';
      }
 
 
+     if (isset($_POST['SaarcVisitNo'])) {
+        //I used `new_course_name` as the loop termination condition, 
+        //but any of the 2 keys would have worked
+        for ($i = 0; $i < count($_POST['SaarcVisitNo']); $i++) {
+            $SaarcVisitNo1 = $_POST['SaarcVisitNo'][$i];
+            $SaarcYear11 = $_POST['SaarcYear1'][$i];
+            $SaarcCountry1 = $_POST['SaarcCountry'][$i];
+            // $new_course_name = 'dddd';
+            echo $SaarcYear11;
+        //here, inside the loop, run the database query using the 2 values above    
+        $query1 = "INSERT INTO test2 (Country, YearOfVisits, NumOfVisits) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1')";
+        if ($conn->query($query1) === TRUE) {
+            echo "New record created successfully";
+           }else {
+            echo "Error: " . $query1 . "<br>" . $conn->error;
+            }
+        // $query_init3->execute(array(
+          
+        //     "SaarcCountry" => $new_course_name
+        // ));
+        }
+        }
+
 //      $sql = "SELECT * FROM main";
 // $sth = $conn->query($sql);
 

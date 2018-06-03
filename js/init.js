@@ -108,15 +108,13 @@
 
 
     //////////// Dynamic field
+    var intId = 0;
     $("#add_fields").click(function () {
       var lastField = $("#dynamic_fields div:last");
-      // var lastField = $("#dynamic_fields");
-      var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
+      intId +=1;
       var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
       fieldWrapper.data("idx", intId);
-      var fName = $("<input type=\"text\" class=\"fieldname\" />");
-      var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-      var country = $("<div id=\"dynamic_fields\"><div class=\"row\"><div class=\"col s3\"><select class=\"browser-default\" id=\"saarcCountry1\"><option value=\"\" disabled selected>בחר מדינה</option><option value=\"1\">אפגניסטן</option><option value=\"1\">בוטן</option><option value=\"1\">פקיסטן</option><option value=\"1\">מלדיביים</option><option value=\"1\">בנגלדש</option><option value=\"1\">סרי לנקה</option><option value=\"1\">נפאל</option></select></div><div class=\"col s3\"><select class=\"browser-default\" id=\"saarcYear1\"><option value=\"\" disabled selected>בחר שנה</option><option value=\"1\">2018</option><option value=\"1\">2017</option><option value=\"1\">2016</option><option value=\"1\">2015</option></select></div><div class=\"col s3\"><div class=\"row\"><div class=\"input-field col s6\" style=\"margin-top:0;\"><input type=\"text\" class=\"validate\" id=\"saarcVisitNo\"><label for=\"saarcVisitNo\">מספר ביקורים</label></div></div></div></div></div>");
+      var country = $("<div class=\"row\"><div class=\"col s3\"><select class=\"browser-default\" name=\"SaarcCountry[]\" id=\"saarcCountry1\"><option value=\"\" disabled selected>בחר מדינה</option><option value=\"אפגניסטן\">אפגניסטן</option><option value=\"בוטן\">בוטן</option><option value=\"פקיסטן\">פקיסטן</option><option value=\"מלדיביים\">מלדיביים</option><option value=\"בנגלדש\">בנגלדש</option><option value=\"סרי לנקה<\">סרי לנקה</option><option value=\"נפאל\">נפאל</option></select></div><div class=\"col s3\"><select class=\"browser-default\" name=\"SaarcYear1\" id=\"saarcYear1\"><option value=\"\" disabled selected>בחר שנה</option><option value=\"2018\">2018</option><option value=\"אלפיים\">2017</option><option value=\"2016\">2016</option><option value=\"2015\">2015</option></select></div><div class=\"col s3\"><div class=\"row\"><div class=\"input-field col s6\" style=\"margin-top:0;\"><input type=\"text\" class=\"validate\" name=\"SaarcVisitNo[]\" id=\"saarcVisitNo\"><label for=\"saarcVisitNo\">מספר ביקורים</label></div></div></div></div>");
       var removeButton = $("<input type=\"button\" class=\"btn waves-effect waves-light material-icons center\" id=\"remove_dynamic\" value=\"X\" />");
       removeButton.click(function () {
         $(this).parent().remove();

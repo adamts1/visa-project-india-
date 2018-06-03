@@ -18,7 +18,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
-  <script src="js/validateBeforeGo.js"></script>
+  <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -1104,7 +1104,7 @@
     <div id="dynamic_fields">
       <div class="row">
        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry" id="saarcCountry1">
+          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
             <option value="אפגניסטן">אפגניסטן</option>
             <option value="בוטן">בוטן</option>
@@ -1117,7 +1117,7 @@
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
-          <select class="browser-default" name="SaarcYear1" id="saarcYear1">
+          <select class="browser-default" name="SaarcYear1[]" id="saarcYear1">
             <option onchange="RemoveAlert(valid_saarcYear1.id)" value="" disabled selected>בחר שנה</option>
 			<!-- להציג רק 4 שנים אחרונות V-->
             <option value="2018">2018</option>
@@ -1130,7 +1130,7 @@
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="1" type="number" class="validate" name="SaarcVisitNo" id="saarcVisitNo" >
+            <input value="1" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
@@ -1197,7 +1197,7 @@
       </div> 
         <!-- Submit button   -->
         <div class="sub_butt">   
-                <button class="btn waves-effect waves-light material-icons center" id = "submit" type="submit">
+                <button class="btn waves-effect waves-light material-icons center" name="submit" id = "submit" type="submit">
                   <span>שלח טופס</span>
                 </button>
         </div>
