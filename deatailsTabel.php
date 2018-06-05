@@ -127,27 +127,36 @@ include 'conn.php';
      echo "Error: " . $sql . "<br>" . $conn->error;
      }
 
+     
+
+
+        $sql1 = "SELECT  MAX(id) FROM main";
+        $sth1 = $conn->query($sql1);
+
+        while($result=mysqli_fetch_array($sth1)){  
+        $idOfMain = $result[0];
+         }
+        echo $idOfMain;
+                    
+                   
+
+       
+
 
      if (isset($_POST['SaarcVisitNo'])) {
-        //I used `new_course_name` as the loop termination condition, 
-        //but any of the 2 keys would have worked
+
         for ($i = 0; $i < count($_POST['SaarcVisitNo']); $i++) {
             $SaarcVisitNo1 = $_POST['SaarcVisitNo'][$i];
             $SaarcYear11 = $_POST['SaarcYear1'][$i];
             $SaarcCountry1 = $_POST['SaarcCountry'][$i];
-            // $new_course_name = 'dddd';
-            echo $SaarcYear11;
-        //here, inside the loop, run the database query using the 2 values above    
-        $query1 = "INSERT INTO test2 (Country, YearOfVisits, NumOfVisits) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1')";
+            
+        $query1 = "INSERT INTO test2 (Country, YearOfVisits, NumOfVisits, mainId) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1', '$idOfMain')";
         if ($conn->query($query1) === TRUE) {
             echo "New record created successfully";
            }else {
             echo "Error: " . $query1 . "<br>" . $conn->error;
             }
-        // $query_init3->execute(array(
-          
-        //     "SaarcCountry" => $new_course_name
-        // ));
+       
         }
         }
 

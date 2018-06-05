@@ -1117,8 +1117,8 @@
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
-          <select class="browser-default" name="SaarcYear1[]" id="saarcYear1">
-            <option onchange="RemoveAlert(valid_saarcYear1.id)" value="" disabled selected>בחר שנה</option>
+          <select onchange="RemoveAlert(valid_saarcYear1.id)"  class="browser-default" name="SaarcYear1[]" id="saarcYear1">
+            <option  value="" disabled selected>בחר שנה</option>
 			<!-- להציג רק 4 שנים אחרונות V-->
             <option value="2018">2018</option>
             <option value="2017">2017</option>
