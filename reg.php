@@ -49,7 +49,7 @@
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="deatailsTabel.php" enctype="multipart/form-data"> 
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -1232,15 +1232,6 @@
       </div>
     </div>
   </footer>
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-  <!-- <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/validFields.js"></script>
-  <script src="js/splitedForm.js"></script>
-  <script src="js/validateBeforeGo.js"></script>
-  <script src="js/emailValid.js"></script>
-  <script src="js/arrData.js"></script>
-  <script src="js/removeAlertDropdowm.js"></script> -->
   </body>
 </html>
 
