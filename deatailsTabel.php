@@ -1,9 +1,10 @@
 <?php
 include 'conn.php';
+include 'phpArray.php';
 session_start();
-
+$fieldsLength=count($fields);
+$bussinessLength=count($bussiness);
 $id = $_SESSION['id'];
-
 ?>
 <html lang="he">
 <head>
@@ -40,40 +41,71 @@ $id = $_SESSION['id'];
 if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
    $stmt->execute();
    $result = $stmt->get_result();
-   $row=$result->fetch_object();
-
-  
-
-
+   $row=$result->fetch_object(); 
 ?>
 <div class="row">
         <div class="col s12">
           <div class="row">
             <div class="col s6">
-
-<table>
-
-          
-<tr bgcolor='#f1f1f1'><td><b>סוג דרכון</b></td><td><?php echo $row->Passport_Type ?></td></tr>
-<tr><td><b>לאום</b></td><td><?php echo $row->Nationality ?></td></tr>
-<tr bgcolor='#f1f1f1'><td><b>שם משפחה</b></td><td><?php echo $row->Surename ?></td></tr>
-<tr><td><b>שם</b></td><td><?php echo $row->Given_Name ?></td></tr>
-          
-  
-    </table>
-
-    </div>
-    </div>
-    </div>
-    </div>
-
-
+            <h3>פרטים שמולאו</h3>
+            <h5>נא וודא שהפרטים שמילאת נכונים לפני שליחה, במידה והינך רוצה לתקן אחד אן יותר מהפרטים לחץ על על חזרה לטופס מילוי</h5>
+              <table class="centered" >
+                <?php
+                  for($x=0;$x<$fieldsLength;$x++)
+                    {
+                    $temp = $fields[$x][1];
+                ?>
+                 <tr><td><b><?php echo $fields[$x][0] ?></b></td><td width="70%"><?php echo $row->$temp ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
 <?php
-
+  if($row->Visa_Type =='2')
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>פרטי העסק</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$bussinessLength;$i++)
+                    {
+                    $bussiness_attr = $bussiness[$i][1];
+                ?>
+                 <tr><td><b><?php echo $bussiness[$i][0] ?></b></td><td width="70%"><?php echo $row->$bussiness_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
 }else{
   echo $conn->error;
 }
 ?>
+
+<div class="row">
+        <div class="col s12">
+            <div class="col s6">
+            <a class="waves-effect red lighten-1 btn">חזרה לתופס רישום</a>
+     
+            <a class="waves-effect green accent-3 btn ">אישור</a>
+            </div>
+          </div>
+        </div>
+</div>
+
   <footer class="page-footer orange">
     <div class="container">
       <div class="row right-align">

@@ -1,12 +1,6 @@
-   
-   
 <?php
-
 include 'conn.php';
-
 session_start();
-
-
    $PassportType = isset($_POST['passport_type']) ? $_POST['passport_type'] : '';
    $Nationality = isset($_POST['nationality']) ? $_POST['nationality'] : '';
    $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
@@ -115,13 +109,13 @@ session_start();
    $CompanyWebsite = isset($_POST['Company_Website']) ? $_POST['Company_Website'] : '';
    $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
    //Business fields pic
+   if (isset($_POST['Business_Card'])) {
    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
    $BusinessCard = file_get_contents($BusinessCard);
    $BusinessCard = base64_encode($BusinessCard);
-
-
-
-
+  }else{
+    $BusinessCard = '';
+  }
    $sql = "INSERT INTO main (Passport_Type, Nationality	, Port_Of_Arrival, Visa_Type, Purpose_Of_Visit,Passport_Image, Selfi_Image, Email, Validate_Email, Date_Of_Birth, Expected_Arrival_Date, Surename, Given_Name, Prev_Surname, Prev_Given_Name, Gender, Birth_Place, Country_Birth, National_Id_Number, Religion,	Identity_Marks, Education, Nationality_By_Birth, Prev_Nationality, At_Least_Two_Years, Passport_Number, Passport_Issue_Place, Passport_Issue_Date, Passport_Expiry_Date, Other_Passport, Other_Ppt_Country_Issue, Other_Ppt_No, Other_Ppt_Issue_Date, Other_Ppt_Issue_Place, Other_Ppt_Nationality, Address1, City_Town_Vllage, Pres_Country, State_Name, Pincode, Pres_Phone, Fthrname, Father_Nationality, Father_Previous_Nationality, Father_Place_Of_Birth, Father_Country_Of_Birth, Mother_Name, Mother_Nationality, Mother_Previous_Nationality, Mother_Place_Of_Birth, Mother_Country_Of_Birth, Marital_Status, Spouse_Name, Spouse_Nationality, Spouse_Previous_Nationality, Spouse_Place_Of_Birth, Spouse_Country_Of_Birth, Grandparent_Flag, Grandparent_Details, Occupation, Empname, Empdesignation, Empaddress, Empphone, Previous_Occupation, Prev_Org, Previous_Organization, Previous_Designation, Previous_Rank, Previous_Posting, Visa_Serreq_Id_1, Exitpoint, Old_Visa_Flag, Prv_Visit_Add1, Visited_City, Old_Visa_No, Old_Visa_Type_Id, Oldvisaissueplace, Oldvisaissuedate, Refuse_Flag, Refuse_Details, Country_Visited, Saarc_Flag, Nameofsponsor_Ind, Add1ofsponsor_Ind, Phoneofsponsor_Ind, Nameofsponsor_Msn, Add1ofsponsor_Msn, Phoneofsponsor_Msn, Business_Prep, Company_Name, Company_Address, Company_Phone, Company_Website, Nature_Of_Company, Business_Card)
    VALUES ('$PassportType','$Nationality', '$PortOfArrival', '$VisaType', '$PurposeOfVisit','$PassportImage','$SelfiImage','$Email','$ValidateEmail','$DateOfBirth','$ExpectedArrivalDate','$Surname','$GivenName','$PrevSurame','$PrevGivenName','$Gender','$BirthPlace','$CountryBirth','$NationalIdNumber','$Religion','$IdentityMarks','$Education', '$NationalityByBirth', '$PrevNationality','$AtLeastTwoYears', '$PassportNumber', '$PassportIssuePlace', '$PassportIssueDate', '$PassportExpiryDate', '$OtherPassport', '$OtherPptCountryIssue', '$OtherPptNo', '$OtherPpptIssueDate', '$OtherPptIssuePlace', '$OtherPptNationality', '$Address1', '$CityTownVillage', '$PresCountry', '$StateName', '$Pincode', '$PresPhone', '$Fthrname', '$FatherNationality','$FatherPreviousNationality', '$FatherPlaceOfBirth', '$FatherCountryOfBirth', '$MotherName', '$MotherNationality', '$MotherPreviousNationality', '$MotherPlaceOfBirth', '$MotherCountryOfBirth', '$MaritalStatus', '$SpouseName', '$SpouseNationality', '$SpousePreviousNationality', '$SpousePlaceOfBirth', '$SpouseCountryOfBirth', '$GrandparentFlag', '$GrandparentDetails', '$Occupation', '$Empname', '$Empdesignation', '$Empaddress', '$Empphone', '$PreviousOccupation', '$PrevOrg' , '$PreviousOrganization', '$PreviousDesignation', '$PreviousRank', '$PreviousPosting', '$VisaSerreqId1', '$Exitpoint', '$OldVisaFlag', '$PrvVisitAdd1', '$VisitedCity', '$OldVisaNo', '$OldVisaTypeId', '$Oldvisaissueplace' ,'$Oldvisaissuedate', '$RefuseFlag', '$RefuseDetails', '$CountryVisited', '$SaarcFlag', '$NameofsponsorInd', '$Add1ofsponsorInd', '$PhoneofsponsorInd', '$NameofsponsorMsn', '$Add1ofsponsorMsn', '$PhoneofsponsorMsn', '$BusinessPrep', '$CompanyName', '$CompanyAddress', '$CompanyPhone', '$CompanyWebsite', '$NatureOfCompany', '$BusinessCard')";
     if ($conn->query($sql) === TRUE) {
@@ -129,26 +123,14 @@ session_start();
     }else {
      echo "Error: " . $sql . "<br>" . $conn->error;
      }
-
-     
-
-
         $sql1 = "SELECT  MAX(id) FROM main";
         $sth1 = $conn->query($sql1);
-
         while($result=mysqli_fetch_array($sth1)){  
         $idOfMain = $result[0];
          }
 
          $_SESSION['id'] = $idOfMain;
-
-
-                    
-                   
-
-       
-
-
+         
      if (isset($_POST['SaarcCountry'])) {
 
         for ($i = 0; $i < count($_POST['SaarcVisitNo']); $i++) {
