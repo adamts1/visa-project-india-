@@ -1,11 +1,20 @@
 
 //Remove alert text from DropDown 
-function RemoveAlert(pElement) {
+function RemoveAlert(pElement){
     var obj0 = document.getElementById(pElement);
     obj0.innerText = '';
 }
-//Remove alert text from numbers fields 
 
+function sectionStatus(value, select, field) {
+    if (value == field) {
+            $("#"+select).show(400);
+          }
+          else {
+            $("#"+select).hide(400);
+          }
+}
+
+//Remove alert text from numbers fields 
 function RemoveAlertNum(value, select) {
     var re = /^[0-9]+$/;
     if (!re.test(value)) {
@@ -16,8 +25,8 @@ function RemoveAlertNum(value, select) {
         objNum.innerText = '';
     }
 }
-//Remove alert text from Datepicker fields fields 
 
+//Remove alert text from Datepicker fields fields 
 function RemoveAlertDate(DateElement) {
     var objDate = document.getElementById(DateElement);
     objDate.innerText = '';

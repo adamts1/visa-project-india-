@@ -5,6 +5,7 @@ session_start();
 $fieldsLength=count($fields);
 $bussinessLength=count($bussiness);
 $id = $_SESSION['id'];
+$_SESSION['idToUpdate'] = $id;
 ?>
 <html lang="he">
 <head>
@@ -65,7 +66,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
          </div>
   </div>
 <?php
-  if($row->Visa_Type =='2')
+  if($row->Visa_Type =='Bussiness')
   {
 ?>
     <div class="row">
@@ -98,8 +99,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 <div class="row">
         <div class="col s12">
             <div class="col s6">
-            <a class="waves-effect red lighten-1 btn">חזרה לתופס רישום</a>
-     
+            <a class="waves-effect red lighten-1 btn" onClick="document.location.href='updateForm.php'" /> חזרה לתופס רישום</a>
             <a class="waves-effect green accent-3 btn ">אישור</a>
             </div>
           </div>

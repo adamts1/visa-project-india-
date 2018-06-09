@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+include 'conn.php';
+session_start();
+$id = $_SESSION['id'];
+$_SESSION['idToUpdate'] = $id;
+if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row=$result->fetch_object(); }
+?>
 <html lang="he">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -18,7 +27,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
-  <script src="js/validateBeforeGo.js"></script>
+  <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -49,7 +58,7 @@
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data"> 
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="update.php" enctype="multipart/form-data"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -63,6 +72,7 @@
             <div class="col s6">
               <select onchange="RemoveAlert(valid_passport_type.id)" class="browser-default validate" name="passport_type" id="passport_type">
                 <option value=""  disabled selected>סוג הדרכון</option>
+                <option value="<?php echo $row->Passport_Type ?>" selected><?php echo $row->Passport_Type ?></option>
                 <option value="רגיל">רגיל</option>
                 <option value="מיוחד">מיוחד</option>
               </select>
@@ -71,6 +81,7 @@
             <div class="col s6">
               <select onchange="RemoveAlert(valid_nationality.id)" class="browser-default" name="nationality" id="nationality">
                 <option value="" disabled selected>לאום</option>
+                <option value=<?php echo $row->Nationality ?> selected><?php echo $row->Nationality ?></option>
                 <option value="ישראל">ישראל</option>
                 <!-- רשימת מדינות עם קוד מדינה -->
               </select>
@@ -81,6 +92,7 @@
             <div class="col s6">
               <select onchange="RemoveAlert(valid_port_of_arrival.id)" class="browser-default" name="port_of_arrival" id="port_of_arrival">
                 <option value="" disabled selected>נמל הגעה להודו</option>
+                <option value=<?php echo $row->Port_Of_Arrival ?> selected><?php echo $row->Port_Of_Arrival ?></option>
                 <option value="I022">AHMEDABAD AIRPORT</option>
                 <option value="I032">AMRITSAR AIRPORT</option>
                 <option value="I096">BAGDOGRA AIRPORT</option>
@@ -115,6 +127,7 @@
             <div class="col s6">
               <select  onchange="RemoveAlert(valid_visa_type.id); sectionStatus(this.value, visa_type_fields.id, 'Bussiness')" class="browser-default" name="visa_type" id="visa_type">
                 <option value="" disabled selected>סוג הויזה</option>
+                <option value=<?php echo $row->Visa_Type ?> selected><?php echo $row->Visa_Type ?></option>
                 <option value="תיירות">תיירות</option>
                 <option value="Bussiness">Bussiness</option>
               </select>
@@ -1104,7 +1117,7 @@
     <div id="dynamic_fields">
       <div class="row">
        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry" id="saarcCountry1">
+          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
             <option value="אפגניסטן">אפגניסטן</option>
             <option value="בוטן">בוטן</option>
@@ -1117,7 +1130,7 @@
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcYear1.id)"  class="browser-default" name="SaarcYear1" id="saarcYear1">
+          <select onchange="RemoveAlert(valid_saarcYear1.id)"  class="browser-default" name="SaarcYear1[]" id="saarcYear1">
             <option  value="" disabled selected>בחר שנה</option>
 			<!-- להציג רק 4 שנים אחרונות V-->
             <option value="2018">2018</option>
@@ -1130,7 +1143,7 @@
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="1" type="number" class="validate" name="SaarcVisitNo" id="saarcVisitNo" >
+            <input value="1" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>

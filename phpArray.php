@@ -49,7 +49,7 @@ $fields = array
   array("טלפון של איש קשר בהודו","Phoneofsponsor_Ind"),
   array("שם איש קשר בישראל","Nameofsponsor_Msn"),
   array("כתובת איש קשר בישראל","Add1ofsponsor_Msn"),
-  array("מספר טלפון של איש קשר בישראל","Expected_Arrival_Date"),
+  array("מספר טלפון של איש קשר בישראל","Phoneofsponsor_Msn"),
   );
 
   $bussiness = array
@@ -58,7 +58,8 @@ $fields = array
   array("כתובת החברה","Company_Address"),
   array("טלפון החברה","Company_Phone"),
   array("אתר אינטרנט החברה","Company_Website"),
-  array("תחום החברה","Nature_Of_Company")
+  array("תחום החברה","Nature_Of_Company"),
+  array("מטרת הביקור העסקי","Business_Prep")
   );
 
 

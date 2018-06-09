@@ -20,40 +20,19 @@
     }).trigger('change');
   });
 
+
+
   $(document).ready(function () {
 
 
-    $("#visa_type_fields").hide(); // Business owner dropdown
-    $('#visa_type').on('change', function () {
-      if (this.value == '2') {
-        $("#visa_type_fields").show(400);
-      }
-      else {
-        $("#visa_type_fields").hide(400);
-      }
-    });
+    $("#visa_type_fields").hide();
 
-    $("#married_field").hide(); // married dropdown
-    $('#marital_status').on('change', function () {
-      if (this.value == 'married') {
-        $("#married_field").show(400);
-      }
-      else {
-        $("#married_field").hide(400);
-      }
-    });
+    if($('#visa_type').val() == 'Bussiness'){ 
+        $('#visa_type_fields').show();   }
 
-    $("#naturalization").hide(); // naturalization dropdown
-    $('#nationality_by_birth').on('change', function () {
-      if (this.value == 'NATURALIZATION') {
-        // $("#valid_nationality_by_birth").text("");
+        $("#married_field").hide(); // married dropdown
+        $("#naturalization").hide(); // naturalization dropdown
 
-        $("#naturalization").show(400);
-      }
-      else {
-        $("#naturalization").hide(400);
-      }
-    });
 
 
     $("#lastCiti").hide();  // Last visa details radio

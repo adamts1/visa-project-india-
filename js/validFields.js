@@ -24,9 +24,12 @@ function GenricValidate(value,reg,select,text) {
         $(select).text(text);
     } else {
         $(select).text("");
-        
     }
 }
+
+
+
+
 $('#date_of_birth').pickadate({ 
   isRTL: true,
   // format: 'dd/mm/yyyy',
