@@ -63,6 +63,38 @@ $fields = array
   );
 
 
+  $changedName = array
+  (
+  array("שם משפחה קודם","Prev_Surname"),
+  array("שם פרטי קודם","Prev_Given_Name")
+  );
+
+  $naturalization = array
+  (
+  array("אזרחות קודמת","Prev_Nationality")
+  );
+
+  $otherPpt = array
+  (
+  array("מדינת הדרכון הנוסף","Other_Ppt_Country_Issue"),
+  array("מספר הדרכון הנוסף","Other_Ppt_No"),
+  array("תאריך הנפקה","Other_Ppt_Issue_Date"),
+  array("מקום הנפקה","Other_Ppt_Issue_Place"),
+  array("אזרחות הדרכון הנוסף כפי שרשומה בדרכון","Other_Ppt_Nationality")
+  );
+
+  $Marital = array
+  (
+  array("שם בן/בת זוג","Spouse_Name"),
+  array("אזרחות בן/בת זוג","Spouse_Nationality"),
+  array("אזרחות קודמת בן/בת זוג","Spouse_Previous_Nationality"),
+  array("","Spouse_Place_Of_Birth"),
+  array("ארץ לידה של בן/בת זוג","Spouse_Country_Of_Birth")
+  );
+
+
+
+
 
 
 ?>

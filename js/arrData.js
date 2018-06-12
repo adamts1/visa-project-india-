@@ -110,13 +110,9 @@ var arry_of_item = {
 
 "deniedField":[
     ["valid_prv_visit_add1", "refuse_details"],
-    ["valid_refuse_details", "visited_city"],
-],
-
-"dynamicFields":[
-    ["valid_saarcCountry1", "saarcCountry1"],
-    ["valid_saarcYear1", "saarcYear1"]
+    ["valid_refuse_details", "visited_city"]
 ]
+
 
 
 }

@@ -163,7 +163,7 @@ $sql = "UPDATE main SET Passport_Type='$PassportType' WHERE id=$id";
 // }
 // $conn->close();
 
-header('Location: deatailsTabel.php');
+header('Location: view.php');
 
 
     ?>

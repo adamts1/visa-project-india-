@@ -4,6 +4,10 @@ include 'phpArray.php';
 session_start();
 $fieldsLength=count($fields);
 $bussinessLength=count($bussiness);
+$changedNameLength=count($changedName);
+$naturalizationLength=count($naturalization);
+$otherPptLength=count($otherPpt);
+$MaritalLength=count($Marital);
 $id = $_SESSION['id'];
 $_SESSION['idToUpdate'] = $id;
 ?>
@@ -91,6 +95,106 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   </div>
   <?php
   }
+  if($row->Prev_Surname != null)
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>שם ושם משפחה קודמים</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$changedNameLength;$i++)
+                    {
+                      $changedName_attr = $changedName[$i][1];
+                ?>
+                 <tr><td><b><?php echo $changedName[$i][0] ?></b></td><td width="70%"><?php echo $row->$changedName_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Nationality_By_Birth == "NATURALIZATION")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>אזרחות קודמת</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$naturalizationLength;$i++)
+                    {
+                      $naturalization_attr = $naturalization[$i][1];
+                ?>
+                 <tr><td><b><?php echo $naturalization[$i][0] ?></b></td><td width="70%"><?php echo $row->$naturalization_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Other_Passport == "Yes")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>דרכון נוסף</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$otherPptLength;$i++)
+                    {
+                      $otherPpt_attr = $otherPpt[$i][1];
+                ?>
+                 <tr><td><b><?php echo $otherPpt[$i][0] ?></b></td><td width="70%"><?php echo $row->$otherPpt_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Marital_Status == "married")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>פרטי בן/בת זוג</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$MaritalLength;$i++)
+                    {
+                      $Marital_attr = $Marital[$i][1];
+                ?>
+                 <tr><td><b><?php echo $Marital[$i][0] ?></b></td><td width="70%"><?php echo $row->$Marital_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
 }else{
   echo $conn->error;
 }
@@ -99,7 +203,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 <div class="row">
         <div class="col s12">
             <div class="col s6">
-            <a class="waves-effect red lighten-1 btn" onClick="document.location.href='updateForm.php'" /> חזרה לתופס רישום</a>
+            <a class="waves-effect red lighten-1 btn" onClick="document.location.href='edit.php'" /> חזרה לתופס רישום</a>
             <a class="waves-effect green accent-3 btn ">אישור</a>
             </div>
           </div>

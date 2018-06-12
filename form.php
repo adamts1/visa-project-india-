@@ -1,13 +1,4 @@
-<?php
-include 'conn.php';
-session_start();
-
-$id = $_SESSION['idToUpdate'];
-if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row=$result->fetch_object(); }
-?>
+<!DOCTYPE html>
 <html lang="he">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -58,7 +49,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="insert.php" enctype="multipart/form-data"> 
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="create.php" enctype="multipart/form-data"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -72,7 +63,6 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
             <div class="col s6">
               <select onchange="RemoveAlert(valid_passport_type.id)" class="browser-default validate" name="passport_type" id="passport_type">
                 <option value=""  disabled selected>סוג הדרכון</option>
-                <option value="<?php echo $row->Passport_Type ?>" selected><?php echo $row->Passport_Type ?></option>
                 <option value="רגיל">רגיל</option>
                 <option value="מיוחד">מיוחד</option>
               </select>
@@ -80,9 +70,8 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
             </div>
             <div class="col s6">
               <select onchange="RemoveAlert(valid_nationality.id)" class="browser-default" name="nationality" id="nationality">
-                <option value=""  disabled selected>לאום</option>
-                <option value=<?php echo $row->Nationality ?> selected><?php echo $row->Nationality ?></option>
-                <option value="ILS">ישראל</option>
+                <option value="" disabled selected>לאום</option>
+                <option value="ישראל">ישראל</option>
                 <!-- רשימת מדינות עם קוד מדינה -->
               </select>
               <p class = "valid_alert" id = "valid_nationality"></p>              
@@ -92,7 +81,6 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
             <div class="col s6">
               <select onchange="RemoveAlert(valid_port_of_arrival.id)" class="browser-default" name="port_of_arrival" id="port_of_arrival">
                 <option value="" disabled selected>נמל הגעה להודו</option>
-                <option value=<?php echo $row->Port_Of_Arrival ?> selected><?php echo $row->Port_Of_Arrival ?></option>
                 <option value="I022">AHMEDABAD AIRPORT</option>
                 <option value="I032">AMRITSAR AIRPORT</option>
                 <option value="I096">BAGDOGRA AIRPORT</option>
@@ -125,9 +113,8 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
               
             </div>
             <div class="col s6">
-              <select  onchange="RemoveAlert(valid_visa_type.id)" class="browser-default" name="visa_type" id="visa_type">
+              <select  onchange="RemoveAlert(valid_visa_type.id); sectionStatus(this.value, visa_type_fields.id, 'Bussiness')" class="browser-default" name="visa_type" id="visa_type">
                 <option value="" disabled selected>סוג הויזה</option>
-                <option value=<?php echo $row->Visa_Type ?> selected><?php echo $row->Visa_Type ?></option>
                 <option value="תיירות">תיירות</option>
                 <option value="Bussiness">Bussiness</option>
               </select>
@@ -391,7 +378,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 	  
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_nationality_by_birth.id)" class="browser-default" name="Nationality_By_Birth" id="nationality_by_birth">
+          <select onchange="RemoveAlert(valid_nationality_by_birth.id); sectionStatus(this.value, naturalization.id, 'NATURALIZATION')" class="browser-default" name="Nationality_By_Birth" id="nationality_by_birth">
             <option value="" disabled selected>האם קיבלת אזרחות מלידה או התאזרחות?</option>
             <option value="BY BIRTH">מלידה</option>
             <option value="NATURALIZATION">התאזרחות</option>
@@ -690,7 +677,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div class="section">      
       <div class="row">
         <div class="col s6">
-          <select onchange="RemoveAlert(valid_marital_status.id)" class="browser-default" name="Marital_Status" id="marital_status">
+          <select onchange="RemoveAlert(valid_marital_status.id); sectionStatus(this.value, married_field.id, 'married')" class="browser-default" name="Marital_Status" id="marital_status">
             <option value="" disabled selected>מצב משפחתי</option>
             <option value="single">רווק</option>
             <option value="married">נשוי</option>
@@ -1117,7 +1104,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div id="dynamic_fields">
       <div class="row">
        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
+          <select  class="browser-default" name="SaarcCountry1[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
             <option value="אפגניסטן">אפגניסטן</option>
             <option value="בוטן">בוטן</option>
@@ -1130,7 +1117,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
         <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcYear1.id)"  class="browser-default" name="SaarcYear1[]" id="saarcYear1">
+          <select   class="browser-default" name="SaarcYear1[]" id="saarcYear1">
             <option  value="" disabled selected>בחר שנה</option>
 			<!-- להציג רק 4 שנים אחרונות V-->
             <option value="2018">2018</option>
@@ -1143,7 +1130,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="1" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
+            <input value="1" type="number" class="validate" name="SaarcVisitNo" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
@@ -1211,7 +1198,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
         <!-- Submit button   -->
         <div class="sub_butt">   
                 <button class="btn waves-effect waves-light material-icons center" name="submit" id = "submit" type="submit">
-                  <span>עדכן טופס</span>
+                  <span>שלח טופס</span>
                 </button>
         </div>
           <!-- End of submit button -->

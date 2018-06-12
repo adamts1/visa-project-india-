@@ -11,7 +11,7 @@ function validateForm() {
     var armyField = arry_of_item.armyField;
     var lastCiti = arry_of_item.lastCiti;
     var deniedField = arry_of_item.deniedField;
-    var dynamicFields = arry_of_item.dynamicFields;
+    // var dynamicFields = arry_of_item.dynamicFields; /TBD
 
  //Arry of all the arry in arrData.js
     var sctions = [
@@ -22,7 +22,7 @@ function validateForm() {
         ["#previous_posting", armyField],
         ["#lastCiti", lastCiti],
         ["#refuse_details", deniedField],
-        ["#dynamic_fields", dynamicFields],
+        // ["#dynamic_fields", dynamicFields], /TBD
     ];
 
     // Conacatinate data to arry acording to the apearance in the form

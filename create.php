@@ -157,7 +157,7 @@ session_start();
 // }
 // $conn->close();
 
-header('Location: deatailsTabel.php');
+header('Location: view.php');
 
 
     ?>
