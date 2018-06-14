@@ -8,6 +8,10 @@ $changedNameLength=count($changedName);
 $naturalizationLength=count($naturalization);
 $otherPptLength=count($otherPpt);
 $MaritalLength=count($Marital);
+$GranbparentLength=count($Granbparent);
+$PrevOrgLength=count($PrevOrg);
+$OldvisaLength=count($Oldvisa);
+$RefuseLength=count($Refuse);
 $id = $_SESSION['id'];
 $_SESSION['idToUpdate'] = $id;
 ?>
@@ -185,6 +189,106 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
                       $Marital_attr = $Marital[$i][1];
                 ?>
                  <tr><td><b><?php echo $Marital[$i][0] ?></b></td><td width="70%"><?php echo $row->$Marital_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Grandparent_Flag == "Yes")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>קשר משפחתי לפקיסטן</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$GranbparentLength;$i++)
+                    {
+                      $Granbparent_attr = $Granbparent[$i][1];
+                ?>
+                 <tr><td><b><?php echo $Granbparent[$i][0] ?></b></td><td width="70%"><?php echo $row->$Granbparent_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Prev_Org == "Yes")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>שירות צבאי</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$PrevOrgLength;$i++)
+                    {
+                      $PrevOrg_attr = $PrevOrg[$i][1];
+                ?>
+                 <tr><td><b><?php echo $PrevOrg[$i][0] ?></b></td><td width="70%"><?php echo $row->$PrevOrg_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Old_Visa_Flag == "Yes")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>פרטי ויזה קודמת</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$OldvisaLength;$i++)
+                    {
+                      $Oldvisa_attr = $Oldvisa[$i][1];
+                ?>
+                 <tr><td><b><?php echo $Oldvisa[$i][0] ?></b></td><td width="70%"><?php echo $row->$Oldvisa_attr ?></td></tr>
+                  <?php
+                   }
+                  ?>
+              </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  }
+  if($row->Refuse_Flag == "Yes")
+  {
+?>
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s6">
+            <h4>דחיית בקשה לויזה</h4>
+              <table class="centered" >
+                <?php
+                  for($i=0;$i<$RefuseLength;$i++)
+                    {
+                      $Refuse_attr = $Refuse[$i][1];
+                ?>
+                 <tr><td><b><?php echo $Refuse[$i][0] ?></b></td><td width="70%"><?php echo $row->$Refuse_attr ?></td></tr>
                   <?php
                    }
                   ?>

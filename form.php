@@ -740,15 +740,13 @@
 האם יש להוריך או סביך קשר לפקיסטן? סמן כן או לא
       </div>
      </div>
-
-	  
       <div class="row">
        <div class="col s1">
-          <input value="כן" type="radio" name="Grandparent_Flag" id="grandparent_flag1" />
+          <input value="Yes" type="radio" name="Grandparent_Flag" id="grandparent_flag1" />
           <label for="grandparent_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input value="לא" type="radio" name="Grandparent_Flag" id="grandparent_flag2" />
+          <input value="No" type="radio" name="Grandparent_Flag" id="grandparent_flag2" />
           <label for="grandparent_flag2">לא</label>
        </div>       
       </div> 
@@ -823,11 +821,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input value="כן"  type="radio" name="Prev_Org" id="prev_org1" />
+          <input value="Yes"  type="radio" name="Prev_Org" id="prev_org1" />
           <label for="prev_org1">כן</label>
        </div>
        <div class="col s6">
-          <input value="לא"  type="radio" name="Prev_Org" id="prev_org2" />
+          <input value="No"  type="radio" name="Prev_Org" id="prev_org2" />
           <label for="prev_org2">לא</label>
        </div>       
       </div> 
@@ -951,11 +949,11 @@
       </div>
       <div class="row">
        <div class="col s1">
-          <input class="old_visa_flag1" type="radio" name="Old_Visa_Flag" id="old_visa_flag1" />
+          <input value="Yes" class="old_visa_flag1" type="radio" name="Old_Visa_Flag" id="old_visa_flag1" />
           <label for="old_visa_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input type="radio" name="Old_Visa_Flag" id="old_visa_flag2" checked />
+          <input value="No" type="radio" name="Old_Visa_Flag" id="old_visa_flag2" checked />
           <label for="old_visa_flag2">לא</label>
        </div>       
       </div> 
@@ -1044,11 +1042,11 @@
 
       <div class="row">
        <div class="col s1">
-          <input value="כן" type="radio" name="Refuse_Flag" id="refuse_flag1" />
+          <input value="Yes" type="radio" name="Refuse_Flag" id="refuse_flag1" />
           <label for="refuse_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input value="לא" type="radio" name="Refuse_Flag" id="refuse_flag2"  checked/>
+          <input value="No" type="radio" name="Refuse_Flag" id="refuse_flag2"  checked/>
           <label for="refuse_flag2">לא</label>
        </div>       
       </div>

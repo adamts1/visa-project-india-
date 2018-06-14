@@ -91,6 +91,34 @@ $fields = array
   array("","Spouse_Place_Of_Birth"),
   array("ארץ לידה של בן/בת זוג","Spouse_Country_Of_Birth")
   );
+  
+  $Granbparent = array
+  (
+  array("קשר משפחתי לפקיסטן","Grandparent_Details")
+  );
+
+  $PrevOrg = array
+  (
+  array("ארגון (צבא.משטרה אחר)","Previous_Organization"),
+  array("חיל","Previous_Designation"),
+  array("דרגה","Previous_Rank"),
+  array("מקום השירות","Previous_Posting")
+  );
+
+  $Oldvisa = array
+  (
+  array("כתובת בה ביקרת","Prv_Visit_Add1"),
+  array("ערים בן ביקרת","Visited_City"),
+  array("מספר ויזה ישנה","Old_Visa_No"),
+  array("סוג הויזה הישנה","Old_Visa_Type_Id"),
+  array("מקום הנפקת הויזה הקודמת","Oldvisaissueplace"),
+  array("תאריך הנפקת הויזה הישנה","Oldvisaissuedate")
+  );
+
+  $Refuse = array
+  (
+  array("סיבת דחיה","Refuse_Details"),
+  );
 
 
 
