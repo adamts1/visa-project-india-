@@ -5,35 +5,39 @@ session_start();
    $_SESSION['idToUpdate'] = $id;
    $PassportType = isset($_POST['passport_type']) ? $_POST['passport_type'] : '';
    $Nationality = isset($_POST['nationality']) ? $_POST['nationality'] : '';
-//    $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
-//    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
-//    $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
-//    //Passport pic
-//    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
-//    $PassportImage = file_get_contents($PassportImage);
-//    $PassportImage = base64_encode($PassportImage);
-//    //Selfi pic
-//    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
-//    $SelfiImage = file_get_contents($SelfiImage);
-//    $SelfiImage = base64_encode($SelfiImage);
-//    //
-//    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
-//    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
-//    $DateOfBirth = isset($_POST['date_of_birth']) ? $_POST['date_of_birth'] : '';
-//    $ExpectedArrivalDate = isset($_POST['expected_arrival_date']) ? $_POST['expected_arrival_date'] : '';
-//    $Surname = isset($_POST['surname']) ? $_POST['surname'] : '';
-//    $GivenName = isset($_POST['given_name']) ? $_POST['given_name'] : '';
-//    $PrevSurame = isset($_POST['Prev_Surname']) ? $_POST['Prev_Surname'] : '';
-//    $PrevGivenName = isset($_POST['Prev_Given_Name']) ? $_POST['Prev_Given_Name'] : '';
-//    $Gender = isset($_POST['Gender']) ? $_POST['Gender'] : '';
-//    $BirthPlace = isset($_POST['Birth_Place']) ? $_POST['Birth_Place'] : '';
-//    $CountryBirth = isset($_POST['Country_Birth']) ? $_POST['Country_Birth'] : '';
-//    $NationalIdNumber = isset($_POST['National_Id_Number']) ? $_POST['National_Id_Number'] : '';
-//    $Religion = isset($_POST['Religion']) ? $_POST['Religion'] : '';
-//    $IdentityMarks = isset($_POST['Identity_Marks']) ? $_POST['Identity_Marks'] : '';
-//    $Education = isset($_POST['Education']) ? $_POST['Education'] : '';
-//    $NationalityByBirth = isset($_POST['Nationality_By_Birth']) ? $_POST['Nationality_By_Birth'] : '';
-//    $PrevNationality = isset($_POST['Prev_Nationality']) ? $_POST['Prev_Nationality'] : '';
+   $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
+   $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
+   $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
+   //Passport pic
+   $PassportImage = $_FILES['Passport_Image']['tmp_name'];
+   $PassportImage = file_get_contents($PassportImage);
+   $PassportImage = base64_encode($PassportImage);
+   $PassportImage1 = $_FILES['Passport_Image'][name];
+   $_SESSION['passportimage'] = $PassportImage1;
+   //Selfi pic
+   $SelfiImage = $_FILES['selfi_image']['tmp_name'];
+   $SelfiImage = file_get_contents($SelfiImage);
+   $SelfiImage = base64_encode($SelfiImage);
+   $SelfiImage1 = $_FILES['selfi_image'][name];
+   $_SESSION['selfiimage'] = $SelfiImage1;
+   //
+   $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
+   $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
+   $DateOfBirth = isset($_POST['date_of_birth']) ? $_POST['date_of_birth'] : '';
+   $ExpectedArrivalDate = isset($_POST['expected_arrival_date']) ? $_POST['expected_arrival_date'] : '';
+   $Surname = isset($_POST['surname']) ? $_POST['surname'] : '';
+   $GivenName = isset($_POST['given_name']) ? $_POST['given_name'] : '';
+   $PrevSurame = isset($_POST['Prev_Surname']) ? $_POST['Prev_Surname'] : '';
+   $PrevGivenName = isset($_POST['Prev_Given_Name']) ? $_POST['Prev_Given_Name'] : '';
+   $Gender = isset($_POST['Gender']) ? $_POST['Gender'] : '';
+   $BirthPlace = isset($_POST['Birth_Place']) ? $_POST['Birth_Place'] : '';
+   $CountryBirth = isset($_POST['Country_Birth']) ? $_POST['Country_Birth'] : '';
+   $NationalIdNumber = isset($_POST['National_Id_Number']) ? $_POST['National_Id_Number'] : '';
+   $Religion = isset($_POST['Religion']) ? $_POST['Religion'] : '';
+   $IdentityMarks = isset($_POST['Identity_Marks']) ? $_POST['Identity_Marks'] : '';
+   $Education = isset($_POST['Education']) ? $_POST['Education'] : '';
+   $NationalityByBirth = isset($_POST['Nationality_By_Birth']) ? $_POST['Nationality_By_Birth'] : '';
+   $PrevNationality = isset($_POST['Prev_Nationality']) ? $_POST['Prev_Nationality'] : '';
 //    $AtLeastTwoYears = isset($_POST['At_Least_Two_Years']) ? $_POST['At_Least_Two_Years'] : '';
 //    $PassportNumber = isset($_POST['Passport_Number']) ? $_POST['Passport_Number'] : '';
 //    $PassportIssuePlace = isset($_POST['Passport_Issue_Place']) ? $_POST['Passport_Issue_Place'] : '';
@@ -104,24 +108,31 @@ session_start();
 //    $Add1ofsponsorMsn = isset($_POST['Add1ofsponsor_Msn']) ? $_POST['Add1ofsponsor_Msn'] : '';
 //    $PhoneofsponsorMsn = isset($_POST['Phoneofsponsor_Msn']) ? $_POST['Phoneofsponsor_Msn'] : '';
 //    //////////////Business
-//    $BusinessPrep = isset($_POST['Business_Prep']) ? $_POST['Business_Prep'] : '';
-//    $CompanyName = isset($_POST['Company_Name']) ? $_POST['Company_Name'] : '';
-//    $CompanyAddress = isset($_POST['Company_Address']) ? $_POST['Company_Address'] : '';
-//    $CompanyPhone = isset($_POST['Company_Phone']) ? $_POST['Company_Phone'] : '';
-//    $CompanyWebsite = isset($_POST['Company_Website']) ? $_POST['Company_Website'] : '';
-//    $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
-//    //Business fields pic
-//    if (isset($_POST['Business_Card'])) {
-//    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
-//    $BusinessCard = file_get_contents($BusinessCard);
-//    $BusinessCard = base64_encode($BusinessCard);
-//   }else{
-//     $BusinessCard = '';
-//   }
+   $BusinessPrep = isset($_POST['Business_Prep']) ? $_POST['Business_Prep'] : '';
+   $CompanyName = isset($_POST['Company_Name']) ? $_POST['Company_Name'] : '';
+   $CompanyAddress = isset($_POST['Company_Address']) ? $_POST['Company_Address'] : '';
+   $CompanyPhone = isset($_POST['Company_Phone']) ? $_POST['Company_Phone'] : '';
+   $CompanyWebsite = isset($_POST['Company_Website']) ? $_POST['Company_Website'] : '';
+   $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
+   //Business fields pic
+   if (isset($_POST['Business_Card_txt'])) {
+   $BusinessCard = $_FILES['Business_Card']['tmp_name'];
+   $BusinessCard = file_get_contents($BusinessCard);
+   $BusinessCard = base64_encode($BusinessCard);
+   $BusinessCard1 = $_FILES['Business_Card'][name];
+   $_SESSION['businesscard'] = $BusinessCard1;
+  }else{
+    $BusinessCard = '';
+  }
 //    $sql = "UPDATE main (Passport_Type)
 //    SET (Passport_Type ='$PassportType')
 //    WHERE (id =$id)";
-$sql = "UPDATE main SET Passport_Type='$PassportType' WHERE id=$id";
+$sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality', Port_Of_Arrival='$PortOfArrival', visa_type='$VisaType',
+  Purpose_Of_Visit='$PurposeOfVisit',Business_Prep='$BusinessPrep', Company_Name='$CompanyName', Company_Address='$CompanyAddress',
+  Company_Phone='$CompanyPhone', Company_Website='$CompanyWebsite', Nature_Of_Company='$NatureOfCompany', Business_Card='$BusinessCard', Passport_Image='$PassportImage', selfi_image='$SelfiImage',
+  Email='$Email', Validate_Email='$ValidateEmail', Date_Of_Birth='$DateOfBirth', Expected_Arrival_Date='$ExpectedArrivalDate', Surename='$Surname', Given_Name='$GivenName', Prev_Surname='$PrevSurame', Prev_Given_Name='$PrevGivenName',
+  Gender='$Gender',Birth_Place='$BirthPlace', Country_Birth='$CountryBirth', National_Id_Number='$NationalIdNumber', Religion='$Religion', Identity_Marks='$IdentityMarks', Education='$Education',Nationality_By_Birth='$NationalityByBirth',
+  Prev_Nationality= '$PrevNationality' WHERE id=$id";
 
     
     if ($conn->query($sql) === TRUE) {

@@ -2,6 +2,8 @@
 include 'conn.php';
 include 'phpArray.php';
 session_start();
+echo $_SESSION['myValue'];
+
 //count of attar of each optional section
 $fieldsLength=count($fields);
 $bussinessLength=count($bussiness);
@@ -66,6 +68,8 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
                     {
                     $fields_attr = $fields[$x][1];
                 ?>
+           
+
                  <tr><td><b><?php echo $fields[$x][0] ?></b></td><td width="70%"><?php echo $row->$fields_attr ?></td></tr>
                   <?php
                    }

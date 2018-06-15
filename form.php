@@ -175,7 +175,7 @@
                 <input type="file" name="Business_Card" id="business_card">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="business_card_txt">
+                <input class="file-path validate" type="text" name="Business_Card_txt" id="business_card_txt">
                 <p class = "valid_alert" id = "valid_business_card_txt"></p>              
 
               </div>

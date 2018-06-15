@@ -10,10 +10,15 @@ session_start();
    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
    $PassportImage = file_get_contents($PassportImage);
    $PassportImage = base64_encode($PassportImage);
+   $PassportImage1 = $_FILES['Passport_Image'][name];
+   $_SESSION['passportimage'] = $PassportImage1;
+
    //Selfi pic
    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
    $SelfiImage = file_get_contents($SelfiImage);
    $SelfiImage = base64_encode($SelfiImage);
+   $SelfiImage1 = $_FILES['selfi_image'][name];
+   $_SESSION['selfiimage'] = $SelfiImage1;
    //
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
@@ -109,10 +114,13 @@ session_start();
    $CompanyWebsite = isset($_POST['Company_Website']) ? $_POST['Company_Website'] : '';
    $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
    //Business fields pic
-   if (isset($_POST['Business_Card'])) {
+   if (isset($_POST['Business_Card_txt'])) {
    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
    $BusinessCard = file_get_contents($BusinessCard);
    $BusinessCard = base64_encode($BusinessCard);
+   $BusinessCard1 = $_FILES['Business_Card'][name];
+   $_SESSION['businesscard'] = $BusinessCard1;
+
   }else{
     $BusinessCard = '';
   }
