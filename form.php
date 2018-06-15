@@ -1102,7 +1102,7 @@
     <div id="dynamic_fields">
       <div class="row">
        <div class="col s3">
-          <select  class="browser-default" name="SaarcCountry1[]" id="saarcCountry1">
+          <select  class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
             <option value="אפגניסטן">אפגניסטן</option>
             <option value="בוטן">בוטן</option>
@@ -1128,7 +1128,7 @@
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="1" type="number" class="validate" name="SaarcVisitNo" id="saarcVisitNo" >
+            <input value="1" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>

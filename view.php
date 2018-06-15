@@ -2,6 +2,7 @@
 include 'conn.php';
 include 'phpArray.php';
 session_start();
+//count of attar of each optional section
 $fieldsLength=count($fields);
 $bussinessLength=count($bussiness);
 $changedNameLength=count($changedName);
@@ -51,20 +52,21 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
    $stmt->execute();
    $result = $stmt->get_result();
    $row=$result->fetch_object(); 
+   //Show general details
 ?>
 <div class="row">
         <div class="col s12">
           <div class="row">
             <div class="col s6">
             <h3>פרטים שמולאו</h3>
-            <h5>נא וודא שהפרטים שמילאת נכונים לפני שליחה, במידה והינך רוצה לתקן אחד אן יותר מהפרטים לחץ על על חזרה לטופס מילוי</h5>
+            <h5>נא וודא שהפרטים שמילאת נכונים לפני שליחה, במידה והינך רוצה לתקן אחד או יותר מהפרטים לחץ על על חזרה לטופס מילוי</h5>
               <table class="centered" >
                 <?php
                   for($x=0;$x<$fieldsLength;$x++)
                     {
-                    $temp = $fields[$x][1];
+                    $fields_attr = $fields[$x][1];
                 ?>
-                 <tr><td><b><?php echo $fields[$x][0] ?></b></td><td width="70%"><?php echo $row->$temp ?></td></tr>
+                 <tr><td><b><?php echo $fields[$x][0] ?></b></td><td width="70%"><?php echo $row->$fields_attr ?></td></tr>
                   <?php
                    }
                   ?>
@@ -76,6 +78,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 <?php
   if($row->Visa_Type =='Bussiness')
   {
+       //Show bussiness details
 ?>
     <div class="row">
         <div class="col s12">
@@ -101,6 +104,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   }
   if($row->Prev_Surname != null)
   {
+    //Show previous details
 ?>
     <div class="row">
         <div class="col s12">
@@ -125,6 +129,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <?php
   }
   if($row->Nationality_By_Birth == "NATURALIZATION")
+  //Show nationalization details
   {
 ?>
     <div class="row">
@@ -299,6 +304,34 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   </div>
   <?php
   }
+  $sql = "SELECT * FROM test2 WHERE mainId = $id ";
+  $result = $conn->query($sql);
+  ?>
+  <?php
+  if ($result->num_rows > 0) {
+    //Show dynamic fiels details 
+    ?>
+    <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s6">
+        <h4>ביקורים בדרום אסיה</h4>
+          <table class="centered" >
+          <tr><td width="34%"><b>מדינה</b></td><td width="33%"><b>שנה</b></td></td><td width="33%"><b>מספר ביקורים</b></td></tr>
+
+      <?php   
+      while($row = $result->fetch_assoc()) { ?>
+          <tr><td width="34%"><?php echo $row["Country"] ?></td><td width="33%"><?php echo $row["YearOfVisits"] ?></td></td><td width="33%"><?php echo $row["NumOfVisits"] ?></td></tr>
+<?php
+      }
+      ?>
+                </table>
+             </div>
+          </div>
+         </div>
+  </div>
+  <?php
+  } 
 }else{
   echo $conn->error;
 }

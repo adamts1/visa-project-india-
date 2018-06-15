@@ -72,7 +72,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
             <div class="col s6">
               <select onchange="RemoveAlert(valid_passport_type.id)" class="browser-default validate" name="passport_type" id="passport_type">
                 <option value=""  disabled selected>סוג הדרכון</option>
-                <option value="<?php echo $row->Passport_Type ?>" selected><?php echo $row->Passport_Type ?></option>
+                <option value=<?php echo $row->Passport_Type ?> selected><?php echo $row->Passport_Type ?></option>
                 <option value="רגיל">רגיל</option>
                 <option value="מיוחד">מיוחד</option>
               </select>
