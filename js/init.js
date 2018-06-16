@@ -22,8 +22,10 @@
 
 
 
+
   $(document).ready(function () {
 
+    
 
     $("#visa_type_fields").hide();
 

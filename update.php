@@ -20,6 +20,7 @@ session_start();
    $SelfiImage = base64_encode($SelfiImage);
    $SelfiImage1 = $_FILES['selfi_image'][name];
    $_SESSION['selfiimage'] = $SelfiImage1;
+   $_SESSION['SelfiImageFile'] = $SelfiImage;
    //
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
@@ -38,47 +39,47 @@ session_start();
    $Education = isset($_POST['Education']) ? $_POST['Education'] : '';
    $NationalityByBirth = isset($_POST['Nationality_By_Birth']) ? $_POST['Nationality_By_Birth'] : '';
    $PrevNationality = isset($_POST['Prev_Nationality']) ? $_POST['Prev_Nationality'] : '';
-//    $AtLeastTwoYears = isset($_POST['At_Least_Two_Years']) ? $_POST['At_Least_Two_Years'] : '';
-//    $PassportNumber = isset($_POST['Passport_Number']) ? $_POST['Passport_Number'] : '';
-//    $PassportIssuePlace = isset($_POST['Passport_Issue_Place']) ? $_POST['Passport_Issue_Place'] : '';
-//    $PassportIssueDate = isset($_POST['Passport_Issue_Date']) ? $_POST['Passport_Issue_Date'] : '';
-//    $PassportExpiryDate = isset($_POST['Passport_Expiry_Date']) ? $_POST['Passport_Expiry_Date'] : '';
-//    $OtherPassport = isset($_POST['Other_Passport']) ? $_POST['Other_Passport'] : '';
-//    $OtherPptCountryIssue = isset($_POST['Other_Ppt_Country_Issue']) ? $_POST['Other_Ppt_Country_Issue'] : '';
-//    $OtherPptNo = isset($_POST['Other_Ppt_No']) ? $_POST['Other_Ppt_No'] : '';
-//    $OtherPpptIssueDate = isset($_POST['Other_Ppt_Issue_Date']) ? $_POST['Other_Ppt_Issue_Date'] : '';
-//    $OtherPptIssuePlace = isset($_POST['Other_Ppt_Issue_Place']) ? $_POST['Other_Ppt_Issue_Place'] : '';
-//    $OtherPptNationality = isset($_POST['Other_Ppt_Nationality']) ? $_POST['Other_Ppt_Nationality'] : '';
-//    $Address1 = isset($_POST['Address1']) ? $_POST['Address1'] : '';
-//    $CityTownVillage = isset($_POST['City_Town_Village']) ? $_POST['City_Town_Village'] : '';
-//    $PresCountry = isset($_POST['Pres_Country']) ? $_POST['Pres_Country'] : '';
-//    $StateName = isset($_POST['State_Name']) ? $_POST['State_Name'] : '';
-//    $Pincode = isset($_POST['Pincode']) ? $_POST['Pincode'] : '';
-//    $PresPhone = isset($_POST['Pres_Phone']) ? $_POST['Pres_Phone'] : '';
-//    $Fthrname = isset($_POST['Fthrname']) ? $_POST['Fthrname'] : '';
-//    $FatherNationality = isset($_POST['Father_Nationality']) ? $_POST['Father_Nationality'] : '';
-//    $FatherPreviousNationality = isset($_POST['Father_Previous_Nationality']) ? $_POST['Father_Previous_Nationality'] : '';
-//    $FatherPlaceOfBirth = isset($_POST['Father_Place_Of_Birth']) ? $_POST['Father_Place_Of_Birth'] : '';
-//    $FatherCountryOfBirth = isset($_POST['Father_Country_Of_Birth']) ? $_POST['Father_Country_Of_Birth'] : '';
-//    $MotherName = isset($_POST['Mother_Name']) ? $_POST['Mother_Name'] : '';
-//    $MotherNationality = isset($_POST['Mother_Nationality']) ? $_POST['Mother_Nationality'] : '';
-//    $MotherPreviousNationality = isset($_POST['Mother_Previous_Nationality']) ? $_POST['Mother_Previous_Nationality'] : '';
-//    $MotherPlaceOfBirth = isset($_POST['Mother_Place_Of_Birth']) ? $_POST['Mother_Place_Of_Birth'] : '';
-//    $MotherCountryOfBirth = isset($_POST['Mother_Country_Of_Birth']) ? $_POST['Mother_Country_Of_Birth'] : '';
-//    $MaritalStatus = isset($_POST['Marital_Status']) ? $_POST['Marital_Status'] : '';
-//    $SpouseName = isset($_POST['Spouse_Name']) ? $_POST['Spouse_Name'] : '';
-//    $SpouseNationality = isset($_POST['Spouse_Nationality']) ? $_POST['Spouse_Nationality'] : '';
-//    $SpousePreviousNationality = isset($_POST['Spouse_Previous_Nationality']) ? $_POST['Spouse_Previous_Nationality'] : '';
-//    $SpousePlaceOfBirth = isset($_POST['Spouse_Place_Of_Birth']) ? $_POST['Spouse_Place_Of_Birth'] : '';
-//    $SpouseCountryOfBirth = isset($_POST['Spouse_Country_Of_Birth']) ? $_POST['Spouse_Country_Of_Birth'] : '';
-//    $GrandparentFlag = isset($_POST['Grandparent_Flag']) ? $_POST['Grandparent_Flag'] : '';
-//    $GrandparentDetails = isset($_POST['Grandparent_Details']) ? $_POST['Grandparent_Details'] : '';
-//    $Occupation = isset($_POST['Occupation']) ? $_POST['Occupation'] : '';
-//    $Empname = isset($_POST['Empname']) ? $_POST['Empname'] : '';
-//    $Empdesignation = isset($_POST['Empdesignation']) ? $_POST['Empdesignation'] : '';
-//    $Empaddress = isset($_POST['Empaddress']) ? $_POST['Empaddress'] : '';
-//    $Empphone = isset($_POST['Empphone']) ? $_POST['Empphone'] : '';
-//    $PreviousOccupation = isset($_POST['Previous_Occupation']) ? $_POST['Previous_Occupation'] : '';
+   $AtLeastTwoYears = isset($_POST['At_Least_Two_Years']) ? $_POST['At_Least_Two_Years'] : '';
+   $PassportNumber = isset($_POST['Passport_Number']) ? $_POST['Passport_Number'] : '';
+   $PassportIssuePlace = isset($_POST['Passport_Issue_Place']) ? $_POST['Passport_Issue_Place'] : '';
+   $PassportIssueDate = isset($_POST['Passport_Issue_Date']) ? $_POST['Passport_Issue_Date'] : '';
+   $PassportExpiryDate = isset($_POST['Passport_Expiry_Date']) ? $_POST['Passport_Expiry_Date'] : '';
+   $OtherPassport = isset($_POST['Other_Passport']) ? $_POST['Other_Passport'] : '';
+   $OtherPptCountryIssue = isset($_POST['Other_Ppt_Country_Issue']) ? $_POST['Other_Ppt_Country_Issue'] : '';
+   $OtherPptNo = isset($_POST['Other_Ppt_No']) ? $_POST['Other_Ppt_No'] : '';
+   $OtherPpptIssueDate = isset($_POST['Other_Ppt_Issue_Date']) ? $_POST['Other_Ppt_Issue_Date'] : '';
+   $OtherPptIssuePlace = isset($_POST['Other_Ppt_Issue_Place']) ? $_POST['Other_Ppt_Issue_Place'] : '';
+   $OtherPptNationality = isset($_POST['Other_Ppt_Nationality']) ? $_POST['Other_Ppt_Nationality'] : '';
+   $Address1 = isset($_POST['Address1']) ? $_POST['Address1'] : '';
+   $CityTownVillage = isset($_POST['City_Town_Village']) ? $_POST['City_Town_Village'] : '';
+   $PresCountry = isset($_POST['Pres_Country']) ? $_POST['Pres_Country'] : '';
+   $StateName = isset($_POST['State_Name']) ? $_POST['State_Name'] : '';
+   $Pincode = isset($_POST['Pincode']) ? $_POST['Pincode'] : '';
+   $PresPhone = isset($_POST['Pres_Phone']) ? $_POST['Pres_Phone'] : '';
+   $Fthrname = isset($_POST['Fthrname']) ? $_POST['Fthrname'] : '';
+   $FatherNationality = isset($_POST['Father_Nationality']) ? $_POST['Father_Nationality'] : '';
+   $FatherPreviousNationality = isset($_POST['Father_Previous_Nationality']) ? $_POST['Father_Previous_Nationality'] : '';
+   $FatherPlaceOfBirth = isset($_POST['Father_Place_Of_Birth']) ? $_POST['Father_Place_Of_Birth'] : '';
+   $FatherCountryOfBirth = isset($_POST['Father_Country_Of_Birth']) ? $_POST['Father_Country_Of_Birth'] : '';
+   $MotherName = isset($_POST['Mother_Name']) ? $_POST['Mother_Name'] : '';
+   $MotherNationality = isset($_POST['Mother_Nationality']) ? $_POST['Mother_Nationality'] : '';
+   $MotherPreviousNationality = isset($_POST['Mother_Previous_Nationality']) ? $_POST['Mother_Previous_Nationality'] : '';
+   $MotherPlaceOfBirth = isset($_POST['Mother_Place_Of_Birth']) ? $_POST['Mother_Place_Of_Birth'] : '';
+   $MotherCountryOfBirth = isset($_POST['Mother_Country_Of_Birth']) ? $_POST['Mother_Country_Of_Birth'] : '';
+   $MaritalStatus = isset($_POST['Marital_Status']) ? $_POST['Marital_Status'] : '';
+   $SpouseName = isset($_POST['Spouse_Name']) ? $_POST['Spouse_Name'] : '';
+   $SpouseNationality = isset($_POST['Spouse_Nationality']) ? $_POST['Spouse_Nationality'] : '';
+   $SpousePreviousNationality = isset($_POST['Spouse_Previous_Nationality']) ? $_POST['Spouse_Previous_Nationality'] : '';
+   $SpousePlaceOfBirth = isset($_POST['Spouse_Place_Of_Birth']) ? $_POST['Spouse_Place_Of_Birth'] : '';
+   $SpouseCountryOfBirth = isset($_POST['Spouse_Country_Of_Birth']) ? $_POST['Spouse_Country_Of_Birth'] : '';
+   $GrandparentFlag = isset($_POST['Grandparent_Flag']) ? $_POST['Grandparent_Flag'] : '';
+   $GrandparentDetails = isset($_POST['Grandparent_Details']) ? $_POST['Grandparent_Details'] : '';
+   $Occupation = isset($_POST['Occupation']) ? $_POST['Occupation'] : '';
+   $Empname = isset($_POST['Empname']) ? $_POST['Empname'] : '';
+   $Empdesignation = isset($_POST['Empdesignation']) ? $_POST['Empdesignation'] : '';
+   $Empaddress = isset($_POST['Empaddress']) ? $_POST['Empaddress'] : '';
+   $Empphone = isset($_POST['Empphone']) ? $_POST['Empphone'] : '';
+   $PreviousOccupation = isset($_POST['Previous_Occupation']) ? $_POST['Previous_Occupation'] : '';
 //    $PrevOrg = isset($_POST['Prev_Org']) ? $_POST['Prev_Org'] : '';
 //    $PreviousOrganization = isset($_POST['Previous_Organization']) ? $_POST['Previous_Organization'] : '';
 //    $PreviousDesignation = isset($_POST['Previous_Designation']) ? $_POST['Previous_Designation'] : '';
@@ -132,7 +133,14 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
   Company_Phone='$CompanyPhone', Company_Website='$CompanyWebsite', Nature_Of_Company='$NatureOfCompany', Business_Card='$BusinessCard', Passport_Image='$PassportImage', selfi_image='$SelfiImage',
   Email='$Email', Validate_Email='$ValidateEmail', Date_Of_Birth='$DateOfBirth', Expected_Arrival_Date='$ExpectedArrivalDate', Surename='$Surname', Given_Name='$GivenName', Prev_Surname='$PrevSurame', Prev_Given_Name='$PrevGivenName',
   Gender='$Gender',Birth_Place='$BirthPlace', Country_Birth='$CountryBirth', National_Id_Number='$NationalIdNumber', Religion='$Religion', Identity_Marks='$IdentityMarks', Education='$Education',Nationality_By_Birth='$NationalityByBirth',
-  Prev_Nationality= '$PrevNationality' WHERE id=$id";
+  Prev_Nationality='$PrevNationality', At_Least_Two_Years='$AtLeastTwoYears', Passport_Number='$PassportNumber', Passport_Issue_Place='$PassportIssuePlace', Passport_Issue_Date='$PassportIssueDate', Passport_Expiry_Date='$PassportExpiryDate',
+  Other_Passport='$OtherPassport',Other_Ppt_Country_Issue='$OtherPptCountryIssue', Other_Ppt_No='$OtherPptNo', Other_Ppt_Issue_Date='$OtherPpptIssueDate', Other_Ppt_Nationality='$OtherPptNationality',
+  Address1='$Address1', City_Town_Vllage='$CityTownVillage', Pres_Country='$PresCountry', State_Name='$StateName', Pincode='$Pincode', Pres_Phone='$PresPhone',
+  Fthrname='$Fthrname',	Father_Nationality='$FatherNationality', Father_Previous_Nationality='$FatherPreviousNationality', Father_Place_Of_Birth='$FatherPlaceOfBirth', Father_Country_Of_Birth='$FatherCountryOfBirth',
+  Mother_Name='$MotherName', Mother_Nationality='$MotherNationality', Mother_Previous_Nationality='$MotherPreviousNationality', Mother_Place_Of_Birth='$MotherPlaceOfBirth',
+  Marital_Status='$MaritalStatus', Spouse_Name='$SpouseName', Spouse_Nationality='$SpouseNationality', Spouse_Previous_Nationality='$SpousePreviousNationality', Spouse_Place_Of_Birth='$Spouse_Previous_Nationality',Spouse_Place_Of_Birth='$SpousePlaceOfBirth', Spouse_Country_Of_Birth='$SpouseCountryOfBirth',
+  Grandparent_Flag='$GrandparentFlag', Grandparent_Details='$GrandparentDetails', 	Occupation='$Occupation', Empname='$Empname', Empdesignation='$Empdesignation', Empaddress='$Empaddress', Empphone='$Empphone', Previous_Occupation='$PreviousOccupation'  WHERE id=$id";
+
 
     
     if ($conn->query($sql) === TRUE) {

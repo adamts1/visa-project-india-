@@ -22,7 +22,8 @@ $fields = array
   array("השכלה","Education"),
   array("מספר דרכון","Passport_Number"),
   array("מקום הנפקת דרכון","Passport_Issue_Place"),
-  array("תוקף דרכון","Passport_Issue_Date"),
+  array("תאריך הנפקת הדרכון","Passport_Issue_Date"),
+  array("תוקף דרכון","Passport_Expiry_Date"),
   array("כתובת מגורים","Address1"),
   array("שם העיר/ישוב","City_Town_Vllage"),
   array("מחוז","Pres_Country"),
@@ -88,7 +89,7 @@ $fields = array
   array("שם בן/בת זוג","Spouse_Name"),
   array("אזרחות בן/בת זוג","Spouse_Nationality"),
   array("אזרחות קודמת בן/בת זוג","Spouse_Previous_Nationality"),
-  array("","Spouse_Place_Of_Birth"),
+  array("עיר לידה של בן/בת זוג","Spouse_Place_Of_Birth"),
   array("ארץ לידה של בן/בת זוג","Spouse_Country_Of_Birth")
   );
   

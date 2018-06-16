@@ -2,7 +2,6 @@
 include 'conn.php';
 include 'phpArray.php';
 session_start();
-echo $_SESSION['myValue'];
 
 //count of attar of each optional section
 $fieldsLength=count($fields);
