@@ -2,6 +2,13 @@
   $(function () {
 
     $('.button-collapse').sideNav();
+
+    var $radios = $('input:radio[name=Other_Passport]');
+    if($radios.is(':checked') === true) {
+      $("#other_pass_fields").show(400);   
+     }else{ 
+      $("#other_pass_fields").hide(400);
+     }
   }); // end of document ready
 
   $(function () { // previus name checkbox

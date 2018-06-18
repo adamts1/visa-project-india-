@@ -80,34 +80,34 @@ session_start();
    $Empaddress = isset($_POST['Empaddress']) ? $_POST['Empaddress'] : '';
    $Empphone = isset($_POST['Empphone']) ? $_POST['Empphone'] : '';
    $PreviousOccupation = isset($_POST['Previous_Occupation']) ? $_POST['Previous_Occupation'] : '';
-//    $PrevOrg = isset($_POST['Prev_Org']) ? $_POST['Prev_Org'] : '';
-//    $PreviousOrganization = isset($_POST['Previous_Organization']) ? $_POST['Previous_Organization'] : '';
-//    $PreviousDesignation = isset($_POST['Previous_Designation']) ? $_POST['Previous_Designation'] : '';
-//    $PreviousRank = isset($_POST['Previous_Rank']) ? $_POST['Previous_Rank'] : '';
-//    $PreviousPosting = isset($_POST['Previous_Posting']) ? $_POST['Previous_Posting'] : '';
-//    $VisaSerreqId1 = isset($_POST['Visa_Serreq_Id_1']) ? $_POST['Visa_Serreq_Id_1'] : '';
-//    $Exitpoint = isset($_POST['Exitpoint']) ? $_POST['Exitpoint'] : '';
-//    $OldVisaFlag = isset($_POST['Old_Visa_Flag']) ? $_POST['Old_Visa_Flag'] : '';
-//    $PrvVisitAdd1 = isset($_POST['Prv_Visit_Add1']) ? $_POST['Prv_Visit_Add1'] : '';
-//    $VisitedCity = isset($_POST['Visited_City']) ? $_POST['Visited_City'] : '';
-//    $OldVisaNo = isset($_POST['Old_Visa_No']) ? $_POST['Old_Visa_No'] : '';
-//    $OldVisaTypeId = isset($_POST['Old_Visa_Type_Id']) ? $_POST['Old_Visa_Type_Id'] : '';
-//    $Oldvisaissueplace = isset($_POST['Oldvisaissueplace']) ? $_POST['Oldvisaissueplace'] : '';
-//    $Oldvisaissuedate = isset($_POST['Oldvisaissuedate']) ? $_POST['Oldvisaissuedate'] : '';
-//    $RefuseFlag = isset($_POST['Refuse_Flag']) ? $_POST['Refuse_Flag'] : '';
-//    $RefuseDetails = isset($_POST['Refuse_Details']) ? $_POST['Refuse_Details'] : '';
-//    $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
-//    $CountryVisited = isset($_POST['Country_Visited']) ? $_POST['Country_Visited'] : '';
+   $PrevOrg = isset($_POST['Prev_Org']) ? $_POST['Prev_Org'] : '';
+   $PreviousOrganization = isset($_POST['Previous_Organization']) ? $_POST['Previous_Organization'] : '';
+   $PreviousDesignation = isset($_POST['Previous_Designation']) ? $_POST['Previous_Designation'] : '';
+   $PreviousRank = isset($_POST['Previous_Rank']) ? $_POST['Previous_Rank'] : '';
+   $PreviousPosting = isset($_POST['Previous_Posting']) ? $_POST['Previous_Posting'] : '';
+
+   $VisaSerreqId1 = isset($_POST['Visa_Serreq_Id_1']) ? $_POST['Visa_Serreq_Id_1'] : '';
+   $Exitpoint = isset($_POST['Exitpoint']) ? $_POST['Exitpoint'] : '';
+   $OldVisaFlag = isset($_POST['Old_Visa_Flag']) ? $_POST['Old_Visa_Flag'] : '';
+   $PrvVisitAdd1 = isset($_POST['Prv_Visit_Add1']) ? $_POST['Prv_Visit_Add1'] : '';
+   $VisitedCity = isset($_POST['Visited_City']) ? $_POST['Visited_City'] : '';
+   $OldVisaNo = isset($_POST['Old_Visa_No']) ? $_POST['Old_Visa_No'] : '';
+   $OldVisaTypeId = isset($_POST['Old_Visa_Type_Id']) ? $_POST['Old_Visa_Type_Id'] : '';
+   $Oldvisaissueplace = isset($_POST['Oldvisaissueplace']) ? $_POST['Oldvisaissueplace'] : '';
+   $Oldvisaissuedate = isset($_POST['Oldvisaissuedate']) ? $_POST['Oldvisaissuedate'] : '';
+   $RefuseFlag = isset($_POST['Refuse_Flag']) ? $_POST['Refuse_Flag'] : '';
+   $RefuseDetails = isset($_POST['Refuse_Details']) ? $_POST['Refuse_Details'] : '';
+   $CountryVisited = isset($_POST['Country_Visited']) ? $_POST['Country_Visited'] : '';
 //    $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
 //    $SaarcCountry1 = isset($_POST['SaarcCountry']) ? $_POST['SaarcCountry'] : '';
 //    $SaarcYear1 = isset($_POST['SaarcYear1']) ? $_POST['SaarcYear1'] : '';
 //    $SaarcVisitNo = isset($_POST['SaarcVisitNo']) ? $_POST['SaarcVisitNo'] : '';
-//    $NameofsponsorInd = isset($_POST['Nameofsponsor_Ind']) ? $_POST['Nameofsponsor_Ind'] : '';
-//    $Add1ofsponsorInd = isset($_POST['Add1ofsponsor_Ind']) ? $_POST['Add1ofsponsor_Ind'] : '';
-//    $PhoneofsponsorInd = isset($_POST['Phoneofsponsor_Ind']) ? $_POST['Phoneofsponsor_Ind'] : '';
-//    $NameofsponsorMsn = isset($_POST['Nameofsponsor_Msn']) ? $_POST['Nameofsponsor_Msn'] : '';
-//    $Add1ofsponsorMsn = isset($_POST['Add1ofsponsor_Msn']) ? $_POST['Add1ofsponsor_Msn'] : '';
-//    $PhoneofsponsorMsn = isset($_POST['Phoneofsponsor_Msn']) ? $_POST['Phoneofsponsor_Msn'] : '';
+   $NameofsponsorInd = isset($_POST['Nameofsponsor_Ind']) ? $_POST['Nameofsponsor_Ind'] : '';
+   $Add1ofsponsorInd = isset($_POST['Add1ofsponsor_Ind']) ? $_POST['Add1ofsponsor_Ind'] : '';
+   $PhoneofsponsorInd = isset($_POST['Phoneofsponsor_Ind']) ? $_POST['Phoneofsponsor_Ind'] : '';
+   $NameofsponsorMsn = isset($_POST['Nameofsponsor_Msn']) ? $_POST['Nameofsponsor_Msn'] : '';
+   $Add1ofsponsorMsn = isset($_POST['Add1ofsponsor_Msn']) ? $_POST['Add1ofsponsor_Msn'] : '';
+   $PhoneofsponsorMsn = isset($_POST['Phoneofsponsor_Msn']) ? $_POST['Phoneofsponsor_Msn'] : '';
 //    //////////////Business
    $BusinessPrep = isset($_POST['Business_Prep']) ? $_POST['Business_Prep'] : '';
    $CompanyName = isset($_POST['Company_Name']) ? $_POST['Company_Name'] : '';
@@ -139,7 +139,11 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
   Fthrname='$Fthrname',	Father_Nationality='$FatherNationality', Father_Previous_Nationality='$FatherPreviousNationality', Father_Place_Of_Birth='$FatherPlaceOfBirth', Father_Country_Of_Birth='$FatherCountryOfBirth',
   Mother_Name='$MotherName', Mother_Nationality='$MotherNationality', Mother_Previous_Nationality='$MotherPreviousNationality', Mother_Place_Of_Birth='$MotherPlaceOfBirth',
   Marital_Status='$MaritalStatus', Spouse_Name='$SpouseName', Spouse_Nationality='$SpouseNationality', Spouse_Previous_Nationality='$SpousePreviousNationality', Spouse_Place_Of_Birth='$Spouse_Previous_Nationality',Spouse_Place_Of_Birth='$SpousePlaceOfBirth', Spouse_Country_Of_Birth='$SpouseCountryOfBirth',
-  Grandparent_Flag='$GrandparentFlag', Grandparent_Details='$GrandparentDetails', 	Occupation='$Occupation', Empname='$Empname', Empdesignation='$Empdesignation', Empaddress='$Empaddress', Empphone='$Empphone', Previous_Occupation='$PreviousOccupation'  WHERE id=$id";
+  Grandparent_Flag='$GrandparentFlag', Grandparent_Details='$GrandparentDetails', 	Occupation='$Occupation', Empname='$Empname', Empdesignation='$Empdesignation', Empaddress='$Empaddress', Empphone='$Empphone', Previous_Occupation='$PreviousOccupation',
+  Prev_Org='$PrevOrg', Previous_Organization='$PreviousOrganization', Previous_Designation='$PreviousDesignation', Previous_Rank='$PreviousRank', Previous_Posting='$PreviousPosting',
+  visa_serreq_id_1='$VisaSerreqId1', Exitpoint='$Exitpoint', Old_Visa_Flag='$OldVisaFlag', Prv_Visit_Add1='$PrvVisitAdd1', Visited_City='$VisitedCity', Old_Visa_No='$OldVisaNo ', Old_Visa_Type_Id='$OldVisaTypeId', Oldvisaissueplace='$Oldvisaissueplace', Oldvisaissuedate='$Oldvisaissuedate',
+  Refuse_Flag='$RefuseFlag', 	Refuse_Details='$RefuseDetails', Country_Visited='$CountryVisited',
+  Nameofsponsor_Ind='$NameofsponsorInd', Add1ofsponsor_Ind='$Add1ofsponsorInd', Phoneofsponsor_Ind='$PhoneofsponsorInd' ,Nameofsponsor_Msn='$NameofsponsorMsn', Add1ofsponsor_Msn='$Add1ofsponsorMsn', Phoneofsponsor_Msn='$PhoneofsponsorMsn' WHERE id=$id";
 
 
     

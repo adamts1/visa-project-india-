@@ -860,11 +860,11 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
       <div class="row">
        <div class="col s1">
-          <input value="כן"  type="radio" name="Prev_Org" id="prev_org1" />
+          <input value="Yes"  type="radio" name="Prev_Org" <?php echo ($row->Prev_Org=='Yes')?'checked':'' ?> id="prev_org1" />
           <label for="prev_org1">כן</label>
        </div>
        <div class="col s6">
-          <input value="לא"  type="radio" name="Prev_Org" id="prev_org2" />
+          <input value="No"  type="radio" name="Prev_Org" <?php echo ($row->Prev_Org=='No')?'checked':'' ?> id="prev_org2" />
           <label for="prev_org2">לא</label>
        </div>       
       </div> 
@@ -873,28 +873,28 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div id="army_field">
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_organization.id)" type="text" class="validate validate_previous_organization" name="Previous_Organization" id="previous_organization">
+          <input value="<?php echo $row->Previous_Organization ?>" onkeyup="genValEngHeb(this.value, valid_previous_organization.id)" type="text" class="validate validate_previous_organization" name="Previous_Organization" id="previous_organization">
            <p class = "valid_alert" id = "valid_previous_organization"></p>          
           <label for="previous_organization">ציין את הארגון בו שירתת (צבא\משטרה אחר)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_designation.id)" type="text" class="validate validate_previous_designation" name="Previous_Designation" id="previous_designation">
+          <input value="<?php echo $row->Previous_Designation ?>" onkeyup="genValEngHeb(this.value, valid_previous_designation.id)" type="text" class="validate validate_previous_designation" name="Previous_Designation" id="previous_designation">
            <p class = "valid_alert" id = "valid_previous_designation"></p>          
           <label for="previous_designation">חיל</label>
         </div>
       </div> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_previous_previous_rank.id)" type="text" class="validate validate_previous_rank" name="Previous_Rank" id="previous_rank">
+          <input value="<?php echo $row->Previous_Rank ?>" onkeyup="genValEngHeb(this.value, valid_previous_previous_rank.id)" type="text" class="validate validate_previous_rank" name="Previous_Rank" id="previous_rank">
            <p class = "valid_alert" id = "valid_previous_previous_rank"></p>                    
           <label for="previous_rank">דרגה</label>
         </div>
       </div>      
       <div class="row">
         <div class="input-field col s6">
-          <input type="text" class="validate validate_previous_posting" name="Previous_Posting" id="previous_posting">
+          <input value="<?php echo $row->Previous_Posting ?>" type="text" class="validate validate_previous_posting" name="Previous_Posting" id="previous_posting">
            <p class = "valid_alert" id = "valid_previous_posting"></p>                              
           <label for="previous_posting">מקום השירות?</label>
         </div>
@@ -916,7 +916,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
      <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_visa_serreq_id_1.id)" type="text" class="validate validate_visa_serreq_id_1" name="Visa_Serreq_Id_1" id="visa_serreq_id_1">
+          <input value="<?php echo $row->visa_serreq_id_1 ?>" onkeyup="genValEngHeb(this.value, valid_visa_serreq_id_1.id)" type="text" class="validate validate_visa_serreq_id_1" name="Visa_Serreq_Id_1" id="visa_serreq_id_1">
            <p class = "valid_alert" id = "valid_visa_serreq_id_1"></p>                              
           <label for="visa_serreq_id_1">ערים בהם את\ה מתכננ\ת לבקר</label>
         </div>
@@ -943,7 +943,8 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       <div class="row">
         <div class="col s6">
           <select onchange="RemoveAlert(valid_exitpoint.id)" class="browser-default" name="Exitpoint" id="exitpoint">
-            <option value="" disabled selected>נמל עזיבה</option>
+            <option value="" disabled>נמל עזיבה</option>
+            <option value="<?php echo $row->Exitpoint	?>" selected><?php echo $row->Exitpoint	?></option>
             <option value="AHMEDABAD AIRPORT">AHMEDABAD AIRPORT</option>
             <option value="AMRITSAR AIRPORT">AMRITSAR AIRPORT</option>
             <option value="BAGDOGRA AIRPORT">BAGDOGRA AIRPORT</option>
@@ -988,11 +989,11 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       </div>
       <div class="row">
        <div class="col s1">
-          <input class="old_visa_flag1" type="radio" name="Old_Visa_Flag" id="old_visa_flag1" />
+          <input value="Yes" class="old_visa_flag1" type="radio" name="Old_Visa_Flag" <?php echo ($row->Old_Visa_Flag=='Yes')?'checked':'' ?> id="old_visa_flag1" />
           <label for="old_visa_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input type="radio" name="Old_Visa_Flag" id="old_visa_flag2" checked />
+          <input value="No" type="radio" name="Old_Visa_Flag" id="old_visa_flag2"  <?php echo ($row->Old_Visa_Flag=='No')?'checked':'' ?>  />
           <label for="old_visa_flag2">לא</label>
        </div>       
       </div> 
@@ -1004,21 +1005,21 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_prv_visit_add1.id)" type="text" class="validate validate_prv_visit_add1" name="Prv_Visit_Add1" id="prv_visit_add1">
+          <input value="<?php echo $row->Prv_Visit_Add1 ?>" onkeyup="genValEngHeb(this.value, valid_prv_visit_add1.id)" type="text" class="validate validate_prv_visit_add1" name="Prv_Visit_Add1" id="prv_visit_add1">
            <p class = "valid_alert" id = "valid_prv_visit_add1"></p>
           <label for="prv_visit_add1">כתובת בה ביקרת</label>
         </div>
        </div> 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_visited_city.id)" type="text" class="validate validate_visited_city" name="Visited_City" id="visited_city">
+          <input value="<?php echo $row->Visited_City ?>" onkeyup="genValEngHeb(this.value, valid_visited_city.id)" type="text" class="validate validate_visited_city" name="Visited_City" id="visited_city">
            <p class = "valid_alert" id = "valid_visited_city"></p>          
           <label for="visited_city">ערים בהן ביקרת</label>
         </div>
        </div>        
        <div class="row">
         <div class="input-field col s6">
-          <input type="text" class="validate" name="Old_Visa_No" id="old_visa_no">
+          <input value="<?php echo $row->Old_Visa_Type_Id ?>" type="text" class="validate" name="Old_Visa_No" id="old_visa_no">
           <p class = "valid_alert" id = "valid_old_visa_no"></p>          
           <label for="old_visa_no">מספר ויזה הישנה</label>
         </div>
@@ -1027,6 +1028,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
         <div class="col s6">
           <select onchange="RemoveAlert(valid_old_visa_type_id.id)" class="browser-default" name="Old_Visa_Type_Id" id="old_visa_type_id">
             <option value="" disabled selected>סוג הויזה הישנה</option>
+            <option value="<?php echo $row->Old_Visa_Type_Id?>" selected><?php echo $row->Old_Visa_Type_Id	?></option>
             <option value="1">BUSINESS VISA</option>
             <option value="4">CONFERENCE VISA</option>
             <option value="11">DIPLOMATIC VISA</option>
@@ -1057,14 +1059,14 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
        </div> 
        <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_oldvisaissueplace.id)" type="text" class="validate validate_oldvisaissueplace" name="Oldvisaissueplace" id="oldvisaissueplace">
+          <input value="<?php echo $row->Oldvisaissueplace ?>" onkeyup="genValEngHeb(this.value, valid_oldvisaissueplace.id)" type="text" class="validate validate_oldvisaissueplace" name="Oldvisaissueplace" id="oldvisaissueplace">
            <p class = "valid_alert" id = "valid_oldvisaissueplace"></p>      
           <label for="oldvisaissueplace">מקום הנפקת הויזה הקודמת</label>
         </div>
        </div>  
 	     <div class="row">
 	      <div class="input-area col s6">
-	      <input onchange="RemoveAlertDate(valid_oldvisaissuedate.id)" type="text" class="datepicker datepicker_oldvisaissuedate" name="Oldvisaissuedate" id="oldvisaissuedate" style="direction:ltr;">
+	      <input value="<?php echo $row->Oldvisaissuedate ?>" onchange="RemoveAlertDate(valid_oldvisaissuedate.id)" type="text" class="datepicker datepicker_oldvisaissuedate" name="Oldvisaissuedate" id="oldvisaissuedate" style="direction:ltr;">
         <p class = "valid_alert" id = "valid_oldvisaissuedate"></p>      
 	      <label for="oldvisaissuedate" data-error="wrong" data-success="right">תאריך הנפקת הויזה הישנה</label>
 	     </div>
@@ -1081,11 +1083,11 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
       <div class="row">
        <div class="col s1">
-          <input value="כן" type="radio" name="Refuse_Flag" id="refuse_flag1" />
+          <input value="Yes" type="radio" name="Refuse_Flag" <?php echo ($row->Refuse_Flag=='Yes')?'checked':'' ?> id="refuse_flag1" />
           <label for="refuse_flag1">כן</label>
        </div>
        <div class="col s6">
-          <input value="לא" type="radio" name="Refuse_Flag" id="refuse_flag2"  checked/>
+          <input value="No" type="radio" name="Refuse_Flag" <?php echo ($row->Refuse_Flag=='No')?'checked':'' ?> id="refuse_flag2"  />
           <label for="refuse_flag2">לא</label>
        </div>       
       </div>
@@ -1095,7 +1097,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       <div id="denied_field">
        <div class="row">
          <div class="input-field col s8">
-          <input onkeyup="genValEngHeb(this.value, valid_refuse_details.id)" type="text" class="validate validate_refuse_details" name="Refuse_Details" id="refuse_details">
+          <input value="<?php echo $row->Refuse_Details ?>" onkeyup="genValEngHeb(this.value, valid_refuse_details.id)" type="text" class="validate validate_refuse_details" name="Refuse_Details" id="refuse_details">
            <p class = "valid_alert" id = "valid_refuse_details"></p>
           <label for="refuse_details">מהי הסיבה בגינה בקשתכם להיכנס להודו נדחתה? אם ידוע לך, ציין תאריכים ושם האדם שדחה את בקשת הויזה</label>
          </div>
@@ -1108,7 +1110,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEngHeb(this.value, valid_country_visited.id)" type="text" class="validate validate_country_visited" name="Country_Visited" id="country_visited">
+          <input value="<?php echo $row->Country_Visited ?>" onkeyup="genValEngHeb(this.value, valid_country_visited.id)" type="text" class="validate validate_country_visited" name="Country_Visited" id="country_visited">
            <p class = "valid_alert" id = "valid_country_visited"></p>
           <label for="country_visited">מדינות אשר ביקרת בהן במהלך ה-10 שנים האחרונות (באנגלית בלבד)</label>
         </div>
@@ -1125,11 +1127,11 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
     <div class="row">
      <div class="col s1">
-        <input value="כן" type="radio" name="Saarc_Flag" id="saarc_flag1" />
+        <input value="Yes" type="radio" name="Saarc_Flag" id="saarc_flag1" />
         <label for="saarc_flag1">כן</label>
      </div>
      <div class="col s6">
-        <input value="לא" type="radio" name="Saarc_Flag"  id="saarc_flag2" checked />
+        <input value="No" type="radio" name="Saarc_Flag" id="saarc_flag2" checked />
         <label for="saarc_flag2">לא</label>
      </div>       
     </div>
@@ -1189,21 +1191,21 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div class="section">      
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_nameofsponsor_ind.id)" type="text" class="validate validate_nameofsponsor_ind" name="Nameofsponsor_Ind" id="nameofsponsor_ind">
+          <input value="<?php echo $row->Nameofsponsor_Ind ?>" onkeyup="genValEng(this.value, valid_nameofsponsor_ind.id)" type="text" class="validate validate_nameofsponsor_ind" name="Nameofsponsor_Ind" id="nameofsponsor_ind">
            <p class = "valid_alert" id = "valid_nameofsponsor_ind"></p>
           <label for="nameofsponsor_ind">שם איש הקשר בהודו, אם אין השאירו ריק</label>
         </div>
       </div>    
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_ind.id)" type="text" class="validate validate_add1ofsponsor_ind" name="Add1ofsponsor_Ind" id="add1ofsponsor_ind">
+          <input value="<?php echo $row->Add1ofsponsor_Ind ?>" onkeyup="genValEng(this.value, valid_add1ofsponsor_ind.id)" type="text" class="validate validate_add1ofsponsor_ind" name="Add1ofsponsor_Ind" id="add1ofsponsor_ind">
            <p class = "valid_alert" id = "valid_add1ofsponsor_ind"></p>
           <label for="add1ofsponsor_ind">כתובת איש הקשר בהודו, אם  אין השאירו ריק</label>
         </div>
       </div>     
       <div class="row">
         <div class="input-field col s6">
-          <input type="number" class="validate" name="Phoneofsponsor_Ind" id="phoneofsponsor_ind">
+          <input value="<?php echo $row->Phoneofsponsor_Ind ?>" type="number" class="validate" name="Phoneofsponsor_Ind" id="phoneofsponsor_ind">
           <label for="phoneofsponsor_ind">טלפון של איש הקשר בהודו, אם אין, השאירו ריק</label>
         </div>
       </div> 
@@ -1213,21 +1215,21 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
     <div class="section"> 
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_nameofsponsor_msn.id)" type="text" class="validate validate_nameofsponsor_msn" name="Nameofsponsor_Msn" id="nameofsponsor_msn">
+          <input value="<?php echo $row->Nameofsponsor_Msn ?>" onkeyup="genValEng(this.value, valid_nameofsponsor_msn.id)" type="text" class="validate validate_nameofsponsor_msn" name="Nameofsponsor_Msn" id="nameofsponsor_msn">
            <p class = "valid_alert" id = "valid_nameofsponsor_msn"></p>
           <label for="nameofsponsor_msn">שם איש הקשר בישראל</label>
         </div>
       </div>    
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="genValEng(this.value, valid_add1ofsponsor_msn.id)" type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn" name="Add1ofsponsor_Msn" id="add1ofsponsor_msn">
+          <input value="<?php echo $row->Add1ofsponsor_Msn ?>" onkeyup="genValEng(this.value, valid_add1ofsponsor_msn.id)" type="text" class="validate validate_add1ofsponsor_msn" for="add1ofsponsor_msn" name="Add1ofsponsor_Msn" id="add1ofsponsor_msn">
            <p class = "valid_alert" id = "valid_add1ofsponsor_msn"></p>
           <label>כתובת איש הקשר בישראל</label>
         </div>
       </div>     
       <div class="row">
         <div class="input-field col s6">
-          <input onkeyup="RemoveAlertNum(this.value, valid_phoneofsponsor_msn.id)" type="text" class="validate" name="Phoneofsponsor_Msn" id="phoneofsponsor_msn">
+          <input value="<?php echo $row->Phoneofsponsor_Msn ?>" onkeyup="RemoveAlertNum(this.value, valid_phoneofsponsor_msn.id)" type="text" class="validate" name="Phoneofsponsor_Msn" id="phoneofsponsor_msn">
           <p class = "valid_alert" id = "valid_phoneofsponsor_msn"></p>
           <label for="phoneofsponsor_msn">מספר טלפון של איש הקשר בישראל</label>
         </div>
