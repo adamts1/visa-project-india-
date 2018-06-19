@@ -30,7 +30,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
-  <!-- <script src="js/splitedForm.js"></script> -->
+  <script src="js/onLoad.js"></script>
   <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
@@ -507,13 +507,12 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 	  
       <!-- Hidden fields area START -->	
       <!-- אם כן יש להציג את השדות הבאים V-->
-
+ 
     <div id="other_pass_fields">
       <div class="row">
         <div class="col s6">
           <select onchange="RemoveAlert(valid_other_ppt_country_issue.id)" class="browser-default" name="Other_Ppt_Country_Issue" id="other_ppt_country_issue">
             <option value="" disabled selected>מדינת הדרכון הנוסף</option>
-            <option value="<?php echo $row->Other_Ppt_Country_Issue ?>" selected><?php echo $row->Other_Ppt_Country_Issue ?></option>
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
           </select>
@@ -554,7 +553,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       </div>
     </div>
 	  <!-- Hidden fields / END  V-->  
-	  
+ 
     </div> <!-- end of section -->
     
     
