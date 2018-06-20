@@ -1124,13 +1124,19 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       </div>
      </div>
 
+         <?php
+        $sql1 = "SELECT * FROM test2 WHERE mainId = $id ";
+        $result1 = $conn->query($sql1);
+        if ($result1->num_rows > 0) {
+    ?>
+
     <div class="row">
      <div class="col s1">
-        <input value="Yes" type="radio" name="Saarc_Flag" id="saarc_flag1" />
+        <input value="Yes" type="radio" name="Saarc_Flag" <?php echo ($row->Saarc_Flag=='Yes')?'checked':'' ?> id="saarc_flag1" />
         <label for="saarc_flag1">כן</label>
      </div>
      <div class="col s6">
-        <input value="No" type="radio" name="Saarc_Flag" id="saarc_flag2" checked />
+        <input value="No" type="radio" name="Saarc_Flag" <?php echo ($row->Saarc_Flag=='No')?'checked':'' ?> id="saarc_flag2"  />
         <label for="saarc_flag2">לא</label>
      </div>       
     </div>
@@ -1138,26 +1144,31 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 	  <!-- Hidden fields area START V-->
       <!-- אם כן -->
 	  <!-- יש לאפשר למשתמש להוסיף עוד שדות במידה והוא ביקר בעוד מדינות  v-->
-    
+
     <div id="dynamic_fields">
+
+      <?php   
+      while($row1 = $result1->fetch_assoc()) { ?>
+
       <div class="row">
        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcCountry1.id)" class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
+          <select  class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
+            <option value="<?php echo $row1["Country"] ?>" selected><?php echo $row1["Country"] ?></option>
             <option value="אפגניסטן">אפגניסטן</option>
             <option value="בוטן">בוטן</option>
             <option value="פקיסטן">פקיסטן</option>
             <option value="מלדיביים">מלדיביים</option>
             <option value="בנגלדש">בנגלדש</option>
-            <option value="לנקה">סרי לנקה</option>
+            <option value="סרי לנקה">סרי לנקה</option>
             <option value="נפאל">נפאל</option>
           </select>
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
-        <div class="col s3">
-          <select onchange="RemoveAlert(valid_saarcYear1.id)"  class="browser-default" name="SaarcYear1[]" id="saarcYear1">
-            <option  value="" disabled selected>בחר שנה</option>
-			<!-- להציג רק 4 שנים אחרונות V-->
+       <div class="col s3">
+          <select   class="browser-default" name="SaarcYear1[]" id="saarcYear1">
+            <option  value="" disabled >בחר שנה</option>
+            <option value="<?php echo $row1["YearOfVisits"] ?>" selected><?php echo $row1["YearOfVisits"] ?></option>
             <option value="2018">2018</option>
             <option value="2017">2017</option>
             <option value="2016">2016</option>
@@ -1168,20 +1179,26 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="1" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
+            <input value="<?php echo $row1["NumOfVisits"] ?>" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
         </div>
         </div>
-        <div class="btn right teal lighten-3 col s2" id="add_fields">
-       
-          <span>הוסף</span>
-      </div>    
       </div>
-    </div>
- 
-
+       <?php
+      }
+      ?>
+      <div class="row">
+       <div class="btn right teal lighten-3 col s2" id="add_fields">
+         <span>הוסף</span>
+       </div>    
+       </div>    
+              
+  </div>
+  <?php
+  } 
+  ?>
       <!-- Hidden fields / END V--> 	  
     </div>   <!-- end of section -->
     

@@ -25,8 +25,9 @@ $(document).ready(function(){
     $("#lastCiti").show(400);
    }
 
-   if( $("input[type=radio][id='denied_field']:checked").val()){
-    $("#lastCiti").show(400);
+
+   if( $("input[type=radio][id='saarc_flag1']:checked").val()){
+    $("#saarcCountry1").show(400);
    }
   
 });

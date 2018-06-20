@@ -309,8 +309,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   }
   $sql = "SELECT * FROM test2 WHERE mainId = $id ";
   $result = $conn->query($sql);
-  ?>
-  <?php
+ 
   if ($result->num_rows > 0) {
     //Show dynamic fiels details 
     ?>

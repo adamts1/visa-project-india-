@@ -1086,11 +1086,11 @@
 
     <div class="row">
      <div class="col s1">
-        <input value="כן" type="radio" name="Saarc_Flag" id="saarc_flag1" />
+        <input value="Yes" type="radio" name="Saarc_Flag" id="saarc_flag1" />
         <label for="saarc_flag1">כן</label>
      </div>
      <div class="col s6">
-        <input value="לא" type="radio" name="Saarc_Flag"  id="saarc_flag2" checked />
+        <input value="No" type="radio" name="Saarc_Flag"  id="saarc_flag2" checked />
         <label for="saarc_flag2">לא</label>
      </div>       
     </div>
@@ -1109,7 +1109,7 @@
             <option value="פקיסטן">פקיסטן</option>
             <option value="מלדיביים">מלדיביים</option>
             <option value="בנגלדש">בנגלדש</option>
-            <option value="לנקה">סרי לנקה</option>
+            <option value="סרי לנקה">סרי לנקה</option>
             <option value="נפאל">נפאל</option>
           </select>
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
