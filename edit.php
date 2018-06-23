@@ -32,7 +32,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/onLoad.js"></script>
-  <!-- <script src="js/validateBeforeGo.js"></script> -->
+  <script src="js/validateBeforeGo.js"></script>
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -163,7 +163,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 		  <label for="company_name">שם החברה</label>
 		  </div>
 		  <div class="input-field col s6">
-      <input value="<?php $row->Company_Address ?>"   type="text" class="validate validate_company_address" onkeyup="genValEng(this.value, valid_company_address.id)" name="Company_Address" id="company_address">
+      <input value="<?php echo $row->Company_Address ?>"   type="text" class="validate validate_company_address" onkeyup="genValEng(this.value, valid_company_address.id)" name="Company_Address" id="company_address">
       <p class = "valid_alert" id = "valid_company_address"></p>      
 		  <label for="company_address">כתובת החברה</label>
 		  </div>
@@ -1158,32 +1158,23 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
        <div class="col s3">
           <select  class="browser-default" name="SaarcCountry[]" id="saarcCountry1">
             <option value="" disabled selected>בחר מדינה</option>
-            <option value="<?php echo $row1["Country"] ?>" selected><?php echo $row1["Country"] ?></option>
-            <option value="אפגניסטן">אפגניסטן</option>
-            <option value="בוטן">בוטן</option>
-            <option value="פקיסטן">פקיסטן</option>
-            <option value="מלדיביים">מלדיביים</option>
-            <option value="בנגלדש">בנגלדש</option>
-            <option value="סרי לנקה">סרי לנקה</option>
-            <option value="נפאל">נפאל</option>
+            <option disabled value="<?php echo $row1["Country"] ?>" selected><?php echo $row1["Country"] ?></option>
+
           </select>
           <p class = "valid_alert" id = "valid_saarcCountry1"></p>
        </div>
        <div class="col s3">
           <select   class="browser-default" name="SaarcYear1[]" id="saarcYear1">
             <option  value="" disabled >בחר שנה</option>
-            <option value="<?php echo $row1["YearOfVisits"] ?>" selected><?php echo $row1["YearOfVisits"] ?></option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            <option value="2016">2016</option>
-            <option value="2015">2015</option>
+            <option disabled value="<?php echo $row1["YearOfVisits"] ?>" selected><?php echo $row1["YearOfVisits"] ?></option>
+          
           </select>
           <p class = "valid_alert" id = "valid_saarcYear1"></p>
         </div>
         <div class="col s3">
         <div class="row">
           <div class="input-field col s6" style="margin-top:0;">
-            <input value="<?php echo $row1["NumOfVisits"] ?>" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" >
+            <input value="<?php echo $row1["NumOfVisits"] ?>" type="number" class="validate" name="SaarcVisitNo[]" id="saarcVisitNo" disabled >
             <p class = "valid_alert" id = "valid_saarcVisitNo"></p>
             <label for="saarcVisitNo">מספר ביקורים</label>
           </div>
@@ -1193,11 +1184,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
        <?php
       }
       ?>
-      <div class="row">
-       <div class="btn right teal lighten-3 col s2" id="add_fields">
-         <span>הוסף</span>
-       </div>    
-       </div>    
+   
               
   </div>
   <?php

@@ -18,7 +18,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
-  <!-- <script src="js/validateBeforeGo.js"></script> -->
+  <script src="js/validateBeforeGo.js"></script>
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->

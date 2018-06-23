@@ -11,8 +11,8 @@ function add_passport_image()
                     cache       : false,
                     contentType : false,
                     processData : false,
-                    dataType    : 'text',           // what to expect back from the PHP script, if anything
-
+                    dataType    : 'text',           // Send passport image to EditPassImg.php to insert the img to mysql
+ 
                 });
             }
 
@@ -29,7 +29,7 @@ function add_passport_image()
                     cache       : false,
                     contentType : false,
                     processData : false,
-                    dataType    : 'text',           // what to expect back from the PHP script, if anything
+                    dataType    : 'text',           //  Send selfi image to EditPassImg.php to insert the img to mysql
 
                 });
             }
@@ -47,7 +47,7 @@ function add_passport_image()
                     cache       : false,
                     contentType : false,
                     processData : false,
-                    dataType    : 'text',           // what to expect back from the PHP script, if anything
+                    dataType    : 'text',          //  Send business card to EditPassImg.php to insert the img to mysql
 
                 });
             }

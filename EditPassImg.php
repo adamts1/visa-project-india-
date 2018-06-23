@@ -1,6 +1,8 @@
 <?php
 include 'conn.php';
 
+/// Edit Passport Image with ajax geting form editimg.js
+
 session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;

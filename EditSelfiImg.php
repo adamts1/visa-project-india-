@@ -1,6 +1,6 @@
 <?php
+/// Edit selfi image with ajax geting form editimg.js
 include 'conn.php';
-
 session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;

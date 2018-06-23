@@ -1,6 +1,8 @@
 <?php
 include 'conn.php';
 
+/// Edit bussiness card Image with ajax geting form editimg.js
+
 session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;
