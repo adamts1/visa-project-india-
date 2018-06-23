@@ -98,7 +98,7 @@ session_start();
    $RefuseFlag = isset($_POST['Refuse_Flag']) ? $_POST['Refuse_Flag'] : '';
    $RefuseDetails = isset($_POST['Refuse_Details']) ? $_POST['Refuse_Details'] : '';
    $CountryVisited = isset($_POST['Country_Visited']) ? $_POST['Country_Visited'] : '';
-//    $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
+   $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
 //    $SaarcCountry1 = isset($_POST['SaarcCountry']) ? $_POST['SaarcCountry'] : '';
 //    $SaarcYear1 = isset($_POST['SaarcYear1']) ? $_POST['SaarcYear1'] : '';
 //    $SaarcVisitNo = isset($_POST['SaarcVisitNo']) ? $_POST['SaarcVisitNo'] : '';
@@ -130,7 +130,7 @@ session_start();
 //    WHERE (id =$id)";
 $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality', Port_Of_Arrival='$PortOfArrival', visa_type='$VisaType',
   Purpose_Of_Visit='$PurposeOfVisit',Business_Prep='$BusinessPrep', Company_Name='$CompanyName', Company_Address='$CompanyAddress',
-  Company_Phone='$CompanyPhone', Company_Website='$CompanyWebsite', Nature_Of_Company='$NatureOfCompany', Business_Card='$BusinessCard', Passport_Image='$PassportImage', selfi_image='$SelfiImage',
+  Company_Phone='$CompanyPhone', Company_Website='$CompanyWebsite', Nature_Of_Company='$NatureOfCompany',
   Email='$Email', Validate_Email='$ValidateEmail', Date_Of_Birth='$DateOfBirth', Expected_Arrival_Date='$ExpectedArrivalDate', Surename='$Surname', Given_Name='$GivenName', Prev_Surname='$PrevSurame', Prev_Given_Name='$PrevGivenName',
   Gender='$Gender',Birth_Place='$BirthPlace', Country_Birth='$CountryBirth', National_Id_Number='$NationalIdNumber', Religion='$Religion', Identity_Marks='$IdentityMarks', Education='$Education',Nationality_By_Birth='$NationalityByBirth',
   Prev_Nationality='$PrevNationality', At_Least_Two_Years='$AtLeastTwoYears', Passport_Number='$PassportNumber', Passport_Issue_Place='$PassportIssuePlace', Passport_Issue_Date='$PassportIssueDate', Passport_Expiry_Date='$PassportExpiryDate',
@@ -142,7 +142,7 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
   Grandparent_Flag='$GrandparentFlag', Grandparent_Details='$GrandparentDetails', 	Occupation='$Occupation', Empname='$Empname', Empdesignation='$Empdesignation', Empaddress='$Empaddress', Empphone='$Empphone', Previous_Occupation='$PreviousOccupation',
   Prev_Org='$PrevOrg', Previous_Organization='$PreviousOrganization', Previous_Designation='$PreviousDesignation', Previous_Rank='$PreviousRank', Previous_Posting='$PreviousPosting',
   visa_serreq_id_1='$VisaSerreqId1', Exitpoint='$Exitpoint', Old_Visa_Flag='$OldVisaFlag', Prv_Visit_Add1='$PrvVisitAdd1', Visited_City='$VisitedCity', Old_Visa_No='$OldVisaNo ', Old_Visa_Type_Id='$OldVisaTypeId', Oldvisaissueplace='$Oldvisaissueplace', Oldvisaissuedate='$Oldvisaissuedate',
-  Refuse_Flag='$RefuseFlag', 	Refuse_Details='$RefuseDetails', Country_Visited='$CountryVisited',
+  Refuse_Flag='$RefuseFlag', 	Refuse_Details='$RefuseDetails', Country_Visited='$CountryVisited', Saarc_Flag='$SaarcFlag',
   Nameofsponsor_Ind='$NameofsponsorInd', Add1ofsponsor_Ind='$Add1ofsponsorInd', Phoneofsponsor_Ind='$PhoneofsponsorInd' ,Nameofsponsor_Msn='$NameofsponsorMsn', Add1ofsponsor_Msn='$Add1ofsponsorMsn', Phoneofsponsor_Msn='$PhoneofsponsorMsn' WHERE id=$id";
 
 
@@ -152,30 +152,23 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
     }else {
      echo "Error: " . $sql . "<br>" . $conn->error;
      }
-    //     $sql1 = "SELECT  MAX(id) FROM main";
-    //     $sth1 = $conn->query($sql1);
-    //     while($result=mysqli_fetch_array($sth1)){  
-    //     $idOfMain = $result[0];
-    //      }
 
-    //      $_SESSION['id'] = $idOfMain;
-         
-    //  if (isset($_POST['SaarcCountry'])) {
+     if (isset($_POST['SaarcCountry'])) {
 
-    //     for ($i = 0; $i < count($_POST['SaarcVisitNo']); $i++) {
-    //         $SaarcVisitNo1 = $_POST['SaarcVisitNo'][$i];
-    //         $SaarcYear11 = $_POST['SaarcYear1'][$i];
-    //         $SaarcCountry1 = $_POST['SaarcCountry'][$i];
+        for ($i = 0; $i < count($_POST['SaarcVisitNo']); $i++) {
+            $SaarcVisitNo1 = $_POST['SaarcVisitNo'][$i];
+            $SaarcYear11 = $_POST['SaarcYear1'][$i];
+            $SaarcCountry1 = $_POST['SaarcCountry'][$i];
             
-    //     $query1 = "INSERT INTO test2 (Country, YearOfVisits, NumOfVisits, mainId) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1', '$idOfMain')";
-    //     if ($conn->query($query1) === TRUE) {
-    //         echo "New record created successfully";
-    //        }else {
-    //         echo "Error: " . $query1 . "<br>" . $conn->error;
-    //         }
+        $query1 = "UPDATE test2 SET Country='$SaarcCountry1', YearOfVisits='$SaarcYear11', NumOfVisits='$SaarcVisitNo1', mainId='$id'";
+        if ($conn->query($query1) === TRUE) {
+            echo "New record created successfully";
+           }else {
+            echo "Error: " . $query1 . "<br>" . $conn->error;
+            }
        
-    //     }
-        // }
+        }
+        }
 
 //      $sql = "SELECT * FROM main";
 // $sth = $conn->query($sql);

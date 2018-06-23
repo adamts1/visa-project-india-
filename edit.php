@@ -28,6 +28,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <!-- ///-->
 
   <script src="js/materialize.js"></script>
+  <script src="js/editImg.js"></script>
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/onLoad.js"></script>
@@ -36,6 +37,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
 
 </head>
 <body>
@@ -62,7 +64,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 
 
  <div class="container">
-  <form name="Form"  onsubmit="return validateForm()" method="post"  action="update.php" enctype="multipart/form-data"> 
+  <form name="Form"  onsubmit="return validateForm()" method="post"  action="update.php" enctype="multipart/form-data" id="FormId"> 
 <div id = "section1">
      <div class="section">
       <div class="col s12 right">
@@ -189,7 +191,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 		  <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף כרטיס ביקור</span>
-                <input type="file" name="Business_Card" id="business_card">
+                <input onchange="add_bc_image()" type="file" name="Business_Card" id="business_card">
               </div>
               <div class="file-path-wrapper">
                 <input  value="<?php echo $businesscard ?>" class="file-path validate" type="text" name="Business_Card_txt" id="business_card_txt">
@@ -225,10 +227,10 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף צילום דרכון</span>
-                <input type="file" name="Passport_Image" id="passport_image">
+                <input type="file"  name="Passport_Image" id="passport_image">
               </div>
               <div class="file-path-wrapper">
-                <input value="<?php echo $passportimage ?>"  class="file-path validate" type="text" id="passport_image_txt">
+                <input onchange="add_passport_image()" value="<?php echo $passportimage ?>"  class="file-path validate" type="text" id="passport_image_txt">
                 <p class = "valid_alert" id = "valid_passport_image_txt"></p>              
               </div>
           </div>
@@ -236,7 +238,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף תמונת פספורט</span>
-                <input value="<?php  $SelfiImageFile ?>" type="file" id="selfi_image" name="selfi_image">
+                <input onchange="add_selfi_image()" value="<?php  $SelfiImageFile ?>" type="file" id="selfi_image" name="selfi_image">
               </div>
               <div class="file-path-wrapper">
                 <input value="<?php echo $selfiimage ?>" class="file-path validate" type="text" id="selfi_image_txt">
@@ -244,7 +246,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
               </div>
           </div>          
          </div>
-         
+
           <div class="row">
               <div class="input-field col s6">
                <input value="<?php echo $row->Email ?>" type="email" class="validate validate1" name="email1" id="email1" >
@@ -1124,11 +1126,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       </div>
      </div>
 
-         <?php
-        $sql1 = "SELECT * FROM test2 WHERE mainId = $id ";
-        $result1 = $conn->query($sql1);
-        if ($result1->num_rows > 0) {
-    ?>
+ 
 
     <div class="row">
      <div class="col s1">
@@ -1144,6 +1142,12 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 	  <!-- Hidden fields area START V-->
       <!-- אם כן -->
 	  <!-- יש לאפשר למשתמש להוסיף עוד שדות במידה והוא ביקר בעוד מדינות  v-->
+
+            <?php
+        $sql1 = "SELECT * FROM test2 WHERE mainId = $id ";
+        $result1 = $conn->query($sql1);
+        if ($result1->num_rows > 0) {
+    ?>
 
     <div id="dynamic_fields">
 

@@ -160,7 +160,7 @@ session_start();
 // $sth = $conn->query($sql);
 
 // while($result=mysqli_fetch_array($sth)){  
-// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Business_Card'].'"/>';
+// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Passport_Image'].'"/>';
 // // echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
 // }
 // $conn->close();

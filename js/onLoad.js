@@ -21,14 +21,14 @@ $(document).ready(function(){
     $("#lastCiti").show(400);
    }
 
-   if( $("input[type=radio][id='denied_field']:checked").val()){
-    $("#lastCiti").show(400);
+   if( $("input[type=radio][id='refuse_flag1']:checked").val()){
+    $("#denied_field").show(400);
    }
-
 
    if( $("input[type=radio][id='saarc_flag1']:checked").val()){
-    $("#saarcCountry1").show(400);
+    $("#dynamic_fields").show(400);
    }
+
   
 });
 });

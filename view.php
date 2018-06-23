@@ -310,7 +310,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   $sql = "SELECT * FROM test2 WHERE mainId = $id ";
   $result = $conn->query($sql);
  
-  if ($result->num_rows > 0) {
+  if ($row->Saarc_Flag == "Yes") {
     //Show dynamic fiels details 
     ?>
     <div class="row">

@@ -106,6 +106,16 @@
       $("#dynamic_fields").append(fieldWrapper);
     });
 
+
+    // $("#remove_row").click(function () {
+
+     
+    //   $("#dynamic_fields").remove();
+
+    // });
+
+
+
   });
 
 
