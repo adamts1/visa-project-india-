@@ -4,6 +4,9 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "visa_project";
+$DB_TBLName = "main"; 
+$filename = "temp"; 
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

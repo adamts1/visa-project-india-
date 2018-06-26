@@ -334,16 +334,19 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   </div>
   <?php
   } 
-}else{
+
+  }else{
   echo $conn->error;
-}
+  }
+
 ?>
+
 
 <div class="row">
         <div class="col s12">
             <div class="col s6">
             <a class="waves-effect red lighten-1 btn" onClick="document.location.href='edit.php'" /> חזרה לתופס רישום</a>
-            <a class="waves-effect green accent-3 btn ">אישור</a>
+            <a class="waves-effect green accent-3 btn " onClick="document.location.href='export2.php'" />אישור</a>
             </div>
           </div>
         </div>
