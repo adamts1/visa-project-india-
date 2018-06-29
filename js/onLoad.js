@@ -16,7 +16,6 @@ $(document).ready(function(){
     $("#army_field").show(400);
    }
 
-   
    if( $("input[type=radio][id='old_visa_flag1']:checked").val()){
     $("#lastCiti").show(400);
    }

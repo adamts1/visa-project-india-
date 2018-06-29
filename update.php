@@ -143,7 +143,8 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
   Prev_Org='$PrevOrg', Previous_Organization='$PreviousOrganization', Previous_Designation='$PreviousDesignation', Previous_Rank='$PreviousRank', Previous_Posting='$PreviousPosting',
   visa_serreq_id_1='$VisaSerreqId1', Exitpoint='$Exitpoint', Old_Visa_Flag='$OldVisaFlag', Prv_Visit_Add1='$PrvVisitAdd1', Visited_City='$VisitedCity', Old_Visa_No='$OldVisaNo ', Old_Visa_Type_Id='$OldVisaTypeId', Oldvisaissueplace='$Oldvisaissueplace', Oldvisaissuedate='$Oldvisaissuedate',
   Refuse_Flag='$RefuseFlag', 	Refuse_Details='$RefuseDetails', Country_Visited='$CountryVisited', Saarc_Flag='$SaarcFlag',
-  Nameofsponsor_Ind='$NameofsponsorInd', Add1ofsponsor_Ind='$Add1ofsponsorInd', Phoneofsponsor_Ind='$PhoneofsponsorInd' ,Nameofsponsor_Msn='$NameofsponsorMsn', Add1ofsponsor_Msn='$Add1ofsponsorMsn', Phoneofsponsor_Msn='$PhoneofsponsorMsn' WHERE id=$id";
+  Nameofsponsor_Ind='$NameofsponsorInd', Add1ofsponsor_Ind='$Add1ofsponsorInd', Phoneofsponsor_Ind='$PhoneofsponsorInd' ,Nameofsponsor_Msn='$NameofsponsorMsn', Add1ofsponsor_Msn='$Add1ofsponsorMsn', Phoneofsponsor_Msn='$PhoneofsponsorMsn',
+  Other_Ppt_Issue_Place='$OtherPptIssuePlace' WHERE id=$id";
 
 
     

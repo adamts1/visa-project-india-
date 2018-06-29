@@ -514,7 +514,8 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
       <div class="row">
         <div class="col s6">
           <select onchange="RemoveAlert(valid_other_ppt_country_issue.id)" class="browser-default" name="Other_Ppt_Country_Issue" id="other_ppt_country_issue">
-            <option value="" disabled selected>מדינת הדרכון הנוסף</option>
+            <option value="" disabled >מדינת הדרכון הנוסף</option>
+            <option value="<?php echo $row->Other_Ppt_Country_Issue ?>" selected><?php echo $row->Other_Ppt_Country_Issue ?></option>
             <option value="1">ארץ 1</option>
             <option value="2">ארץ 2</option>
           </select>
