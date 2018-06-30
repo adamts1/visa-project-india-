@@ -5,7 +5,9 @@ session_start();
 $id = $_SESSION['id'];
 $_SESSION['idToUpdate'] = $id;
 
- $query = "SELECT * FROM main WHERE id='$id'";
+ $query1 = "SELECT * FROM test2 WHERE mainId='$id' ";
+ $result1 = mysqli_query($conn, $query1);
+ $query = "SELECT * FROM main WHERE id='$id' ";
  $result = mysqli_query($conn, $query);
  $output ="";
  if(mysqli_num_rows($result) > 0)
@@ -16,7 +18,13 @@ $_SESSION['idToUpdate'] = $id;
                          <th>מספר מזהה</th>  
                          <th>סוג דרכון</th>  
                          <th>נמל הגעה</th>  
-                         <th>סוג ויזה</th>  
+                         <th>סוג ויזה</th> 
+                         <th>מטרת ביקור עסקי</th>
+                         <th>שם החברה</th>
+                         <th>כתובת החברה</th>
+                         <th>טלפון החברה</th>
+                         <th>אתר אינטרנט החברה</th>
+                         <th>תחום החברה</th> 
                          <th>מטרת הביקור</th>  
                          <th>דוא"ל</th>  
                          <th>תאריך לידה</th>  
@@ -96,12 +104,8 @@ $_SESSION['idToUpdate'] = $id;
                          <th>קשר ישראל</th>
                          <th>כתובת קשר ישראל</th>
                          <th>טלפון ישראל</th>
-                         
+
                         
-
-                         
-
-
                     </tr>
   ';
   while($row = mysqli_fetch_array($result))
@@ -112,6 +116,12 @@ $_SESSION['idToUpdate'] = $id;
                          <td>'.$row["Passport_Type"].'</td>  
                          <td>'.$row["Port_Of_Arrival"].'</td>  
                          <td>'.$row["Visa_Type"].'</td>  
+                         <td>'.$row["Business_Prep"].'</td>  
+                         <td>'.$row["Company_Name"].'</td>  
+                         <td>'.$row["Company_Address"].'</td>  
+                         <td>'.$row["Company_Phone"].'</td>  
+                         <td>'.$row["Company_Website"].'</td>  
+                         <td>'.$row["Nature_Of_Company"].'</td> 
                          <td>'.$row["Purpose_Of_Visit"].'</td>  
                          <td>'.$row["Email"].'</td>  
                          <td>'.$row["Date_Of_Birth"].'</td>  
@@ -191,14 +201,34 @@ $_SESSION['idToUpdate'] = $id;
                          <td>'.$row["Nameofsponsor_Msn"].'</td>  
                          <td>'.$row["Add1ofsponsor_Msn"].'</td>  
                          <td>'.$row["Phoneofsponsor_Msn"].'</td>  
+
+                   
                          
                     </tr>
+                    <tr>  
+                    <th>מדינה</th> 
+                    <th>שנת הביקור</th>  
+                    <th>מספר ביקורים</th>      
+                </tr>
+                  
+
    ';
+   while($row1 = mysqli_fetch_array($result1))
+   {
+    $output .= '
+  
+     <tr>  
+     <td>'.$row1["Country"].'</td>  
+     <td>'.$row1["YearOfVisits"].'</td>  
+     <td>'.$row1["NumOfVisits"].'</td>      
+     </tr>
+     ';
   }
   $output .= '</table>';
   header('Content-Type: application/xls');
   header('Content-Disposition: attachment; filename=download.xls');
   echo $output;
  }
+}
 
 ?>
