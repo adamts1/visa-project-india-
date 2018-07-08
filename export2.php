@@ -3,6 +3,7 @@ include 'conn.php';
 session_start();
 
 $id = $_SESSION['id'];
+
 $_SESSION['idToUpdate'] = $id;
 
  $query1 = "SELECT * FROM test2 WHERE mainId='$id' ";
@@ -110,6 +111,7 @@ $_SESSION['idToUpdate'] = $id;
   ';
   while($row = mysqli_fetch_array($result))
   {
+      $idnum = $row["Passport_Image"];
    $output .= '
     <tr>  
                          <td>'.$row["id"].'</td>  
@@ -225,10 +227,71 @@ $_SESSION['idToUpdate'] = $id;
      ';
   }
   $output .= '</table>';
-  header('Content-Type: application/xls');
-  header('Content-Disposition: attachment; filename=download.xls');
-  echo $output;
+//   header('Content-Type: application/xls');
+//   header('Content-Disposition: attachment; filename=download.xls');
+  file_put_contents('C:/Users/Adam Tsityat/Desktop/WhatsApp Images/document.xlsx', $output);
+  header("Location: form.php");
+
+
+  file_put_contents("C:/Users/Adam Tsityat/Desktop/WhatsApp Images/adam.pdf", $row['Passport_Image']);
+
+
+//   echo $output;
  }
 }
+
+// $pdf_data = generate_pdf();
+
+// // And a path where the file will be created
+// $path = 'C:\xampp\htdocs\visa project (india)\newly_created_file.pdf';
+
+// // Then just save it like this
+// file_put_contents( $path, $pdf_data );
+
+// // $from = "adamtsityat@gmail.com"; // sender
+
+
+// //    mail("$from","subject blabal bla ))))))","$idnum","From: $from\n");
+
+
+// $htmlbody = " Your Mail Contant Here.... You can use html tags here...";
+// $to = "adamtsityat@gmail.com"; //Recipient Email Address
+// $subject = "Test email with attachment"; //Email Subject
+// $headers = "From: adamtsityat@gmail.com\r\nReply-To: adamtsityat@gamil.com";
+// $random_hash = md5(date('r', time()));
+// $headers .= "\r\nContent-Type: multipart/mixed; 
+// boundary=\"PHP-mixed-".$random_hash."\"";
+// // // Set your file path here
+// $attachment = base64_encode(file_get_contents($idnum)); // Set your file path here
+
+
+// //define the body of the message.
+// $message = "--PHP-mixed-$random_hash\r\n"."Content-Type: multipart/alternative; 
+// boundary=\"PHP-alt-$random_hash\"\r\n\r\n";
+// $message .= "--PHP-alt-$random_hash\r\n"."Content-Type: text/plain; 
+// charset=\"iso-8859-1\"\r\n"."Content-Transfer-Encoding: 7bit\r\n\r\n";
+
+
+// //Insert the html message.
+// $message .= $htmlbody;
+// $message .="\r\n\r\n--PHP-alt-$random_hash--\r\n\r\n";
+
+
+// //include attachment
+// $message .= "--PHP-mixed-$random_hash\r\n"."Content-Type: application/zip; 
+// name=\"C:\Users\Adam Tsityat\Desktop\WhatsApp Images\w.jpg\"\r\n"."Content-Transfer-Encoding: 
+// base64\r\n"."Content-Disposition: attachment\r\n\r\n";
+
+// $message .= $attachment;
+// // $message .= "/r/n--PHP-mixed-$random_hash--";
+
+
+// // //send the email
+// // 
+// mail("$from","subject blabal bla ))))))","$message","From: $from\n");
+
+
+
+
 
 ?>
