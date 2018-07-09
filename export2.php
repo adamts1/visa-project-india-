@@ -229,14 +229,19 @@ $_SESSION['idToUpdate'] = $id;
   $output .= '</table>';
 //   header('Content-Type: application/xls');
 //   header('Content-Disposition: attachment; filename=download.xls');
-  file_put_contents('C:/Users/Adam Tsityat/Desktop/WhatsApp Images/document.xlsx', $output);
-  header("Location: form.php");
+  file_put_contents('C:/Users/Adam Tsityat/Desktop/WhatsApp Images/document.xls', $output);
+  // header("Location: form.php");
 
+  // $img=base64_encode($row['Passport_Image']);
 
-  file_put_contents("C:/Users/Adam Tsityat/Desktop/WhatsApp Images/adam.pdf", $row['Passport_Image']);
+  // $img = file_get_contents($row['Passport_Image']);
+  // $img1 = chunk_split($row['Passport_Image']);
 
-
-//   echo $output;
+  file_put_contents("C:/Users/Adam Tsityat/Desktop/WhatsApp Images/s.jpg",$row['Passport_Image']);
+  // echo 'data:image/jpeg;base64,'.base64_encode($row['Passport_Image']);
+    // $file = 'C:/Users/Adam Tsityat/Desktop/WhatsApp Images/adam.jpg';
+  // fwrite($file, $row['Passport_Image']);
+  // echo $output;/
  }
 }
 

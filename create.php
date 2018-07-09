@@ -9,10 +9,10 @@ session_start();
    //Passport pic
    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
    $PassportImage = file_get_contents($PassportImage);
+   file_put_contents("C:/Users/Adam Tsityat/Desktop/WhatsApp Images/sse9.jpg",$PassportImage); //V
    $PassportImage = base64_encode($PassportImage);
    $PassportImage1 = $_FILES['Passport_Image'][name];
    $_SESSION['passportimage'] = $PassportImage1;
-
    //Selfi pic
    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
    $SelfiImage = file_get_contents($SelfiImage);
