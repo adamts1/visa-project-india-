@@ -9,13 +9,14 @@ session_start();
    //Passport pic
    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
    $PassportImage = file_get_contents($PassportImage);
-   file_put_contents("C:/Users/Adam Tsityat/Desktop/WhatsApp Images/sse9.jpg",$PassportImage); //V
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/PassportImage.jpg",$PassportImage); //  Download img file into folder
    $PassportImage = base64_encode($PassportImage);
    $PassportImage1 = $_FILES['Passport_Image'][name];
    $_SESSION['passportimage'] = $PassportImage1;
    //Selfi pic
    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
    $SelfiImage = file_get_contents($SelfiImage);
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/SelfiImage.jpg",$SelfiImage); //  Download img file into folder
    $SelfiImage = base64_encode($SelfiImage);
    $SelfiImage1 = $_FILES['selfi_image'][name];
    $_SESSION['selfiimage'] = $SelfiImage1;
@@ -117,6 +118,7 @@ session_start();
    if (isset($_POST['Business_Card_txt'])) {
    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
    $BusinessCard = file_get_contents($BusinessCard);
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/BusinessCard.jpg",$BusinessCard); // Download img file into folder
    $BusinessCard = base64_encode($BusinessCard);
    $BusinessCard1 = $_FILES['Business_Card'][name];
    $_SESSION['businesscard'] = $BusinessCard1;

@@ -1,12 +1,12 @@
  
  <?php
 
-    $filename = 'IMG-20150926-WA0002.jpg';
-    $path = 'C:\Users\Adam Tsityat\Desktop\WhatsApp Images';
+    $filename = 'document.xls';
+    $path = 'C:/xampp/htdocs/visa project (india)/files';
     $file = $path . "/" . $filename;
 
 
-    $filename1 = 'temp.xlsx';
+    $filename1 = 'PassportImage.jpg';
     $file1 = $path . "/" . $filename1;
     
     // $path1 = 'C:\Users\Adam Tsityat\Desktop\WhatsApp Images';
