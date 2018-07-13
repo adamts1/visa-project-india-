@@ -1,3 +1,5 @@
+
+// show and hide section according to choosen checkbox\radio\dropdown 
 (function ($) {
   $(function () {
 
@@ -107,13 +109,7 @@
     });
 
 
-    // $("#remove_row").click(function () {
-
-     
-    //   $("#dynamic_fields").remove();
-
-    // });
-
+   
 
 
   });

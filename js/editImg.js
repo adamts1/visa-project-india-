@@ -1,3 +1,5 @@
+
+//Passing file details with ajax sending by edit.php to EditPassImg.php, EditSelfiImg.php, EditBScard.php 
 function add_passport_image()
             {
                       var file_data = $('#passport_image').prop('files')[0];

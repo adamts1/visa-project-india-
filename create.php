@@ -7,19 +7,20 @@ session_start();
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
    $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
    //Passport pic
+   $PassportImage1 = $_FILES['Passport_Image'][name];  // take file name for sving in folder
+   $_SESSION['passportimage'] = $PassportImage1;  // pass file name to session for showing in edit form
    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
-   $PassportImage = file_get_contents($PassportImage);
-   file_put_contents("C:/xampp/htdocs/visa project (india)/files/PassportImage.jpg",$PassportImage); //  Download img file into folder
+   $PassportImage = file_get_contents($PassportImage); 
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/passport/".$PassportImage1,$PassportImage); //  Download img file into folder
    $PassportImage = base64_encode($PassportImage);
-   $PassportImage1 = $_FILES['Passport_Image'][name];
-   $_SESSION['passportimage'] = $PassportImage1;
+
    //Selfi pic
+   $SelfiImage1 = $_FILES['selfi_image'][name]; // take file name for sving in folder
+   $_SESSION['selfiimage'] = $SelfiImage1; // pass file name to session for showing in edit form
    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
    $SelfiImage = file_get_contents($SelfiImage);
-   file_put_contents("C:/xampp/htdocs/visa project (india)/files/SelfiImage.jpg",$SelfiImage); //  Download img file into folder
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/selfi/".$SelfiImage1 ,$SelfiImage); //  Download img file into folder
    $SelfiImage = base64_encode($SelfiImage);
-   $SelfiImage1 = $_FILES['selfi_image'][name];
-   $_SESSION['selfiimage'] = $SelfiImage1;
    //
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
@@ -116,12 +117,13 @@ session_start();
    $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
    //Business fields pic
    if (isset($_POST['Business_Card_txt'])) {
+   $BusinessCard1 = $_FILES['Business_Card'][name];  // take file name for sving in folder
+   $_SESSION['businesscard'] = $BusinessCard1; // pass file name to session for showing in edit form
    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
    $BusinessCard = file_get_contents($BusinessCard);
-   file_put_contents("C:/xampp/htdocs/visa project (india)/files/BusinessCard.jpg",$BusinessCard); // Download img file into folder
+   file_put_contents("C:/xampp/htdocs/visa project (india)/files/business/".$BusinessCard1,$BusinessCard); // Download img file into folder
    $BusinessCard = base64_encode($BusinessCard);
-   $BusinessCard1 = $_FILES['Business_Card'][name];
-   $_SESSION['businesscard'] = $BusinessCard1;
+
 
   }else{
     $BusinessCard = '';
@@ -158,16 +160,8 @@ session_start();
         }
         }
 
-//      $sql = "SELECT * FROM main";
-// $sth = $conn->query($sql);
 
-// while($result=mysqli_fetch_array($sth)){  
-// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Passport_Image'].'"/>';
-// // echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
-// }
-// $conn->close();
-
-header('Location: view.php');
+        header('Location: view.php');
 
 
     ?>

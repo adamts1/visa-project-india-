@@ -1,4 +1,4 @@
-
+// all attr for running over a loop used in ValidateBeforeGo.js
 var arry_of_item = { 
 
   "item": [

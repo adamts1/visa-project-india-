@@ -9,18 +9,18 @@ session_start();
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
    $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
    //Passport pic
-   $PassportImage = $_FILES['Passport_Image']['tmp_name'];
-   $PassportImage = file_get_contents($PassportImage);
-   $PassportImage = base64_encode($PassportImage);
-   $PassportImage1 = $_FILES['Passport_Image'][name];
-   $_SESSION['passportimage'] = $PassportImage1;
+//    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
+//    $PassportImage = file_get_contents($PassportImage);
+//    $PassportImage = base64_encode($PassportImage);
+//    $PassportImage1 = $_FILES['Passport_Image'][name];
+//    $_SESSION['passportimage'] = $PassportImage1;
    //Selfi pic
-   $SelfiImage = $_FILES['selfi_image']['tmp_name'];
-   $SelfiImage = file_get_contents($SelfiImage);
-   $SelfiImage = base64_encode($SelfiImage);
-   $SelfiImage1 = $_FILES['selfi_image'][name];
-   $_SESSION['selfiimage'] = $SelfiImage1;
-   $_SESSION['SelfiImageFile'] = $SelfiImage;
+//    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
+//    $SelfiImage = file_get_contents($SelfiImage);
+//    $SelfiImage = base64_encode($SelfiImage);
+//    $SelfiImage1 = $_FILES['selfi_image'][name];
+//    $_SESSION['selfiimage'] = $SelfiImage1;
+//    $_SESSION['SelfiImageFile'] = $SelfiImage;
    //
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
@@ -121,7 +121,7 @@ session_start();
    $BusinessCard = file_get_contents($BusinessCard);
    $BusinessCard = base64_encode($BusinessCard);
    $BusinessCard1 = $_FILES['Business_Card'][name];
-   $_SESSION['businesscard'] = $BusinessCard1;
+   $_SESSION['businesscarde'] = $BusinessCard1;
   }else{
     $BusinessCard = '';
   }
