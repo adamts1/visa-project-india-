@@ -1,5 +1,6 @@
  
  <?php
+ //Sending mail with all the attached files
 session_start();
     $xls = 'document.xls';
     $path = 'C:/xampp/htdocs/visa project (india)/files';

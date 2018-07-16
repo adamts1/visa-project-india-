@@ -1,4 +1,6 @@
 <?php
+
+//Edit form with all chosem values from the reg form
 include 'conn.php';
 session_start();
 $id = $_SESSION['id'];

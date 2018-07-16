@@ -15,7 +15,7 @@ session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;
 
-   $PassportImage1 = $_FILES['passimage'][name];
+   $PassportImage1 = $_FILES['passimage']['name'];
    $_SESSION['passportimage'] = $PassportImage1;
 
    $PassportImage = $_FILES['passimage']['tmp_name'];

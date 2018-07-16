@@ -1,3 +1,4 @@
+// Hide\Show the three part sections
 (function($){
 
     jQuery(document).ready(function(){

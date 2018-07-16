@@ -12,7 +12,7 @@ session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;
 
-   $SelfiImage1 = $_FILES['selfiimage'][name];
+   $SelfiImage1 = $_FILES['selfiimage']['name'];
    $_SESSION['selfiimage'] = $SelfiImage1;
   
 

@@ -1,4 +1,4 @@
-
+// this file putt the alert text if the is no texting alert
 //Remove alert text from DropDown 
 function RemoveAlert(pElement){
     var obj0 = document.getElementById(pElement);

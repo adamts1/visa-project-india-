@@ -1,4 +1,5 @@
 <?php
+//Updated data in db getting form edit.php
 include 'conn.php';
 session_start();
    $id = $_SESSION['id'];
@@ -8,20 +9,7 @@ session_start();
    $PortOfArrival = isset($_POST['port_of_arrival']) ? $_POST['port_of_arrival'] : '';
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
    $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
-   //Passport pic
-//    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
-//    $PassportImage = file_get_contents($PassportImage);
-//    $PassportImage = base64_encode($PassportImage);
-//    $PassportImage1 = $_FILES['Passport_Image'][name];
-//    $_SESSION['passportimage'] = $PassportImage1;
-   //Selfi pic
-//    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
-//    $SelfiImage = file_get_contents($SelfiImage);
-//    $SelfiImage = base64_encode($SelfiImage);
-//    $SelfiImage1 = $_FILES['selfi_image'][name];
-//    $_SESSION['selfiimage'] = $SelfiImage1;
-//    $_SESSION['SelfiImageFile'] = $SelfiImage;
-   //
+
    $Email = isset($_POST['email1']) ? $_POST['email1'] : '';
    $ValidateEmail = isset($_POST['email2']) ? $_POST['email2'] : '';
    $DateOfBirth = isset($_POST['date_of_birth']) ? $_POST['date_of_birth'] : '';
@@ -99,16 +87,14 @@ session_start();
    $RefuseDetails = isset($_POST['Refuse_Details']) ? $_POST['Refuse_Details'] : '';
    $CountryVisited = isset($_POST['Country_Visited']) ? $_POST['Country_Visited'] : '';
    $SaarcFlag = isset($_POST['Saarc_Flag']) ? $_POST['Saarc_Flag'] : '';
-//    $SaarcCountry1 = isset($_POST['SaarcCountry']) ? $_POST['SaarcCountry'] : '';
-//    $SaarcYear1 = isset($_POST['SaarcYear1']) ? $_POST['SaarcYear1'] : '';
-//    $SaarcVisitNo = isset($_POST['SaarcVisitNo']) ? $_POST['SaarcVisitNo'] : '';
+
    $NameofsponsorInd = isset($_POST['Nameofsponsor_Ind']) ? $_POST['Nameofsponsor_Ind'] : '';
    $Add1ofsponsorInd = isset($_POST['Add1ofsponsor_Ind']) ? $_POST['Add1ofsponsor_Ind'] : '';
    $PhoneofsponsorInd = isset($_POST['Phoneofsponsor_Ind']) ? $_POST['Phoneofsponsor_Ind'] : '';
    $NameofsponsorMsn = isset($_POST['Nameofsponsor_Msn']) ? $_POST['Nameofsponsor_Msn'] : '';
    $Add1ofsponsorMsn = isset($_POST['Add1ofsponsor_Msn']) ? $_POST['Add1ofsponsor_Msn'] : '';
    $PhoneofsponsorMsn = isset($_POST['Phoneofsponsor_Msn']) ? $_POST['Phoneofsponsor_Msn'] : '';
-//    //////////////Business
+    //////////////Business
    $BusinessPrep = isset($_POST['Business_Prep']) ? $_POST['Business_Prep'] : '';
    $CompanyName = isset($_POST['Company_Name']) ? $_POST['Company_Name'] : '';
    $CompanyAddress = isset($_POST['Company_Address']) ? $_POST['Company_Address'] : '';
@@ -125,9 +111,7 @@ session_start();
   }else{
     $BusinessCard = '';
   }
-//    $sql = "UPDATE main (Passport_Type)
-//    SET (Passport_Type ='$PassportType')
-//    WHERE (id =$id)";
+
 $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality', Port_Of_Arrival='$PortOfArrival', visa_type='$VisaType',
   Purpose_Of_Visit='$PurposeOfVisit',Business_Prep='$BusinessPrep', Company_Name='$CompanyName', Company_Address='$CompanyAddress',
   Company_Phone='$CompanyPhone', Company_Website='$CompanyWebsite', Nature_Of_Company='$NatureOfCompany',
@@ -170,15 +154,6 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
        
         }
         }
-
-//      $sql = "SELECT * FROM main";
-// $sth = $conn->query($sql);
-
-// while($result=mysqli_fetch_array($sth)){  
-// echo '<img width="600" height="600"  src="data:image;base64,'.$result['Business_Card'].'"/>';
-// // echo '<img width="600" height="600"  src="data:image;base64,'.$result['Selfi_Image'].'"/>';
-// }
-// $conn->close();
 
 header('Location: view.php');
 

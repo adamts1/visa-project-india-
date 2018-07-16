@@ -1,3 +1,4 @@
+//Picker date and email compare validation 
 (function($){
   $(document).ready(function () {
 

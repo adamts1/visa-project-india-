@@ -18,6 +18,7 @@
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
+  <script src="js/validimg.js"></script>
   <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
@@ -218,7 +219,7 @@
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף תמונת פספורט</span>
-                <input type="file" id="selfi_image" name="selfi_image">
+                <input onchange="validate_image()" type="file" id="selfi_image" name="selfi_image">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" id="selfi_image_txt">

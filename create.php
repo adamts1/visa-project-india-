@@ -7,7 +7,7 @@ session_start();
    $VisaType = isset($_POST['visa_type']) ? $_POST['visa_type'] : '';
    $PurposeOfVisit = isset($_POST['Purpose_Of_Visit']) ? $_POST['Purpose_Of_Visit'] : '';
    //Passport pic
-   $PassportImage1 = $_FILES['Passport_Image'][name];  // take file name for sving in folder
+   $PassportImage1 = $_FILES['Passport_Image']['name'];  // take file name for sving in folder
    $_SESSION['passportimage'] = $PassportImage1;  // pass file name to session for showing in edit form
    $PassportImage = $_FILES['Passport_Image']['tmp_name'];
    $PassportImage = file_get_contents($PassportImage); 
@@ -15,7 +15,7 @@ session_start();
    $PassportImage = base64_encode($PassportImage);
 
    //Selfi pic
-   $SelfiImage1 = $_FILES['selfi_image'][name]; // take file name for sving in folder
+   $SelfiImage1 = $_FILES['selfi_image']['name']; // take file name for sving in folder
    $_SESSION['selfiimage'] = $SelfiImage1; // pass file name to session for showing in edit form
    $SelfiImage = $_FILES['selfi_image']['tmp_name'];
    $SelfiImage = file_get_contents($SelfiImage);
@@ -117,7 +117,7 @@ session_start();
    $NatureOfCompany = isset($_POST['Nature_Of_Company']) ? $_POST['Nature_Of_Company'] : '';
    //Business fields pic
    if (isset($_POST['Business_Card_txt'])) {
-   $BusinessCard1 = $_FILES['Business_Card'][name];  // take file name for sving in folder
+   $BusinessCard1 = $_FILES['Business_Card']['name'];  // take file name for sving in folder
    $_SESSION['businesscard'] = $BusinessCard1; // pass file name to session for showing in edit form
    $BusinessCard = $_FILES['Business_Card']['tmp_name'];
    $BusinessCard = file_get_contents($BusinessCard);

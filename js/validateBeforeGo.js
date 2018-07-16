@@ -1,3 +1,5 @@
+
+//Validate js by pressing on submit
 function validateForm() {
     type = "text/javascript"
 

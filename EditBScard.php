@@ -14,7 +14,7 @@ session_start();
    $id = $_SESSION['id'];
    $_SESSION['idToUpdate'] = $id;
 
-   $Businesscard1 = $_FILES['businesscard'][name];
+   $Businesscard1 = $_FILES['businesscard']['name'];
    $_SESSION['businesscard'] = $Businesscard1;
 
    $BusinessCard = $_FILES['businesscard']['tmp_name'];

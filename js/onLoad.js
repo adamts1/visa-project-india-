@@ -1,4 +1,4 @@
-
+// return to edit page with all the section open or hide according to what were choosen in form
 (function ($) {
   $(function () {
 
