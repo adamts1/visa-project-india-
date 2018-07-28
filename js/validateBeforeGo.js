@@ -13,7 +13,7 @@ function validateForm() {
     var armyField = arry_of_item.armyField;
     var lastCiti = arry_of_item.lastCiti;
     var deniedField = arry_of_item.deniedField;
-    // var dynamicFields = arry_of_item.dynamicFields; /TBD
+    
 
  //Arry of all the arry in arrData.js
     var sctions = [
@@ -28,16 +28,17 @@ function validateForm() {
     ];
 
     // Conacatinate data to arry acording to the apearance in the form
-    for (index1 = 0; index1 < sctions.length; index1++) {
+    for (index1 = 0; index1 < sctions.length; index1++) { 
 
-        if ($(sctions[index1][0]).is(':visible')) {
-            var items = items.concat(sctions[index1][1]);
+        if ($(sctions[index1][0]).is(':visible')) {   // Check if sectioin visible
+            var items = items.concat(sctions[index1][1]); // add the section cintent to the mendatrry filds
         }
     } 
 
     console.log(items);
-    ////////////////////////////////////
-    if ($('#prev_surname').css('display') != 'none') {
+    /////   Check if prev surnema section is visible visible, if yes add to mandatory fileds
+
+    if ($('#prev_surname').css('display') != 'none') {  
         var items = items.concat(prevName);
     } else {
 
@@ -53,15 +54,12 @@ function validateForm() {
    
 
 
-
+     // Email check
     var email1 = document.forms["Form"][items[7][1]].value;
     var email2 = document.forms["Form"][items[8][1]].value;
     var aa = document.forms["Form"][items[0][1]].value;
     var paraMail = document.getElementById(items[8][0]);
-    console.log(aa);
-    console.log(email1);
-    console.log(email2);
-    console.log(paraMail.textContent);
+
     
     if (email1 != email2) {
         if (paraMail.textContent == "null" || paraMail.textContent == "") {
@@ -93,10 +91,17 @@ function validateForm() {
         }
 
     }
-    console.log(testArr.length);
+    
+    console.log(testArr.length); 
+    var selfi = document.getElementById("selfi-result").innerText; // selfi invalid file error
+    var passport = document.getElementById("passport-result").innerText; // passport invalid file error
+    var card = document.getElementById("card-result").innerText; // card invalid file error
+ 
+    
 
-    if (testArr.length > 0 || email1 != email2) {
-        // check if there empty fields
+
+    if (testArr.length > 0 || email1 != email2 || selfi != "" || passport != "" || card != "" ) {
+        
         return false;
     } else {
         return true;

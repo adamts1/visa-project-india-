@@ -177,7 +177,7 @@
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" name="Business_Card_txt" id="business_card_txt">
-                <p class = "valid_alert" id = "valid_business_card_txt"></p>              
+                <p class = "valid_alert" id = "valid_business_card_txt"><span id="card-result"></span></p>              
 
               </div>
           </div>
@@ -208,26 +208,26 @@
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף צילום דרכון</span>
-                <input type="file" name="Passport_Image" id="passport_image">
+                <input type="file" id="passport_image" name="Passport_Image" >
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" id="passport_image_txt">
-                <p class = "valid_alert" id = "valid_passport_image_txt"></p>              
+                <p class = "valid_alert" id = "valid_passport_image_txt"><span id="passport-result"></span></p>              
               </div>
           </div>
  
           <div class="file-field input-field col s6">
               <div class="btn right teal lighten-2">
                 <span>צרף תמונת פספורט</span>
-                <input onchange="validate_image()" type="file" id="selfi_image" name="selfi_image">
+                <input type="file" id="selfi_image" name="selfi_image">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" id="selfi_image_txt">
-                <p class = "valid_alert" id = "valid_selfi_image_txt"></p>             
+                <input class="file-path validate" type="text" id="selfi_image_txt"> 
+                <p class = "valid_alert" id = "valid_selfi_image_txt"><span id="selfi-result"></span></p>             
               </div>
           </div>          
          </div>
-         
+
           <div class="row">
               <div class="input-field col s6">
                <input type="email" class="validate validate1" name="email1" id="email1" >

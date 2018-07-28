@@ -34,6 +34,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
   <script src="js/init.js"></script>
   <script src="js/validFields.js"></script>
   <script src="js/onLoad.js"></script>
+  <script src="js/validimg.js"></script>
   <!-- <script src="js/validateBeforeGo.js"></script> -->
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
@@ -197,7 +198,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
               </div>
               <div class="file-path-wrapper">
                 <input  value="<?php echo $businesscard ?>" class="file-path validate" type="text" name="Business_Card_txt" id="business_card_txt">
-                <p class = "valid_alert" id = "valid_business_card_txt"></p>              
+                <p class = "valid_alert" id = "valid_business_card_txt"><span id="card-result"></p>              
 
               </div>
           </div>
@@ -233,7 +234,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
               </div>
               <div class="file-path-wrapper">
                 <input onchange="add_passport_image()" value="<?php echo $passportimage ?>"  class="file-path validate" type="text" id="passport_image_txt">
-                <p class = "valid_alert" id = "valid_passport_image_txt"></p>              
+                <p class = "valid_alert" id = "valid_passport_image_txt"><span id="passport-result"></p>              
               </div>
           </div>
  
@@ -244,7 +245,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
               </div>
               <div class="file-path-wrapper">
                 <input value="<?php echo $selfiimage ?>" class="file-path validate" type="text" id="selfi_image_txt">
-                <p class = "valid_alert" id = "valid_selfi_image_txt"></p>             
+                <p class = "valid_alert" id = "valid_selfi_image_txt"><span id="selfi-result"></p>             
               </div>
           </div>          
          </div>

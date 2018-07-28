@@ -5,6 +5,7 @@ include 'conn.php';
 include 'phpArray.php';
 session_start();
 
+
 //count of attar of each optional section
 $fieldsLength=count($fields);
 $bussinessLength=count($bussiness);
@@ -33,6 +34,9 @@ $_SESSION['idToUpdate'] = $id;
   <script src="js/materialize.js"></script>
 </head>
 <body>
+
+
+
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo right">VisaIndia</a>
       <ul class="left hide-on-med-and-down">
@@ -69,8 +73,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
                     {
                     $fields_attr = $fields[$x][1];
                 ?>
-           
-
+          
                  <tr><td><b><?php echo $fields[$x][0] ?></b></td><td width="70%"><?php echo $row->$fields_attr ?></td></tr>
                   <?php
                    }

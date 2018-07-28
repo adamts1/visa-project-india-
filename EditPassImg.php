@@ -31,5 +31,7 @@ $sql = "UPDATE main SET Surename='asd', Passport_Image='$PassportImage' WHERE id
     }else {
      echo "Error: " . $sql . "<br>" . $conn->error;
      }
+
+
      
     ?>

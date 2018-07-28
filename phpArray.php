@@ -1,6 +1,6 @@
 <?php
 
-
+// used to build tables in view.php
 $fields = array
   (
   array("דרכון","Passport_Type"),
