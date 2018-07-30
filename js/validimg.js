@@ -6,6 +6,7 @@ $(document).ready(function() {
     clearTimeout(x_timer);
    var selfisize = $('#selfi_image').prop('files')[0].size; //size of selfi file
    var selfiname = $('#selfi_image').prop('files')[0].name; //name of selfi file
+   console.log(selfiname);
     x_timer = setTimeout(function(){
     check_selfi_ajax(selfisize, selfiname);
    }, 1000);
