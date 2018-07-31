@@ -5,12 +5,13 @@ include 'conn.php';
 session_start();
 
 $id = $_SESSION['id'];
+$Hush = $_SESSION['hush'];
 
 $_SESSION['idToUpdate'] = $id;
 
- $query1 = "SELECT * FROM test2 WHERE mainId='$id' ";
+ $query1 = "SELECT * FROM test2 WHERE hush='$Hush' ";
  $result1 = mysqli_query($conn, $query1);
- $query = "SELECT * FROM main WHERE id='$id' ";
+ $query = "SELECT * FROM main WHERE hush='$Hush' ";
  $result = mysqli_query($conn, $query);
  $output ="";
  if(mysqli_num_rows($result) > 0)
@@ -116,7 +117,7 @@ $_SESSION['idToUpdate'] = $id;
       $idnum = $row["Passport_Image"];
    $output .= '
     <tr>  
-                         <td>'.$row["id"].'</td>  
+                         <td>'.$row["hush"].'</td>  
                          <td>'.$row["Passport_Type"].'</td>  
                          <td>'.$row["Port_Of_Arrival"].'</td>  
                          <td>'.$row["Visa_Type"].'</td>  

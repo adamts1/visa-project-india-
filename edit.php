@@ -4,7 +4,7 @@
 include 'conn.php';
 session_start();
 $id = $_SESSION['id'];
-$_SESSION['idToUpdate'] = $id;
+// $_SESSION['idToUpdate'] = $id;
 
 $passportimage = $_SESSION['passportimage'];
 $selfiimage = $_SESSION['selfiimage'];

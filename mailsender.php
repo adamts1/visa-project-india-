@@ -8,6 +8,7 @@ session_start();
     $pathselfi = 'C:/xampp/htdocs/visa project (india)/files/selfi';
     $pathbusiness = 'C:/xampp/htdocs/visa project (india)/files/business';
     $filexls = $path . "/" . $xls;
+    $Hush = $_SESSION['hush'];
 
 
     $passport = $_SESSION['passportimage'];
@@ -27,7 +28,7 @@ session_start();
   
 
     $mailto = 'adamtsityat@gmail.com';
-    $subject = 'Subject';
+    $subject = 'Customer unique number '. $Hush;
     $message = 'My message';
 
     $contentxls = file_get_contents($filexls);

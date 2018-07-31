@@ -18,7 +18,8 @@ $PrevOrgLength=count($PrevOrg);
 $OldvisaLength=count($Oldvisa);
 $RefuseLength=count($Refuse);
 $id = $_SESSION['id'];
-$_SESSION['idToUpdate'] = $id;
+$Hush = $_SESSION['hush']; // Getting unique number with session from create.php
+// $_SESSION['idToUpdate'] = $id;
 ?>
 <html lang="he">
 <head>
@@ -55,7 +56,7 @@ $_SESSION['idToUpdate'] = $id;
     </div>
   </nav>
 <?php
-if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
+if($stmt = $conn->prepare("SELECT * FROM main  WHERE hush='$Hush'")){
    $stmt->execute();
    $result = $stmt->get_result();
    $row=$result->fetch_object(); 
@@ -65,7 +66,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
         <div class="col s12">
           <div class="row">
             <div class="col s6">
-            <h3>פרטים שמולאו</h3>
+            <h3>  מספר לקוח <?php echo $Hush ?></h3>
             <h5>נא וודא שהפרטים שמילאת נכונים לפני שליחה, במידה והינך רוצה לתקן אחד או יותר מהפרטים לחץ על על חזרה לטופס מילוי</h5>
               <table class="centered" >
                 <?php
