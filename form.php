@@ -7,7 +7,7 @@
 
 
   <title>VisaIndia</title>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -19,7 +19,7 @@
   <script src="js/validFields.js"></script>
   <script src="js/splitedForm.js"></script>
   <script src="js/validimg.js"></script>
-  <!-- <script src="js/validateBeforeGo.js"></script> -->
+  <script src="js/validateBeforeGo.js"></script>
   <script src="js/arrData.js"></script>
   <script src="js/removeAlertDropdowm.js"></script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -1233,6 +1233,5 @@
   </footer>
   </body>
 </html>
-
 
 
