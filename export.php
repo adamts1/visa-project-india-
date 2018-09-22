@@ -232,7 +232,7 @@ $_SESSION['idToUpdate'] = $id;
   $output .= '</table>';
 
   file_put_contents('C:/xampp/htdocs/visa project (india)/files/document.xls', $output);
-  header("Location: mailsender.php");
+  header("Location: http://localhost/visa%20project%20(india)/mailsender.php");
 }
  }
 ?>

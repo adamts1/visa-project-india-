@@ -19,6 +19,8 @@ $OldvisaLength=count($Oldvisa);
 $RefuseLength=count($Refuse);
 $id = $_SESSION['id'];
 $Hush = $_SESSION['hush']; // Getting unique number with session from create.php
+$_SESSION['hush_product'] = $Hush;
+ // Getting unique number with session from create.php
 // $_SESSION['idToUpdate'] = $id;
 ?>
 <html lang="he">
@@ -352,7 +354,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE hush='$Hush'")){
         <div class="col s12">
             <div class="col s6">
             <a class="waves-effect red lighten-1 btn" onClick="document.location.href='edit.php'" /> חזרה לתופס רישום</a>
-            <a class="waves-effect green accent-3 btn " onClick="document.location.href='export.php'" />אישור</a>
+            <a class="waves-effect green accent-3 btn " onClick="document.location.href='paypal/checkout.php'" />אישור</a>
             </div>
           </div>
         </div>

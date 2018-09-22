@@ -10,14 +10,23 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 
 require 'app/start.php';
+session_start();
+// if(!isset($_POST['product'], $_POST['price'])) {
+//     die();
 
-if(!isset($_POST['product'], $_POST['price'])) {
+// }
+$product = $_SESSION['hush_product'];
+var_dump($product);
+if(empty($product)){
     die();
 
 }
 
-$product =$_POST['product'];
-$price = $_POST['price'];
+// $product =$_POST['product'];
+// $price = $_POST['price'];
+
+
+$price = 5;
 
 $shipping = 2.00;
 $total =$price + $shipping;
@@ -64,7 +73,11 @@ $payment->setIntent('sale')
 try{
     $payment->create($paypal);
 } catch(Exception $e) {
-    die ($e);
+    // die ($e);
+    $data = json_decode($e->getData());
+    var_dump($data);
+
+    die();
 }
 
 $approvalUrl = $payment->getApprovalLink();

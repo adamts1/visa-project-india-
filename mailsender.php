@@ -130,3 +130,8 @@ foreach($filesselfi as $selfifile){ // iterate files
   if(is_file($selfifile))
     unlink($selfifile); // delete selfi img file
 }
+
+header("Location: http://localhost/visa%20project%20(india)/endofprocess.php");
+
+
+?>

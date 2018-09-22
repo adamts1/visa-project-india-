@@ -18,19 +18,22 @@ if((bool)$_GET['success']===false){
 $paymentId = $_GET['paymentId'];
 $payerId = $_GET['PayerID'];
 
-$payment = Payment::get($paymentId,$payerId);
+$payment = Payment::get($paymentId,$paypal);
 
 $excecute = new PaymentExcecution();
 $excecute->setPayerId($payerId);
 
 try {
-    $resault = $payment->execute();
+    $resault = $payment->execute($excecute,$paypal);
 
 
 }
 catch (Exception $e){
-    die($e);
+    // die($e);
+    $data = json_decode($e->getData());
+    var_dump($data);
 
+    die();
 }
 
 echo 'payment made';

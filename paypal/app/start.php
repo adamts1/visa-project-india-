@@ -3,7 +3,7 @@
 
 require 'vendor/autoload.php';
 
-define('SITE_URL','http://localhost/visa%20project%20(india)/form.php');
+define('SITE_URL','http://localhost/visa%20project%20(india)/export.php');
 
 $paypal = new \PayPal\Rest\ApiContext(
     new \PayPal\Auth\OAuthTokenCredential(
