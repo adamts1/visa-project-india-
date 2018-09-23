@@ -1,7 +1,7 @@
 <?php
 
 use PayPal\Api\Payment;
-use PayPal\Api\PaymentExcecution;
+use PayPal\Api\PaymentExecution;
 
 require 'app/start.php';
 
@@ -20,7 +20,7 @@ $payerId = $_GET['PayerID'];
 
 $payment = Payment::get($paymentId,$paypal);
 
-$excecute = new PaymentExcecution();
+$excecute = new PaymentExecution();
 $excecute->setPayerId($payerId);
 
 try {
@@ -37,4 +37,7 @@ catch (Exception $e){
 }
 
 echo 'payment made';
+header("Location: http://localhost/visa%20project%20(india)/export.php");
+
+
 ?>

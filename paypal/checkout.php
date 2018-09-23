@@ -26,9 +26,9 @@ if(empty($product)){
 // $price = $_POST['price'];
 
 
-$price = 5;
+$price = 10.00;
 
-$shipping = 2.00;
+$shipping = 6.00;
 $total =$price + $shipping;
 
 $payer = new Payer();
