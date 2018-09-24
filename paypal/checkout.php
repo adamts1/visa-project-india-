@@ -11,12 +11,22 @@ use PayPal\Api\Payment;
 
 require 'app/start.php';
 session_start();
+/////
+$product = $_SESSION['hush_product'];
+$db = new PDO("mysql:host=localhost;dbname=visa_project", "root","");
+
+// $user = $db ->prepare("
+//   SELECT Email FROM main
+//   WHERE hush = :user_id
+// ");
+
+// $user->execute(['user_id' => $product]);
+// $user = $user->fetchObject();
+// var_dump($user);
 // if(!isset($_POST['product'], $_POST['price'])) {
 //     die();
 
 // }
-$product = $_SESSION['hush_product'];
-var_dump($product);
 if(empty($product)){
     die();
 
@@ -26,9 +36,9 @@ if(empty($product)){
 // $price = $_POST['price'];
 
 
-$price = 10.00;
+$price = 1.00;
 
-$shipping = 6.00;
+$shipping = 1.00;
 $total =$price + $shipping;
 
 $payer = new Payer();
@@ -72,6 +82,25 @@ $payment->setIntent('sale')
 
 try{
     $payment->create($paypal);
+
+    
+    // $db = new PDO("mysql:host=localhost;dbname=visa_project", "root","");
+
+    $store = $db ->prepare("
+    INSERT INTO transaction_paypal (payer_id, payment_id)
+    VALUES(:Payer_id ,:Payment_id)
+   
+");
+
+    $store->execute([
+        'Payment_id' =>$payment->getId(),
+        'Payer_id' =>$product,
+
+    ]);
+    // $store->bindValue(':Payment_id', '22', PDO::PARAM_STR);
+    // $store->execute();
+
+
 } catch(Exception $e) {
     // die ($e);
     $data = json_decode($e->getData());
