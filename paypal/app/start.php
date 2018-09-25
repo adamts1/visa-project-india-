@@ -4,6 +4,8 @@ session_start();
 
 
 require 'vendor/autoload.php';
+$db = new PDO("mysql:host=localhost;dbname=visa_project", "root","");
+
 
 define('SITE_URL','http://localhost/visa%20project%20(india)/paypal/pay.php');
 

@@ -10,23 +10,10 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Payment;
 
 require 'app/start.php';
-session_start();
+// session_start();
 /////
 $product = $_SESSION['hush_product'];
-$db = new PDO("mysql:host=localhost;dbname=visa_project", "root","");
 
-// $user = $db ->prepare("
-//   SELECT Email FROM main
-//   WHERE hush = :user_id
-// ");
-
-// $user->execute(['user_id' => $product]);
-// $user = $user->fetchObject();
-// var_dump($user);
-// if(!isset($_POST['product'], $_POST['price'])) {
-//     die();
-
-// }
 if(empty($product)){
     die();
 
@@ -82,32 +69,33 @@ $payment->setIntent('sale')
 
 try{
     $payment->create($paypal);
+    $hash = md5($payment->getId());
+    $_SESSION['paypal_hash'] = $hash;
 
     
-    // $db = new PDO("mysql:host=localhost;dbname=visa_project", "root","");
-
-    $store = $db ->prepare("
-    INSERT INTO transaction_paypal (payer_id, payment_id)
-    VALUES(:Payer_id ,:Payment_id)
-   
-");
-
-    $store->execute([
-        'Payment_id' =>$payment->getId(),
-        'Payer_id' =>$product,
-
-    ]);
-    // $store->bindValue(':Payment_id', '22', PDO::PARAM_STR);
-    // $store->execute();
-
-
 } catch(Exception $e) {
     // die ($e);
     $data = json_decode($e->getData());
     var_dump($data);
+    header("Location: http://localhost/visa%20project%20(india)/paynosuccess.php");
 
     die();
+
 }
+
+
+$store = $db ->prepare("
+INSERT INTO transaction_paypal (payer_id, payment_id, hash)
+VALUES(:Payer_id ,:Payment_id ,:hash)
+
+");
+
+$store->execute([
+    'Payment_id' =>$payment->getId(),
+    'Payer_id' =>$product,
+    'hash' =>$hash
+
+]);
 
 $approvalUrl = $payment->getApprovalLink();
 

@@ -3,10 +3,10 @@
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 
-session_start();
-
 
 require 'app/start.php';
+
+$hash = $_SESSION['paypal_hash'];
 
 if (!isset($_GET['success'],$_GET['paymentId'], $_GET['PayerID'])){
 
@@ -21,7 +21,11 @@ if((bool)$_GET['success']===false){
 $paymentId = $_GET['paymentId'];
 $payerId = $_GET['PayerID'];
 
+//Excecute paypal payment
 $payment = Payment::get($paymentId,$paypal);
+
+
+
 
 $excecute = new PaymentExecution();
 $excecute->setPayerId($payerId);
@@ -29,7 +33,8 @@ $excecute->setPayerId($payerId);
 try {
     $resault = $payment->execute($excecute,$paypal);
 
-    $product = $_SESSION['hush_product'];
+
+
 
 }
 catch (Exception $e){
@@ -38,9 +43,21 @@ catch (Exception $e){
     var_dump($data);
 
     die();
+
+    header("Location: http://localhost/visa%20project%20(india)/paynosuccess.php");
 }
 
-echo 'payment made';
+//Upadate transaction
+$updateTransaction = $db->prepare("
+UPDATE transaction_paypal
+SET complete = 1
+WHERE hash = :hash
+");
+
+$updateTransaction->execute([
+'hash' => $hash,
+
+]);
 header("Location: http://localhost/visa%20project%20(india)/export.php");
 
 
