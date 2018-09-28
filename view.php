@@ -315,7 +315,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE hush='$Hush'")){
   </div>
   <?php
   }
-  $sql = "SELECT * FROM test2 WHERE mainId = $id ";
+  $sql = "SELECT * FROM visited_country WHERE mainId = $id ";
   $result = $conn->query($sql);
  
   if ($row->Saarc_Flag == "Yes") {
@@ -354,7 +354,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE hush='$Hush'")){
         <div class="col s12">
             <div class="col s6">
             <a class="waves-effect red lighten-1 btn" onClick="document.location.href='edit.php'" /> חזרה לתופס רישום</a>
-            <a class="waves-effect green accent-3 btn " onClick="document.location.href='paypal/checkout.php'" />אישור</a>
+            <a class="waves-effect green accent-3 btn " onClick="document.location.href='paypal/checkout.php'" />תשלום</a>
             </div>
           </div>
         </div>

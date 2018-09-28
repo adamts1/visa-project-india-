@@ -23,7 +23,7 @@ if(empty($product)){
 // $price = $_POST['price'];
 
 
-$price = 1.00;
+$price = 11.00;
 
 $shipping = 1.00;
 $total =$price + $shipping;

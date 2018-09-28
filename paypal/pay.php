@@ -58,6 +58,9 @@ $updateTransaction->execute([
 'hash' => $hash,
 
 ]);
+
+$_SESSION['payment_id'] = $paymentId;
+
 header("Location: http://localhost/visa%20project%20(india)/export.php");
 
 

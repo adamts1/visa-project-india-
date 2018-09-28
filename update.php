@@ -145,7 +145,7 @@ $sql = "UPDATE main SET Passport_Type='$PassportType', Nationality='$Nationality
             $SaarcYear11 = $_POST['SaarcYear1'][$i];
             $SaarcCountry1 = $_POST['SaarcCountry'][$i];
             
-        $query1 = "UPDATE test2 SET Country='$SaarcCountry1', YearOfVisits='$SaarcYear11', NumOfVisits='$SaarcVisitNo1', mainId='$id'";
+        $query1 = "UPDATE visited_country SET Country='$SaarcCountry1', YearOfVisits='$SaarcYear11', NumOfVisits='$SaarcVisitNo1', mainId='$id'";
         if ($conn->query($query1) === TRUE) {
             echo "New record created successfully";
            }else {

@@ -161,7 +161,7 @@ function randHash($len=32) //Generate unique hash foe each record
             $SaarcYear11 = $_POST['SaarcYear1'][$i];
             $SaarcCountry1 = $_POST['SaarcCountry'][$i];
             
-        $query1 = "INSERT INTO test2 (Country, YearOfVisits, NumOfVisits, mainId, hush) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1', '$idOfMain', '$hush')";
+        $query1 = "INSERT INTO visited_country (Country, YearOfVisits, NumOfVisits, mainId, hush) VALUES('$SaarcCountry1','$SaarcYear11', '$SaarcVisitNo1', '$idOfMain', '$hush')";
         if ($conn->query($query1) === TRUE) {
             echo "New record created successfully";
            }else {

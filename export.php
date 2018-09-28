@@ -6,10 +6,11 @@ session_start();
 
 $id = $_SESSION['id'];
 $Hush = $_SESSION['hush'];
+$paymentid = $_SESSION['payment_id'];
 
 $_SESSION['idToUpdate'] = $id;
 
- $query1 = "SELECT * FROM test2 WHERE hush='$Hush' ";
+ $query1 = "SELECT * FROM visited_country WHERE hush='$Hush' ";
  $result1 = mysqli_query($conn, $query1);
  $query = "SELECT * FROM main WHERE hush='$Hush' ";
  $result = mysqli_query($conn, $query);
@@ -19,6 +20,7 @@ $_SESSION['idToUpdate'] = $id;
   $output .= '
    <table class="table" bordered="1">  
                     <tr>  
+                         <th>מספר תשלום</th> 
                          <th>מספר מזהה</th>  
                          <th>סוג דרכון</th>  
                          <th>נמל הגעה</th>  
@@ -117,6 +119,8 @@ $_SESSION['idToUpdate'] = $id;
       $idnum = $row["Passport_Image"];
    $output .= '
     <tr>  
+
+                         <td>'.$paymentid.'</td>                         
                          <td>'.$row["hush"].'</td>  
                          <td>'.$row["Passport_Type"].'</td>  
                          <td>'.$row["Port_Of_Arrival"].'</td>  

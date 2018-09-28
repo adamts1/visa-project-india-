@@ -1148,7 +1148,7 @@ if($stmt = $conn->prepare("SELECT * FROM main  WHERE id='$id'")){
 	  <!-- יש לאפשר למשתמש להוסיף עוד שדות במידה והוא ביקר בעוד מדינות  v-->
 
             <?php
-        $sql1 = "SELECT * FROM test2 WHERE mainId = $id ";
+        $sql1 = "SELECT * FROM visited_country WHERE mainId = $id ";
         $result1 = $conn->query($sql1);
         if ($result1->num_rows > 0) {
     ?>
